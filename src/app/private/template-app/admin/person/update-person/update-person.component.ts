@@ -13,7 +13,6 @@ import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/fo
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
 
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
     AdminChildSectionFormComponent
 } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
@@ -22,7 +21,7 @@ import {
 selector: "app-update-person",
   templateUrl: "./update-person.component.html",
   styleUrls: ["./update-person.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class UpdatePersonComponent

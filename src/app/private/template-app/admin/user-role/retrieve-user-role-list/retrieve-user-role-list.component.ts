@@ -128,8 +128,7 @@ export class RetrieveUserRoleListComponent
       this
     );
     this.onPageInit("retrieveUserRoleList", this.currentRoute, this, [
-      "retrieveUserRoleListSC",
-    ]);
+      "retrieveUserRoleListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -263,8 +262,7 @@ export class RetrieveUserRoleListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveUserRoleListSC",
-    ]);
+      "retrieveUserRoleListSC"]);
   }
 
   updateSelectOptionsData() {}

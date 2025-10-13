@@ -20,13 +20,11 @@ import {
     IUpdatePrivilegeGroupItemsRequestModel
 } from "src/app/shared/interfaces/dto/template-app/privilege-group/update-privilege-group-items";
 
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-retrieve-privilege-group",
   templateUrl: "./retrieve-privilege-group.component.html",
   styleUrls: ["./retrieve-privilege-group.component.scss"],
-  imports: [BrowserAnimationsModule, DynamicFieldDisplayComponent, AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ DynamicFieldDisplayComponent, AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class RetrievePrivilegeGroupComponent

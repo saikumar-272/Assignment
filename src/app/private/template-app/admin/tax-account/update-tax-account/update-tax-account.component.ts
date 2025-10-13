@@ -253,8 +253,7 @@ export class UpdateTaxAccountComponent
         {
           id: retrievedObjectInfo["taxTypeUUID"],
           value: retrievedObjectInfo["taxTypeDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
 

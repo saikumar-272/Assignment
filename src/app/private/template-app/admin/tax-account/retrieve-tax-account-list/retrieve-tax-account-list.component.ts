@@ -124,8 +124,7 @@ export class RetrieveTaxAccountListComponent
       this
     );
     this.onPageInit("retrieveTaxAccountList", this.currentRoute, this, [
-      "retrieveTaxAccountListSC",
-    ]);
+      "retrieveTaxAccountListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -226,8 +225,7 @@ export class RetrieveTaxAccountListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveTaxAccountListSC",
-    ]);
+      "retrieveTaxAccountListSC"]);
   }
 
   updateSelectOptionsData() {}

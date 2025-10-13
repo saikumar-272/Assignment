@@ -22,7 +22,6 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 import {
     AdminChildSectionFormComponent
 } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 
 import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -31,7 +30,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 selector: "app-retrieve-parent-list",
   templateUrl: "./retrieve-parent-list.component.html",
   styleUrls: ["./retrieve-parent-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, BrowserAnimationsModule, DynamicFieldDisplayComponent, NgbModule, FormsModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, FormsModule, CommonModule, RouterModule, NgbPaginationModule],
   standalone: true
 })
 export class RetrieveParentListComponent
@@ -123,8 +122,7 @@ export class RetrieveParentListComponent
       this
     );
     this.onPageInit("retrieveParentList", this.currentRoute, this, [
-      "retrieveParentListSC",
-    ]);
+      "retrieveParentListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -331,8 +329,7 @@ export class RetrieveParentListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveParentListSC",
-    ]);
+      "retrieveParentListSC"]);
   }
 
   updateSelectOptionsData() {}

@@ -267,8 +267,7 @@ export class UpdateStudentExamResultComponent
           {
             id: retrievedObjectInfo["studentUUID"],
             value: retrievedObjectInfo["studentDisplayText"],
-          },
-        ]);
+          }]);
     }
   }
 

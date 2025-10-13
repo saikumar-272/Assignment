@@ -22,15 +22,13 @@ import {CustomisationService} from "src/app/customisation.service";
 import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 selector: "app-retrieve-sales-invoice-list",
   templateUrl: "./retrieve-sales-invoice-list.component.html",
   styleUrls: ["./retrieve-sales-invoice-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, BrowserAnimationsModule, DynamicFieldDisplayComponent, NgbModule, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbPaginationModule],
   standalone: true
 })
 export class RetrieveSalesInvoiceListComponent
@@ -123,8 +121,7 @@ export class RetrieveSalesInvoiceListComponent
       this
     );
     this.onPageInit("retrieveSalesInvoiceList", this.currentRoute, this, [
-      "retrieveSalesInvoiceListSC",
-    ]);
+      "retrieveSalesInvoiceListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -290,8 +287,7 @@ export class RetrieveSalesInvoiceListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveSalesInvoiceListSC",
-    ]);
+      "retrieveSalesInvoiceListSC"]);
   }
 
   updateSelectOptionsData() {}

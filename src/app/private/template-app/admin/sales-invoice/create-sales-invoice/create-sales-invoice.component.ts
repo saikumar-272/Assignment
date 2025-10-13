@@ -31,13 +31,11 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 
 import {isBlank} from "src/app/shared/util/string-util";
 import {of} from "rxjs";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-create-sales-invoice",
   templateUrl: "./create-sales-invoice.component.html",
   styleUrls: ["./create-sales-invoice.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RetrieveFacultyListSearchPopupComponent, RetrieveEmployeeListSearchPopupComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RetrieveFacultyListSearchPopupComponent, RetrieveEmployeeListSearchPopupComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class CreateSalesInvoiceComponent
@@ -914,8 +912,7 @@ export class CreateSalesInvoiceComponent
           {
             id: retrievedObjectInfo["faculty1UUID"],
             value: retrievedObjectInfo["faculty1DisplayText"],
-          },
-        ]
+          }]
       );
     }
     if (!isBlank(retrievedObjectInfo["dynamicLocationUUID"])) {
@@ -925,8 +922,7 @@ export class CreateSalesInvoiceComponent
         {
           id: retrievedObjectInfo["dynamicLocationUUID"],
           value: retrievedObjectInfo["dynamicLocationDisplayText"],
-        },
-      ]);
+        }]);
     }
     if (!isBlank(retrievedObjectInfo["staticLocationUUID"])) {
       this.updateInvoiceLineItemSelectedLookupsDataListObj[
@@ -935,8 +931,7 @@ export class CreateSalesInvoiceComponent
         {
           id: retrievedObjectInfo["staticLocationUUID"],
           value: retrievedObjectInfo["staticLocationDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
   async handleUpdateCostCenterLineItem(modal: any) {
@@ -999,8 +994,7 @@ export class CreateSalesInvoiceComponent
           {
             id: retrievedObjectInfo["employee1UUID"],
             value: retrievedObjectInfo["employee1DisplayText"],
-          },
-        ]);
+          }]);
     }
     this.updateInjectedFieldsSelectedLookupData(
       this.updateCostCenterLineItemSelectedLookupsDataListObj,

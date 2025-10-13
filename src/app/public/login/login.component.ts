@@ -37,8 +37,7 @@ import { AppRoutingAdminPrivateModule } from "src/app/app-routing-admin-private.
     NgbModule,
     ReactiveFormsModule,
     NgbAlert,
-    AppRoutingAdminPrivateModule,
-  ],
+    AppRoutingAdminPrivateModule],
   standalone: true,
 })
 export class LoginComponent extends FormFieldsImplComponent implements OnInit {
@@ -104,8 +103,7 @@ export class LoginComponent extends FormFieldsImplComponent implements OnInit {
       {
         fieldGroupClassName: "row",
         fieldGroup: this.loginFields.concat(loginFormFieldList),
-      },
-    ];
+      }];
     this.updateSelectOptionsData();
   }
 

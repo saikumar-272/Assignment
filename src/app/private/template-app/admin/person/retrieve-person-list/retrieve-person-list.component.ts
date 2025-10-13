@@ -19,15 +19,13 @@ import {CustomisationService} from "src/app/customisation.service";
 import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 selector: "app-retrieve-person-list",
   templateUrl: "./retrieve-person-list.component.html",
   styleUrls: ["./retrieve-person-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, BrowserAnimationsModule, DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
   standalone: true
 })
 export class RetrievePersonListComponent
@@ -117,8 +115,7 @@ export class RetrievePersonListComponent
       this
     );
     this.onPageInit("retrievePersonList", this.currentRoute, this, [
-      "retrievePersonListSC",
-    ]);
+      "retrievePersonListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -220,8 +217,7 @@ export class RetrievePersonListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrievePersonListSC",
-    ]);
+      "retrievePersonListSC"]);
   }
 
   updateSelectOptionsData() {}

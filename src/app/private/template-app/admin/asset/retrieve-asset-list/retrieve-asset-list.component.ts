@@ -116,8 +116,7 @@ export class RetrieveAssetListComponent
       this
     );
     this.onPageInit("retrieveAssetList", this.currentRoute, this, [
-      "retrieveAssetListSC",
-    ]);
+      "retrieveAssetListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -218,8 +217,7 @@ export class RetrieveAssetListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveAssetListSC",
-    ]);
+      "retrieveAssetListSC"]);
   }
 
   updateSelectOptionsData() {}

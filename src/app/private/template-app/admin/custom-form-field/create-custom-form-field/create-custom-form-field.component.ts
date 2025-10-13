@@ -52,8 +52,7 @@ export class CreateCustomFormFieldComponent  extends FormFieldsTemplateAppImplCo
       this.createCustomFormField_dataTypeOptions =
       [
         { id: 'String', value: 'String' },
-        { id: 'Integer', value: 'Integer' },
-      ];
+        { id: 'Integer', value: 'Integer' }];
     this.updateSelectOptionsData();
   }
   doesUserHaveAccess(privilegeName: string) : boolean

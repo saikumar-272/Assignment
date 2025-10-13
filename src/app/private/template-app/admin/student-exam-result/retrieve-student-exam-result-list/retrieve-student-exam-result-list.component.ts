@@ -123,8 +123,7 @@ export class RetrieveStudentExamResultListComponent
       this
     );
     this.onPageInit("retrieveStudentExamResultList", this.currentRoute, this, [
-      "retrieveStudentExamResultListSC",
-    ]);
+      "retrieveStudentExamResultListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -228,8 +227,7 @@ export class RetrieveStudentExamResultListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveStudentExamResultListSC",
-    ]);
+      "retrieveStudentExamResultListSC"]);
   }
 
   updateSelectOptionsData() {}

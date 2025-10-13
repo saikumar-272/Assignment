@@ -72,8 +72,7 @@ export class CreateEmployeeComponent
     this.createEmployee_genderOptions = [
       { id: "Male", value: "Male" },
       { id: "Female", value: "Female" },
-      { id: "Other", value: "Other" },
-    ];
+      { id: "Other", value: "Other" }];
     this.updateSelectOptionsData();
   }
   doesUserHaveAccess(privilegeName: string): boolean {
@@ -308,16 +307,14 @@ export class CreateEmployeeComponent
   hideSectionField(key: string) {
     let apiFieldList = [
       ...this.basicDetailsSectionFields,
-      ...this.jobDetailsSectionFields,
-    ];
+      ...this.jobDetailsSectionFields];
     this.hideAField(key, apiFieldList);
   }
 
   displaySectionField(key: string) {
     let apiFieldList = [
       ...this.basicDetailsSectionFields,
-      ...this.jobDetailsSectionFields,
-    ];
+      ...this.jobDetailsSectionFields];
     this.displayAField(key, apiFieldList);
   }
 

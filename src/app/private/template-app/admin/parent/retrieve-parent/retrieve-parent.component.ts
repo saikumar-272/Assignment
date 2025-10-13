@@ -16,13 +16,11 @@ import {
     retrieveChildListSearchFilter,
 } from "src/app/shared/interfaces/dto/template-app/child/retrieve-child-list";
 
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-retrieve-parent",
   templateUrl: "./retrieve-parent.component.html",
   styleUrls: ["./retrieve-parent.component.scss"],
-  imports: [BrowserAnimationsModule, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class RetrieveParentComponent

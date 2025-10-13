@@ -499,7 +499,6 @@ export const AppModuleBaseComponents = [
   RetrieveStudentLeaveListComponent,
   DownloadAttachmentComponent,
   PublicComponent,
-  PrintComponent,
-];
+  PrintComponent];
 
 export const nonstarndardComponents = [];

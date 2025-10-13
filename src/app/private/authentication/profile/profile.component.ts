@@ -67,9 +67,7 @@ export class ProfileComponent implements OnInit {
         [
           CustomFormValidators.notBlank(),
           CustomFormValidators.email(),
-          CustomFormValidators.maxLength(Constants.EMAIL_ID_FIELD_MAX_LENGTH),
-        ],
-      ],
+          CustomFormValidators.maxLength(Constants.EMAIL_ID_FIELD_MAX_LENGTH)]],
       passwordForEmailChange: ["", [CustomFormValidators.notBlank()]],
     });
     this.changeContactNumberForm = this.fb.group({
@@ -77,9 +75,7 @@ export class ProfileComponent implements OnInit {
         "",
         [
           CustomFormValidators.notBlank(),
-          CustomFormValidators.pattern(Constants.REGEX_PHONE_NUMBER),
-        ],
-      ],
+          CustomFormValidators.pattern(Constants.REGEX_PHONE_NUMBER)]],
       otpForNumberChange: ["", [CustomFormValidators.notBlank()]],
       passwordForNumberChange: ["", [CustomFormValidators.notBlank()]],
     });
@@ -88,9 +84,7 @@ export class ProfileComponent implements OnInit {
         "",
         [
           CustomFormValidators.notBlank(),
-          CustomFormValidators.pattern(Constants.REGEX_PHONE_NUMBER),
-        ],
-      ],
+          CustomFormValidators.pattern(Constants.REGEX_PHONE_NUMBER)]],
     });
     this.updatePasswordForm = this.fb.group(
       {

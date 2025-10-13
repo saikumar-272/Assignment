@@ -11,13 +11,11 @@ import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ToastNotificationService} from "src/app/toast-notification-service";
 import {TimeZoneService} from "src/app/shared/services/timeZone.service";
 //User Actions request model
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-retrieve-state",
   templateUrl: "./retrieve-state.component.html",
   styleUrls: ["./retrieve-state.component.scss"],
-  imports: [BrowserAnimationsModule, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class RetrieveStateComponent

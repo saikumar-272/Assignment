@@ -18,13 +18,11 @@ import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/fo
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
 
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-update-privilege-group",
   templateUrl: "./update-privilege-group.component.html",
   styleUrls: ["./update-privilege-group.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class UpdatePrivilegeGroupComponent

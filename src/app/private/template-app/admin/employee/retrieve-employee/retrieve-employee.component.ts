@@ -1001,8 +1001,7 @@ export class RetrieveEmployeeComponent
           {
             id: retrievedObjectInfo["locationUUID"],
             value: retrievedObjectInfo["locationDisplayText"],
-          },
-        ]);
+          }]);
     }
   }
   setUpdateEmployeeBasicDetailsSelectedLookupsDataIntoObj(
@@ -1015,8 +1014,7 @@ export class RetrieveEmployeeComponent
         {
           id: retrievedObjectInfo["locationUUID"],
           value: retrievedObjectInfo["locationDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
   setUpdateEmployeeAttachmentsSelectedLookupsDataIntoObj(
@@ -1028,24 +1026,21 @@ export class RetrieveEmployeeComponent
         {
           id: retrievedObjectInfo["locationUUID"],
           value: retrievedObjectInfo["locationDisplayText"],
-        },
-      ]);
+        }]);
     }
     if (!isBlank(retrievedObjectInfo["location1UUID"])) {
       this.updateEmployeeSSSelectedLookupsDataListObj["location1UUID"] = of([
         {
           id: retrievedObjectInfo["location1UUID"],
           value: retrievedObjectInfo["location1DisplayText"],
-        },
-      ]);
+        }]);
     }
     if (!isBlank(retrievedObjectInfo["location2UUID"])) {
       this.updateEmployeeSSSelectedLookupsDataListObj["location2UUID"] = of([
         {
           id: retrievedObjectInfo["location2UUID"],
           value: retrievedObjectInfo["location2DisplayText"],
-        },
-      ]);
+        }]);
     }
   }
   setUpdateEmployeeNameSelectedLookupsDataIntoObj(retrievedObjectInfo: any) {}

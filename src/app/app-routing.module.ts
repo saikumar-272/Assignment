@@ -20,8 +20,7 @@ export const SERVICE_CONTEXT_PATHS = [
   "testservice2",
   "testschoolbe",
   "mockservice1",
-  "mockservice2",
-];
+  "mockservice2"];
 const serviceContextPathRoutes: Routes = SERVICE_CONTEXT_PATHS.map((path) => ({
   path,
   component: ServiceRedirectionComponent,
@@ -44,8 +43,7 @@ export const appRoutes: Routes = [
           import("./app-routing-print-private.module").then(
             (m) => m.AppRoutingPrintPrivateModule
           ),
-      },
-    ],
+      }],
   },
 
   // Routes accessible after login
@@ -61,8 +59,7 @@ export const appRoutes: Routes = [
           import("./app-routing-admin-private.module").then(
             (m) => m.AppRoutingAdminPrivateModule
           ),
-      },
-    ],
+      }],
   },
   // Routes accessible after login
   {
@@ -77,8 +74,7 @@ export const appRoutes: Routes = [
           import("./app-routing-parent-private.module").then(
             (m) => m.AppRoutingParentPrivateModule
           ),
-      },
-    ],
+      }],
   },
   {
     path: "public",
@@ -97,8 +93,7 @@ export const appRoutes: Routes = [
           import("./app-routing-custom-public.module").then(
             (m) => m.AppRoutingCustomPublicModule
           ),
-      },
-    ],
+      }],
   },
   { path: "**", redirectTo: "in" }, //If no match found
 ];

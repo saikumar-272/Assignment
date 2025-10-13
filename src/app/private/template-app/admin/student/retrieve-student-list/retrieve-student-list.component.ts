@@ -176,8 +176,7 @@ export class RetrieveStudentListComponent
       this
     );
     this.onPageInit("retrieveStudentList", this.currentRoute, this, [
-      "retrieveStudentListSC",
-    ]);
+      "retrieveStudentListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -674,8 +673,7 @@ export class RetrieveStudentListComponent
     ) {
       let sectionDataObjectList: any = [this.retrieveStudentListSectionData];
       this.resetDependentLookupFieldsData(sectionDataObjectList, [
-        "sectionUUID",
-      ]);
+        "sectionUUID"]);
     }
   }
   updateDisplayPropertyOfFields(selectedValue: any, field: any) {
@@ -703,8 +701,7 @@ export class RetrieveStudentListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveStudentListSC",
-    ]);
+      "retrieveStudentListSC"]);
   }
 
   updateSelectOptionsData() {

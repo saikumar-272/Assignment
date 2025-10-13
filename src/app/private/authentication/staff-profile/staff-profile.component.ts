@@ -37,16 +37,12 @@ export class StaffProfileComponent implements OnInit {
           "",
           [
             CustomFormValidators.notBlank(),
-            CustomFormValidators.maxLength(Constants.NAME_FIELD_MAX_LENGTH),
-          ],
-        ],
+            CustomFormValidators.maxLength(Constants.NAME_FIELD_MAX_LENGTH)]],
         lastName: [
           "",
           [
             CustomFormValidators.notBlank(),
-            CustomFormValidators.maxLength(Constants.NAME_FIELD_MAX_LENGTH),
-          ],
-        ],
+            CustomFormValidators.maxLength(Constants.NAME_FIELD_MAX_LENGTH)]],
       }),
     });
   }

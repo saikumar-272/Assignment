@@ -25,7 +25,6 @@ export const PARENT_PRIVATE_CHILDREN_ROUTES_BASE: Routes = [
     { path: 'create-student-leave', component: CreateStudentLeaveComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] },
     { path: 'update-student-leave', component: UpdateStudentLeaveComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] },
     { path: 'retrieve-student-leave', component: RetrieveStudentLeaveComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] },
-    { path: 'student-leave-list', component: RetrieveStudentLeaveListComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] },
-  ]
+    { path: 'student-leave-list', component: RetrieveStudentLeaveListComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] }]
 
 export class AppRoutingParentPrivateChildrenRoutesBase { }

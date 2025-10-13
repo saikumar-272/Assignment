@@ -264,8 +264,7 @@ export class UpdateStateForUploadComponent
         {
           id: retrievedObjectInfo["countryUUID"],
           value: retrievedObjectInfo["countryDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
 

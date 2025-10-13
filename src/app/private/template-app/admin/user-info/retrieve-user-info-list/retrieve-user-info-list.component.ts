@@ -118,8 +118,7 @@ export class RetrieveUserInfoListComponent
       this
     );
     this.onPageInit("retrieveUserInfoList", this.currentRoute, this, [
-      "retrieveUserInfoListSC",
-    ]);
+      "retrieveUserInfoListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -224,8 +223,7 @@ export class RetrieveUserInfoListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveUserInfoListSC",
-    ]);
+      "retrieveUserInfoListSC"]);
   }
 
   updateSelectOptionsData() {}

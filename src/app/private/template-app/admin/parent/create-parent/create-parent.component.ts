@@ -13,7 +13,6 @@ import {AuthenticationService} from "src/app/shared/services/authentication.serv
 import {ActivatedRoute, Router, RouterModule} from "@angular/router";
 import {ToastNotificationService} from "src/app/toast-notification-service";
 
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
     AdminChildSectionFormComponent
 } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
@@ -23,7 +22,7 @@ import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display
 selector: "app-create-parent",
   templateUrl: "./create-parent.component.html",
   styleUrls: ["./create-parent.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class CreateParentComponent

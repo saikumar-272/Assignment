@@ -77,8 +77,7 @@ export class GetStudentGraphDataComponent
     this.gradeOptions = [
       { id: "A", value: "A" },
       { id: "B", value: "B" },
-      { id: "C", value: "C" },
-    ];
+      { id: "C", value: "C" }];
     this.updateSelectOptionsData();
   }
   doesUserHaveAccess(privilegeName: string): boolean {

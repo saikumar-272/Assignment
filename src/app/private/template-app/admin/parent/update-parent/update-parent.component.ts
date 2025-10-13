@@ -24,13 +24,11 @@ import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/fo
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
 
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-update-parent",
   templateUrl: "./update-parent.component.html",
   styleUrls: ["./update-parent.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class UpdateParentComponent

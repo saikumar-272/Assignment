@@ -15,13 +15,11 @@ import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/fo
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 
 import {ToastNotificationService} from "src/app/toast-notification-service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-create-section",
   templateUrl: "./create-section.component.html",
   styleUrls: ["./create-section.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class CreateSectionComponent

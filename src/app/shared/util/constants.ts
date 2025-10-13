@@ -66,5 +66,4 @@ export const PAGE_SIZE_OPTIONS: DropDownOption[] = [
   { id: 10, value: '10' },
   { id: 25, value: '25' },
   { id: 50, value: '50' },
-  { id: 100, value: '100' },
-];
+  { id: 100, value: '100' }];

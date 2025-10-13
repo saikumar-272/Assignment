@@ -116,8 +116,7 @@ export class RetrieveStudentListWithJoinComponent
       this
     );
     this.onPageInit("retrieveStudentListWithJoin", this.currentRoute, this, [
-      "retrieveStudentListWithJoinSC",
-    ]);
+      "retrieveStudentListWithJoinSC"]);
   }
 
   async resetSearchCriteria() {
@@ -219,8 +218,7 @@ export class RetrieveStudentListWithJoinComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveStudentListWithJoinSC",
-    ]);
+      "retrieveStudentListWithJoinSC"]);
   }
 
   updateSelectOptionsData() {}

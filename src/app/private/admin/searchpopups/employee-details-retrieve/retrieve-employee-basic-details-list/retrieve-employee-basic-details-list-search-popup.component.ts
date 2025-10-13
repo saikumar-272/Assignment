@@ -27,8 +27,7 @@ selector: "retrieve-employee-basic-details-list-search-popup",
   templateUrl:
     "./retrieve-employee-basic-details-list-search-popup.component.html",
   styleUrls: [
-    "./retrieve-employee-basic-details-list-search-popup.component.scss",
-  ],
+    "./retrieve-employee-basic-details-list-search-popup.component.scss"],
   standalone: true
 })
 export class RetrieveEmployeeBasicDetailsListSearchPopupComponent

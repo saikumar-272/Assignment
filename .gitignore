@@ -1,5 +1,8 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+/remove-browseranimation-modules.js
+/fix-browser-module-imports.js
+/FrontendAngularApp.rar
 # Compiled output
 /dist
 /tmp

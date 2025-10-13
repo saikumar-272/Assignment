@@ -92,13 +92,11 @@ export class CreateStudentComponent
     this.createStudent_genderOptions = [
       { id: "Male", value: "Male" },
       { id: "Female", value: "Female" },
-      { id: "Other", value: "Other" },
-    ];
+      { id: "Other", value: "Other" }];
     this.createStudent_gradeOptions = [
       { id: "A", value: "A" },
       { id: "B", value: "B" },
-      { id: "C", value: "C" },
-    ];
+      { id: "C", value: "C" }];
     this.updateSelectOptionsData();
   }
   doesUserHaveAccess(privilegeName: string): boolean {
@@ -317,11 +315,9 @@ export class CreateStudentComponent
     if (field.key == "classInfoUUID" && field.apiName == "createStudent") {
       let sectionDataObjectList: any = [
         this.section1SectionData,
-        this.section2SectionData,
-      ];
+        this.section2SectionData];
       this.resetDependentLookupFieldsData(sectionDataObjectList, [
-        "sectionUUID",
-      ]);
+        "sectionUUID"]);
     }
   }
   updateLookupDisplayTextMap(
@@ -362,16 +358,14 @@ export class CreateStudentComponent
   hideSectionField(key: string) {
     let apiFieldList = [
       ...this.section1SectionFields,
-      ...this.section2SectionFields,
-    ];
+      ...this.section2SectionFields];
     this.hideAField(key, apiFieldList);
   }
 
   displaySectionField(key: string) {
     let apiFieldList = [
       ...this.section1SectionFields,
-      ...this.section2SectionFields,
-    ];
+      ...this.section2SectionFields];
     this.displayAField(key, apiFieldList);
   }
 

@@ -19,15 +19,13 @@ import {CustomisationService} from "src/app/customisation.service";
 import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 selector: "app-retrieve-privilege-group-list",
   templateUrl: "./retrieve-privilege-group-list.component.html",
   styleUrls: ["./retrieve-privilege-group-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, BrowserAnimationsModule, DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
   standalone: true
 })
 export class RetrievePrivilegeGroupListComponent
@@ -118,8 +116,7 @@ export class RetrievePrivilegeGroupListComponent
       this
     );
     this.onPageInit("retrievePrivilegeGroupList", this.currentRoute, this, [
-      "retrievePrivilegeGroupListSC",
-    ]);
+      "retrievePrivilegeGroupListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -220,8 +217,7 @@ export class RetrievePrivilegeGroupListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrievePrivilegeGroupListSC",
-    ]);
+      "retrievePrivilegeGroupListSC"]);
   }
 
   updateSelectOptionsData() {}

@@ -915,16 +915,14 @@ export class UpdateEmployeeComponent
   hideSectionField(key: string) {
     let apiFieldList = [
       ...this.basicDetailsSectionFields,
-      ...this.jobDetailsSectionFields,
-    ];
+      ...this.jobDetailsSectionFields];
     this.hideAField(key, apiFieldList);
   }
 
   displaySectionField(key: string) {
     let apiFieldList = [
       ...this.basicDetailsSectionFields,
-      ...this.jobDetailsSectionFields,
-    ];
+      ...this.jobDetailsSectionFields];
     this.displayAField(key, apiFieldList);
   }
 
@@ -1034,8 +1032,7 @@ export class UpdateEmployeeComponent
         {
           id: retrievedObjectInfo["locationUUID"],
           value: retrievedObjectInfo["locationDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
 
@@ -1052,8 +1049,7 @@ export class UpdateEmployeeComponent
           {
             id: retrievedObjectInfo["employeeSectionUUID"],
             value: retrievedObjectInfo["employeeSectionDisplayText"],
-          },
-        ]);
+          }]);
     }
   }
 

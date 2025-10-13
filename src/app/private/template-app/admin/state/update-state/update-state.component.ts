@@ -17,13 +17,11 @@ import {AuthenticationService} from "src/app/shared/services/authentication.serv
 import {ToastNotificationService} from "src/app/toast-notification-service";
 import {isBlank} from "src/app/shared/util/string-util";
 import {of} from "rxjs";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-update-state",
   templateUrl: "./update-state.component.html",
   styleUrls: ["./update-state.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class UpdateStateComponent
@@ -253,8 +251,7 @@ export class UpdateStateComponent
         {
           id: retrievedObjectInfo["countryUUID"],
           value: retrievedObjectInfo["countryDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
 

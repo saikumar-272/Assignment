@@ -19,15 +19,13 @@ import {CustomisationService} from "src/app/customisation.service";
 import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 selector: "app-retrieve-organisation-list",
   templateUrl: "./retrieve-organisation-list.component.html",
   styleUrls: ["./retrieve-organisation-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, BrowserAnimationsModule, DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
   standalone: true
 })
 export class RetrieveOrganisationListComponent
@@ -118,8 +116,7 @@ export class RetrieveOrganisationListComponent
       this
     );
     this.onPageInit("retrieveOrganisationList", this.currentRoute, this, [
-      "retrieveOrganisationListSC",
-    ]);
+      "retrieveOrganisationListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -235,8 +232,7 @@ export class RetrieveOrganisationListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveOrganisationListSC",
-    ]);
+      "retrieveOrganisationListSC"]);
   }
 
   updateSelectOptionsData() {}

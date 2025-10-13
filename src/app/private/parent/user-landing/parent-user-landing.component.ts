@@ -12,8 +12,7 @@ import { AppRoutingAdminPrivateModule } from "src/app/app-routing-admin-private.
   imports: [
     ParentMainMenuComponent,
     ParentSecondMainMenuComponent,
-    AppRoutingAdminPrivateModule,
-  ],
+    AppRoutingAdminPrivateModule],
   templateUrl: "./parent-user-landing.component.html",
   styleUrls: ["./parent-user-landing.component.scss"],
   encapsulation: ViewEncapsulation.None,

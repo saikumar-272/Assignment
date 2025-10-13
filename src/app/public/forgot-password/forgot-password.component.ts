@@ -27,8 +27,7 @@ import { AppRoutingAdminPrivateModule } from "src/app/app-routing-admin-private.
     FormsModule,
     ReactiveFormsModule,
     NgbAlertModule,
-    AppRoutingAdminPrivateModule,
-  ],
+    AppRoutingAdminPrivateModule],
   standalone: true,
 })
 export class ForgotPasswordComponent implements OnInit {

@@ -30,8 +30,7 @@ selector: "angular-editor-popup",
       h1 {
         font-family: Lato;
       }
-    `,
-  ],
+    `],
   standalone: true
 })
 export class RichTextEditorComponent extends FormFieldsImplComponent {
@@ -69,8 +68,7 @@ export class RichTextEditorComponent extends FormFieldsImplComponent {
         name: "titleText",
         class: "titleText",
         tag: "h1",
-      },
-    ],
+      }],
   };
   editorText: any;
 

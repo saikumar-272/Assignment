@@ -23,13 +23,11 @@ import {AuthenticationService} from "src/app/shared/services/authentication.serv
 import {ToastNotificationService} from "src/app/toast-notification-service";
 import {isBlank} from "src/app/shared/util/string-util";
 import {of} from "rxjs";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-update-sales-invoice2",
   templateUrl: "./update-sales-invoice2.component.html",
   styleUrls: ["./update-sales-invoice2.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class UpdateSalesInvoice2Component
@@ -354,16 +352,14 @@ export class UpdateSalesInvoice2Component
           {
             id: retrievedObjectInfo["organisationUUID"],
             value: retrievedObjectInfo["organisationDisplayText"],
-          },
-        ]);
+          }]);
     }
     if (!isBlank(retrievedObjectInfo["personUUID"])) {
       this.updateSalesInvoice2SelectedLookupsDataListObj["personUUID"] = of([
         {
           id: retrievedObjectInfo["personUUID"],
           value: retrievedObjectInfo["personDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
 

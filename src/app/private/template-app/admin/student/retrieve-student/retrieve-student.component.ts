@@ -900,8 +900,7 @@ export class RetrieveStudentComponent
         {
           id: retrievedObjectInfo["staticLocationUUID"],
           value: retrievedObjectInfo["staticLocationDisplayText"],
-        },
-      ]);
+        }]);
     }
     if (!isBlank(retrievedObjectInfo["dynamicLocationUUID"])) {
       this.updateStudentAllDetailsSelectedLookupsDataListObj[
@@ -910,8 +909,7 @@ export class RetrieveStudentComponent
         {
           id: retrievedObjectInfo["dynamicLocationUUID"],
           value: retrievedObjectInfo["dynamicLocationDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
   setUpdateStudentFirstNameSelectedLookupsDataIntoObj(
@@ -923,8 +921,7 @@ export class RetrieveStudentComponent
           {
             id: retrievedObjectInfo["location1UUID"],
             value: retrievedObjectInfo["location1DisplayText"],
-          },
-        ]);
+          }]);
     }
   }
   setUpdateStudentFirstName2SelectedLookupsDataIntoObj(
@@ -936,8 +933,7 @@ export class RetrieveStudentComponent
           {
             id: retrievedObjectInfo["faculty1UUID"],
             value: retrievedObjectInfo["faculty1DisplayText"],
-          },
-        ]);
+          }]);
     }
   }
   setAssignToFacultySelectedLookupsDataIntoObj(retrievedObjectInfo: any) {
@@ -946,8 +942,7 @@ export class RetrieveStudentComponent
         {
           id: retrievedObjectInfo["facultyUUID"],
           value: retrievedObjectInfo["facultyDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
   setRemoveFromFacultySelectedLookupsDataIntoObj(retrievedObjectInfo: any) {}

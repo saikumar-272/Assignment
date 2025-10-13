@@ -340,11 +340,9 @@ export class UpdateStudentComponent
     if (field.key == "classInfoUUID" && field.apiName == "updateStudent") {
       let sectionDataObjectList: any = [
         this.section1SectionData,
-        this.section2SectionData,
-      ];
+        this.section2SectionData];
       this.resetDependentLookupFieldsData(sectionDataObjectList, [
-        "sectionUUID",
-      ]);
+        "sectionUUID"]);
     }
   }
   updateLookupDisplayTextMap(
@@ -385,16 +383,14 @@ export class UpdateStudentComponent
   hideSectionField(key: string) {
     let apiFieldList = [
       ...this.section1SectionFields,
-      ...this.section2SectionFields,
-    ];
+      ...this.section2SectionFields];
     this.hideAField(key, apiFieldList);
   }
 
   displaySectionField(key: string) {
     let apiFieldList = [
       ...this.section1SectionFields,
-      ...this.section2SectionFields,
-    ];
+      ...this.section2SectionFields];
     this.displayAField(key, apiFieldList);
   }
 
@@ -466,32 +462,28 @@ export class UpdateStudentComponent
         {
           id: retrievedObjectInfo["classInfoUUID"],
           value: retrievedObjectInfo["classInfoDisplayText"],
-        },
-      ]);
+        }]);
     }
     if (!isBlank(retrievedObjectInfo["sectionUUID"])) {
       this.section1SelectedLookupsDataListObj["sectionUUID"] = of([
         {
           id: retrievedObjectInfo["sectionUUID"],
           value: retrievedObjectInfo["sectionDisplayText"],
-        },
-      ]);
+        }]);
     }
     if (!isBlank(retrievedObjectInfo["dynamicLocationUUID"])) {
       this.section1SelectedLookupsDataListObj["dynamicLocationUUID"] = of([
         {
           id: retrievedObjectInfo["dynamicLocationUUID"],
           value: retrievedObjectInfo["dynamicLocationDisplayText"],
-        },
-      ]);
+        }]);
     }
     if (!isBlank(retrievedObjectInfo["staticLocationUUID"])) {
       this.section1SelectedLookupsDataListObj["staticLocationUUID"] = of([
         {
           id: retrievedObjectInfo["staticLocationUUID"],
           value: retrievedObjectInfo["staticLocationDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
 

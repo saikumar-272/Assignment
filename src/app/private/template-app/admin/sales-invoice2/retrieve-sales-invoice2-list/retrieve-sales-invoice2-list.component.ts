@@ -20,15 +20,13 @@ import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/fo
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
 import OptionsList from "src/app/shared/forms-custom/OptionsList.json";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 selector: "app-retrieve-sales-invoice2-list",
   templateUrl: "./retrieve-sales-invoice2-list.component.html",
   styleUrls: ["./retrieve-sales-invoice2-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, BrowserAnimationsModule, DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
   standalone: true
 })
 export class RetrieveSalesInvoice2ListComponent
@@ -128,8 +126,7 @@ export class RetrieveSalesInvoice2ListComponent
       this
     );
     this.onPageInit("retrieveSalesInvoice2List", this.currentRoute, this, [
-      "retrieveSalesInvoice2ListSC",
-    ]);
+      "retrieveSalesInvoice2ListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -252,8 +249,7 @@ export class RetrieveSalesInvoice2ListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveSalesInvoice2ListSC",
-    ]);
+      "retrieveSalesInvoice2ListSC"]);
   }
 
   updateSelectOptionsData() {

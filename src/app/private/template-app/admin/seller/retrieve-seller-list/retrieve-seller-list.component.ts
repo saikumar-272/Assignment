@@ -19,15 +19,13 @@ import {CustomisationService} from "src/app/customisation.service";
 import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 selector: "app-retrieve-seller-list",
   templateUrl: "./retrieve-seller-list.component.html",
   styleUrls: ["./retrieve-seller-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, BrowserAnimationsModule, DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
   standalone: true
 })
 export class RetrieveSellerListComponent
@@ -117,8 +115,7 @@ export class RetrieveSellerListComponent
       this
     );
     this.onPageInit("retrieveSellerList", this.currentRoute, this, [
-      "retrieveSellerListSC",
-    ]);
+      "retrieveSellerListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -219,8 +216,7 @@ export class RetrieveSellerListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveSellerListSC",
-    ]);
+      "retrieveSellerListSC"]);
   }
 
   updateSelectOptionsData() {}

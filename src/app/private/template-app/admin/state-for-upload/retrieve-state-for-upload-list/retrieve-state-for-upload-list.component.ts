@@ -147,8 +147,7 @@ export class RetrieveStateForUploadListComponent
       this
     );
     this.onPageInit("retrieveStateForUploadList", this.currentRoute, this, [
-      "retrieveStateForUploadListSC",
-    ]);
+      "retrieveStateForUploadListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -387,8 +386,7 @@ export class RetrieveStateForUploadListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveStateForUploadListSC",
-    ]);
+      "retrieveStateForUploadListSC"]);
   }
 
   updateSelectOptionsData() {}

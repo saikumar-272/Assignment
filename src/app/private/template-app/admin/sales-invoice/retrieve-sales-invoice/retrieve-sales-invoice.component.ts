@@ -24,13 +24,11 @@ import {
 } from "src/app/shared/interfaces/dto/template-app/cost-center-line-item/retrieve-cost-center-line-item-list";
 
 import {getNumberWithCommaSeparated} from "src/app/shared/util/string-util";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-retrieve-sales-invoice",
   templateUrl: "./retrieve-sales-invoice.component.html",
   styleUrls: ["./retrieve-sales-invoice.component.scss"],
-  imports: [BrowserAnimationsModule, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class RetrieveSalesInvoiceComponent

@@ -14,7 +14,6 @@ import {AuthenticationService} from "src/app/shared/services/authentication.serv
 import {ToastNotificationService} from "src/app/toast-notification-service";
 import {isBlank} from "src/app/shared/util/string-util";
 import {of} from "rxjs";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
     AdminChildSectionFormComponent
 } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
@@ -23,7 +22,7 @@ import {
 selector: "app-update-section",
   templateUrl: "./update-section.component.html",
   styleUrls: ["./update-section.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class UpdateSectionComponent
@@ -254,8 +253,7 @@ export class UpdateSectionComponent
         {
           id: retrievedObjectInfo["classInfoUUID"],
           value: retrievedObjectInfo["classInfoDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
 

@@ -23,13 +23,11 @@ import {CustomisationService} from "src/app/customisation.service";
 import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-create-sales-invoice2",
   templateUrl: "./create-sales-invoice2.component.html",
   styleUrls: ["./create-sales-invoice2.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class CreateSalesInvoice2Component
@@ -75,8 +73,7 @@ export class CreateSalesInvoice2Component
     this.selected_createSalesInvoice2_personUUID = "";
     this.createSalesInvoice2_buyerTypeOptions = [
       { id: "Organisation", value: "Organisation" },
-      { id: "Individual", value: "Individual" },
-    ];
+      { id: "Individual", value: "Individual" }];
     this.updateSelectOptionsData();
   }
   doesUserHaveAccess(privilegeName: string): boolean {

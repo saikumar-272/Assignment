@@ -52,8 +52,7 @@ export class CreateEmployeeForFlexfieldsComponent  extends FormFieldsTemplateApp
       this.createEmployeeForFlexfields_employmentTypeContextOptions =
       [
         { id: 'Permanent', value: 'Permanent' },
-        { id: 'Contract', value: 'Contract' },
-      ];
+        { id: 'Contract', value: 'Contract' }];
     this.updateSelectOptionsData();
   }
   doesUserHaveAccess(privilegeName: string) : boolean

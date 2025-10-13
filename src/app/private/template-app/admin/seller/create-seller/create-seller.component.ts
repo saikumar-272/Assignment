@@ -18,13 +18,11 @@ import {CustomisationService} from "src/app/customisation.service";
 import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-create-seller",
   templateUrl: "./create-seller.component.html",
   styleUrls: ["./create-seller.component.scss"],
-  imports: [AdminChildSectionFormComponent, BrowserAnimationsModule, CommonModule, RouterModule, NgbModule],
+  imports: [AdminChildSectionFormComponent,  CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class CreateSellerComponent
@@ -61,8 +59,7 @@ export class CreateSellerComponent
     super();
     this.createSeller_sourceTypeOptions = [
       { id: "Buyer", value: "Buyer" },
-      { id: "Agent", value: "Agent" },
-    ];
+      { id: "Agent", value: "Agent" }];
     this.updateSelectOptionsData();
   }
   doesUserHaveAccess(privilegeName: string): boolean {

@@ -19,15 +19,13 @@ import {
     AdminChildSectionFormComponent
 } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 selector: "app-retrieve-section-list",
   templateUrl: "./retrieve-section-list.component.html",
   styleUrls: ["./retrieve-section-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, BrowserAnimationsModule, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent,  NgbModule, CommonModule, RouterModule, NgbPaginationModule],
   standalone: true
 })
 export class RetrieveSectionListComponent
@@ -122,8 +120,7 @@ export class RetrieveSectionListComponent
       this
     );
     this.onPageInit("retrieveSectionList", this.currentRoute, this, [
-      "retrieveSectionListSC",
-    ]);
+      "retrieveSectionListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -226,8 +223,7 @@ export class RetrieveSectionListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveSectionListSC",
-    ]);
+      "retrieveSectionListSC"]);
   }
 
   updateSelectOptionsData() {}

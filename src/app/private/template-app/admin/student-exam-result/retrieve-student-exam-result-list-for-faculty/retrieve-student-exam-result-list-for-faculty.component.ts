@@ -232,8 +232,7 @@ export class RetrieveStudentExamResultListForFacultyComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveStudentExamResultListForFacultySC",
-    ]);
+      "retrieveStudentExamResultListForFacultySC"]);
   }
 
   updateSelectOptionsData() {}

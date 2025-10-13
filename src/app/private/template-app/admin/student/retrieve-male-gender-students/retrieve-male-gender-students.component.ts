@@ -119,8 +119,7 @@ export class RetrieveMaleGenderStudentsComponent
       this
     );
     this.onPageInit("retrieveMaleGenderStudents", this.currentRoute, this, [
-      "retrieveMaleGenderStudentsSC",
-    ]);
+      "retrieveMaleGenderStudentsSC"]);
   }
 
   async resetSearchCriteria() {
@@ -220,8 +219,7 @@ export class RetrieveMaleGenderStudentsComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveMaleGenderStudentsSC",
-    ]);
+      "retrieveMaleGenderStudentsSC"]);
   }
 
   updateSelectOptionsData() {

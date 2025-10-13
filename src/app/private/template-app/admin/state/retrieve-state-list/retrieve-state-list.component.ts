@@ -19,15 +19,13 @@ import {CustomisationService} from "src/app/customisation.service";
 import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
 import {ToastNotificationService} from "src/app/toast-notification-service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
 selector: "app-retrieve-state-list",
   templateUrl: "./retrieve-state-list.component.html",
   styleUrls: ["./retrieve-state-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, BrowserAnimationsModule, DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule],
   standalone: true
 })
 export class RetrieveStateListComponent
@@ -122,8 +120,7 @@ export class RetrieveStateListComponent
       this
     );
     this.onPageInit("retrieveStateList", this.currentRoute, this, [
-      "retrieveStateListSC",
-    ]);
+      "retrieveStateListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -226,8 +223,7 @@ export class RetrieveStateListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveStateListSC",
-    ]);
+      "retrieveStateListSC"]);
   }
 
   updateSelectOptionsData() {}

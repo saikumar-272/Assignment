@@ -24,8 +24,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
     CommonModule,
     RouterModule,
     AdminChildSectionFormComponent,
-    NgbModule,
-  ],
+    NgbModule],
   standalone: true,
 })
 export class CreateAssetComponent

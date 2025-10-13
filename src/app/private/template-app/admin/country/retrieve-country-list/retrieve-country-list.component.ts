@@ -34,8 +34,7 @@ import { NgbModal, NgbModule, NgbPaginationModule,  } from '@ng-bootstrap/ng-boo
     NgbModule,
     AdminChildSectionFormComponent,
     DynamicFieldDisplayComponent,
-    NgbPaginationModule,
-  ],
+    NgbPaginationModule],
   standalone: true,
 })
 export class RetrieveCountryListComponent
@@ -125,8 +124,7 @@ export class RetrieveCountryListComponent
       this
     );
     this.onPageInit("retrieveCountryList", this.currentRoute, this, [
-      "retrieveCountryListSC",
-    ]);
+      "retrieveCountryListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -227,8 +225,7 @@ export class RetrieveCountryListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveCountryListSC",
-    ]);
+      "retrieveCountryListSC"]);
   }
 
   updateSelectOptionsData() {}

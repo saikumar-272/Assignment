@@ -23,10 +23,8 @@ const routes: Routes = [
         canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard],
       },
       //Private base routes
-      ...ADMIN_PRIVATE_CHILDREN_ROUTES_BASE,
-    ],
-  },
-];
+      ...ADMIN_PRIVATE_CHILDREN_ROUTES_BASE],
+  }];
 
 @NgModule({
   imports: [
@@ -35,8 +33,7 @@ const routes: Routes = [
     NgbModule,
     AdminChildSectionFormComponent,
     DynamicFieldDisplayComponent,
-    FormsModule,
-  ],
+    FormsModule],
   exports: [RouterModule],
 })
 export class AppRoutingAdminPrivateModule {}

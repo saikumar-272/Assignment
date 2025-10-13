@@ -115,8 +115,7 @@ export class RetrieveStudentLeaveListComponent
       this
     );
     this.onPageInit("retrieveStudentLeaveList", this.currentRoute, this, [
-      "retrieveStudentLeaveListSC",
-    ]);
+      "retrieveStudentLeaveListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -217,8 +216,7 @@ export class RetrieveStudentLeaveListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveStudentLeaveListSC",
-    ]);
+      "retrieveStudentLeaveListSC"]);
   }
 
   updateSelectOptionsData() {}

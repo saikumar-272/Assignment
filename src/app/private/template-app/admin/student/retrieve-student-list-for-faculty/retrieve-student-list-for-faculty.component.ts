@@ -123,8 +123,7 @@ export class RetrieveStudentListForFacultyComponent
       this
     );
     this.onPageInit("retrieveStudentListForFaculty", this.currentRoute, this, [
-      "retrieveStudentListForFacultySC",
-    ]);
+      "retrieveStudentListForFacultySC"]);
   }
 
   async resetSearchCriteria() {
@@ -224,8 +223,7 @@ export class RetrieveStudentListForFacultyComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveStudentListForFacultySC",
-    ]);
+      "retrieveStudentListForFacultySC"]);
   }
 
   updateSelectOptionsData() {}

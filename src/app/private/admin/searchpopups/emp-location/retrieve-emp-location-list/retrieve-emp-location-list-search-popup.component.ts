@@ -39,8 +39,7 @@ import { NgbModule, NgbPaginationModule, NgbModal, NgbModalRef,  } from '@ng-boo
     NgbModule,
     CommonModule,
     AdminChildSectionFormComponent,
-    NgbPaginationModule,
-  ],
+    NgbPaginationModule],
   templateUrl: "./retrieve-emp-location-list-search-popup.component.html",
   styleUrls: ["./retrieve-emp-location-list-search-popup.component.scss"],
   standalone: true,
@@ -97,8 +96,7 @@ export class RetrieveEmpLocationListSearchPopupComponent
 
     this.locationTypeOptions = [
       { id: "Rural", value: "Rural" },
-      { id: "Urban", value: "Urban" },
-    ];
+      { id: "Urban", value: "Urban" }];
     this.updateSelectOptionsData();
   }
   doesUserHaveAccess(privilegeName: string): boolean {

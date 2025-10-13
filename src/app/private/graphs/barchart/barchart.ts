@@ -22,12 +22,10 @@ export class BarChartComponent {
     '2015',
     '2016',
     '2017',
-    '2018',
-  ];
+    '2018'];
     public barChartData: any[] = [
     { data: [56, 60, 75, 82, 56, 62, 80], label: 'Company A' },
-    { data: [58, 56, 60, 79, 66, 57, 90], label: 'Company B' },
-  ];*/
+    { data: [58, 56, 60, 79, 66, 57, 90], label: 'Company B' }];*/
   public mbarChartLabels: string[] = [];
   public barChartData: any[] = [];
   public barChartType: ChartType = "bar";
@@ -49,8 +47,7 @@ export class BarChartComponent {
       pointBorderColor: "#fff",
       pointHoverBackgroundColor: "#fff",
       pointHoverBorderColor: "rgba(77,20,96,1)",
-    },
-  ];
+    }];
 
   // events
   public chartClicked(e: any): void {

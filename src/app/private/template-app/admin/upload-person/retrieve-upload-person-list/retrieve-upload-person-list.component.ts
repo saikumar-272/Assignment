@@ -145,8 +145,7 @@ export class RetrieveUploadPersonListComponent
       this
     );
     this.onPageInit("retrieveUploadPersonList", this.currentRoute, this, [
-      "retrieveUploadPersonListSC",
-    ]);
+      "retrieveUploadPersonListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -325,8 +324,7 @@ export class RetrieveUploadPersonListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveUploadPersonListSC",
-    ]);
+      "retrieveUploadPersonListSC"]);
   }
 
   updateSelectOptionsData() {}

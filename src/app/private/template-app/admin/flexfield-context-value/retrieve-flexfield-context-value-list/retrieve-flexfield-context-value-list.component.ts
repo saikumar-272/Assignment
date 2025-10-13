@@ -232,8 +232,7 @@ export class RetrieveFlexfieldContextValueListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveFlexfieldContextValueListSC",
-    ]);
+      "retrieveFlexfieldContextValueListSC"]);
   }
 
   updateSelectOptionsData() {}

@@ -55,8 +55,7 @@ export class CreateEmpLocationComponent  extends FormFieldsTemplateAppImplCompon
       this.createEmpLocation_locationTypeOptions =
       [
         { id: 'Rural', value: 'Rural' },
-        { id: 'Urban', value: 'Urban' },
-      ];
+        { id: 'Urban', value: 'Urban' }];
     this.updateSelectOptionsData();
   }
   doesUserHaveAccess(privilegeName: string) : boolean

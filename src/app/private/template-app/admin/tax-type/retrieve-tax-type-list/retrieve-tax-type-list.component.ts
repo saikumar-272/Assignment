@@ -117,8 +117,7 @@ export class RetrieveTaxTypeListComponent
       this
     );
     this.onPageInit("retrieveTaxTypeList", this.currentRoute, this, [
-      "retrieveTaxTypeListSC",
-    ]);
+      "retrieveTaxTypeListSC"]);
   }
 
   async resetSearchCriteria() {
@@ -219,8 +218,7 @@ export class RetrieveTaxTypeListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveTaxTypeListSC",
-    ]);
+      "retrieveTaxTypeListSC"]);
   }
 
   updateSelectOptionsData() {}

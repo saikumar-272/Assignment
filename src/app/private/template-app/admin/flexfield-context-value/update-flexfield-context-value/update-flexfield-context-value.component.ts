@@ -27,7 +27,6 @@ import {AuthenticationService} from "src/app/shared/services/authentication.serv
 import {ToastNotificationService} from "src/app/toast-notification-service";
 import {isBlank} from "src/app/shared/util/string-util";
 import {of} from "rxjs";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
     AdminChildSectionFormComponent
 } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
@@ -37,7 +36,7 @@ import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display
 selector: "app-update-flexfield-context-value",
   templateUrl: "./update-flexfield-context-value.component.html",
   styleUrls: ["./update-flexfield-context-value.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
   standalone: true
 })
 export class UpdateFlexfieldContextValueComponent
@@ -539,8 +538,7 @@ export class UpdateFlexfieldContextValueComponent
         {
           id: retrievedObjectInfo["flexfieldUUID"],
           value: retrievedObjectInfo["flexfieldDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
 

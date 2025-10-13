@@ -40,13 +40,11 @@ import {AuthenticationService} from "src/app/shared/services/authentication.serv
 import {ToastNotificationService} from "src/app/toast-notification-service";
 import {getNumberWithCommaSeparated, isBlank,} from "src/app/shared/util/string-util";
 import {of} from "rxjs";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 @Component({
 selector: "app-update-sales-invoice",
   templateUrl: "./update-sales-invoice.component.html",
   styleUrls: ["./update-sales-invoice.component.scss"],
-  imports: [BrowserAnimationsModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RetrieveFacultyListSearchPopupComponent, RetrieveEmployeeListSearchPopupComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, NgbModule],
+  imports: [ AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RetrieveFacultyListSearchPopupComponent, RetrieveEmployeeListSearchPopupComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, NgbModule],
   standalone: true
 })
 export class UpdateSalesInvoiceComponent
@@ -1081,8 +1079,7 @@ export class UpdateSalesInvoiceComponent
           {
             id: retrievedObjectInfo["faculty1UUID"],
             value: retrievedObjectInfo["faculty1DisplayText"],
-          },
-        ]
+          }]
       );
     }
     if (!isBlank(retrievedObjectInfo["dynamicLocationUUID"])) {
@@ -1092,8 +1089,7 @@ export class UpdateSalesInvoiceComponent
         {
           id: retrievedObjectInfo["dynamicLocationUUID"],
           value: retrievedObjectInfo["dynamicLocationDisplayText"],
-        },
-      ]);
+        }]);
     }
     if (!isBlank(retrievedObjectInfo["staticLocationUUID"])) {
       this.updateInvoiceLineItemSelectedLookupsDataListObj[
@@ -1102,8 +1098,7 @@ export class UpdateSalesInvoiceComponent
         {
           id: retrievedObjectInfo["staticLocationUUID"],
           value: retrievedObjectInfo["staticLocationDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
   setUpdateCostCenterLineItemSelectedLookupsDataIntoObj(
@@ -1115,8 +1110,7 @@ export class UpdateSalesInvoiceComponent
           {
             id: retrievedObjectInfo["employee1UUID"],
             value: retrievedObjectInfo["employee1DisplayText"],
-          },
-        ]);
+          }]);
     }
     this.updateInjectedFieldsSelectedLookupData(
       this.updateCostCenterLineItemSelectedLookupsDataListObj,

@@ -260,8 +260,7 @@ export class UpdateUploadPersonComponent
         {
           id: retrievedObjectInfo["locationUUID"],
           value: retrievedObjectInfo["locationDisplayText"],
-        },
-      ]);
+        }]);
     }
   }
 

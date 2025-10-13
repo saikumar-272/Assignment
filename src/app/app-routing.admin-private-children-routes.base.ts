@@ -435,7 +435,6 @@ export const ADMIN_PRIVATE_CHILDREN_ROUTES_BASE: Routes = [
     { path: 'create-counry-for-upload', component: CreateCounryForUploadComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] },
     { path: 'update-counry-for-upload', component: UpdateCounryForUploadComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] },
     { path: 'retrieve-counry-for-upload', component: RetrieveCounryForUploadComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] },
-    { path: 'counry-for-upload-list', component: RetrieveCounryForUploadListComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] },
-  ]
+    { path: 'counry-for-upload-list', component: RetrieveCounryForUploadListComponent, canActivate: [StaffUserOnlyGuard, LoggedInUserOnlyGuard] }]
 
 export class AppRoutingAdminPrivateChildrenRoutesBase { }
