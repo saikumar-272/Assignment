@@ -1,0 +1,12 @@
+templateFileName,outputFolderPath,outputFileName,processForAllEntitites,processForAllLoginEnabledEntitites,templateType,layoutFormat,copyFiles,overrideExistingFile,processForFileAttachmentEntitites,applicableCustomAPITypes,filterCriteria,skipProcessing,debugData,templateFilesToProcess
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+/angularWithoutFormly/UILayouts/$$UILayoutName$$/PageStructures/$$PageStructureName$$/CustomApi/retrieveList,/,,Yes,,UiPage,,,,,,responseType:FetchDataList;processingServiceName:$$PROCESSING_SERVICE_NAME$$,Yes,"{""allowApis"":""retrieveUploadPersonList""}",

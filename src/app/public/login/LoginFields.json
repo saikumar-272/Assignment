@@ -1,0 +1,18 @@
+{
+  "apiName": "loginApi",
+  "showHideParameters": [
+  ],
+  "requestParameters": [
+    {
+      "uiFieldType": "Input", "key": "loginName", "label": "Email ID / User ID","isMandatory": true, "sectionName":"loginApi","className" :"form-box"
+    }
+  ,
+    {
+      "uiFieldType": "Password", "key": "password", "label": "Password","isMandatory": true,"sectionName":"loginApi","className" :"form-box", "hide":true
+    }
+  ,
+    {
+      "uiFieldType": "Combo", "key": "userType", "label": "User Type", "dataType": "Combo", "optionsListName": "ApplicationUserType", "sectionName":"loginApi" , "className" :"form-box", "hide":true
+    }
+  ]
+}

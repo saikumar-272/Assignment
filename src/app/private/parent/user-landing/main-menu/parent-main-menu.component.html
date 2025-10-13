@@ -1,0 +1,60 @@
+<!--start header -->
+<div class="main-header">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobile-width-40">
+        <div class="header-logo">
+          <a href="">
+            <img
+              src="https://static.htsbusiness.com/assets/images/inner-images/logo.png"
+              alt=""
+            />
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mobile-width-60">
+        <div class="user-dropdown-menu">
+          <div class="dropdown">
+            <div class="profile-content">
+              <ng-container *ngIf="isProfilePicPresent">
+                <img [src]="userImageUrl" alt="" />
+              </ng-container>
+              <ng-container *ngIf="!isProfilePicPresent">
+                <i class="fas fa-user-alt fa-2x text-info"></i>
+              </ng-container>
+            </div>
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div>
+                <h2>Welcome,</h2>
+                <h5>{{ userDisplayName }}</h5>
+              </div>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <a class="dropdown-item" [routerLink]="['/in/view-profile']">
+                  <i class="bx bx-user fs-5"></i><span>Profile</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="javascript:;"
+                  (click)="handleSignout()"
+                >
+                  <i class="bx bx-log-out-circle"></i><span>Logout</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end header -->

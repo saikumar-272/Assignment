@@ -1,0 +1,6 @@
+templateFileName,outputFolderPath,outputFileName,processForAllEntitites,processForAllLoginEnabledEntitites,templateType,layoutFormat,copyFiles,overrideExistingFile,processForFileAttachmentEntitites,applicableCustomAPITypes,filterCriteria,serviceName
+,,,,,,,,,,,,
+/backendJava21/testservice2/others,/others,,No,,,,,,,,,
+/backendJava21/testservice2/apis,/apis,,Yes,,CustomApi,,,,,,processingServiceName:$$PROCESSING_SERVICE_NAME$$,
+/backendJava21/testservice2/tables,/tables,,Yes,,,,,,,,processingServiceName:$$PROCESSING_SERVICE_NAME$$,
+/backendJava21/testservice2/services,/services,,No,,,,,,,,,

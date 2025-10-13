@@ -1,0 +1,199 @@
+<section>
+    <div class="container1 dashboard-inner-pages">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!--User Actions - Start-->
+                        <div ngbDropdown class="d-inline-block" style="float:right;"  *ngIf="showUserActions()">
+                            <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
+                                Actions
+                            </button>
+                            <div ngbDropdownMenu >
+                                <button ngbDropdownItem *ngIf="isUpdateEmpLocationNameEnabled && doesUserHaveAccess('UpdateEmpLocationName') && ((retrievedDataObject.enableLocationNameUpdate + '') == 'true') && ((retrievedDataObject.locationType + '') == 'Rural')"  (click)="openUpdateEmpLocationNamePopup(updateEmpLocationNamePopup)">
+                                    Update Emp Location Name
+                                </button>
+                                <button ngbDropdownItem *ngIf="isVerifyEmpLocationEnabled && doesUserHaveAccess('VerifyEmpLocation')"  (click)="openVerifyEmpLocationPopup(verifyEmpLocationPopup)">
+                                    Verify Emp Location
+                                </button>
+                                <button ngbDropdownItem *ngIf="isSendClientRequestToTestSerializableParamsEnabled && doesUserHaveAccess('SendClientRequestToTestSerializableParams')"  (click)="openSendClientRequestToTestSerializableParamsPopup(sendClientRequestToTestSerializableParamsPopup)">
+                                    Send Client Request To Test Serializable Params
+                                </button>
+                                <ng-container *ngFor="let userAction of userActions">
+                                    <button ngbDropdownItem   (click)="executeUserAction(userAction.actionName)">
+                                        {{userAction.actionLabel}}
+                                    </button>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <!--User Actions - End-->
+
+                    </div>
+                </div>
+            </div>
+
+            <!--BEGIN SECTIONS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="sectionsShowHideInfo.enableRetrieveEmpLocationSection">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Employee Location</h2>
+                        <ng-container *ngFor="let pageField of retrieveEmpLocationFieldList">
+                            <div class="row {{ pageField.displayClassName }}">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <label class="form-label"><b>{{ pageField.label }}</b></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <app-dynamic-field-display [pageField]="pageField" [dataObject]="retrievedDataObject"></app-dynamic-field-display>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <!--END SECTIONS-->
+            <!--BEGIN LINE_ITEMS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <!--END LINE_ITEMS-->
+
+
+
+        </div>
+        <div style="display: flex;justify-content: space-between;gap: 8px;">
+            <button style="margin-right: 0px;padding-bottom: 0px;" *ngIf="doesUserHaveAccess('UpdateEmpLocation')" [routerLink]="['/in/update-emp-location']" [queryParams]="{id: selectedEmpLocationUUID}"  class="btn btn-success pull-right m-l-20"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button style="margin-left: 0px;" *ngIf="doesUserHaveAccess('RetrieveEmpLocationList')" [routerLink]="['/in/emp-location-list']" class="btn btn-secondary m-l-20 back-btn">Back To List Page</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateEmpLocationNamePopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="update-emp-location-name-modal-title">
+            Update Emp Location Name
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="update-emp-location-name-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="updateEmpLocationNameSectionFields" [childSectionData]="updateEmpLocationNameSectionData" [childSectionSelectOptionsData]="updateEmpLocationNameSelectOptionsData"  [childSectionSearchResponseListObject]="updateEmpLocationNameSelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="updateEmpLocationName(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #verifyEmpLocationPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="verify-emp-location-modal-title">
+            Confirm ?
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="verify-emp-location-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                Click 'Yes' to confirm this request.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="verifyEmpLocation(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #sendClientRequestToTestSerializableParamsPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="send-client-request-to-test-serializable-params-modal-title">
+            Confirm ?
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="send-client-request-to-test-serializable-params-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                Click 'Yes' to confirm this request.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="sendClientRequestToTestSerializableParams(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!--BEGIN SEARCH POPUPS-->
+
+<!--END SEARCH POPUPS-->

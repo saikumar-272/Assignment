@@ -1,0 +1,76 @@
+<section>
+    <div class="container1 dashboard-inner-pages">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!--User Actions - Start-->
+                        <div ngbDropdown class="d-inline-block" style="float:right;"  *ngIf="showUserActions()">
+                            <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
+                                Actions
+                            </button>
+                            <div ngbDropdownMenu >
+                                <ng-container *ngFor="let userAction of userActions">
+                                    <button ngbDropdownItem   (click)="executeUserAction(userAction.actionName)">
+                                        {{userAction.actionLabel}}
+                                    </button>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <!--User Actions - End-->
+
+                    </div>
+                </div>
+            </div>
+
+            <!--BEGIN SECTIONS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="sectionsShowHideInfo.enableRetrieveCountrySection">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Country</h2>
+                        <ng-container *ngFor="let pageField of retrieveCountryFieldList">
+                            <div class="row {{ pageField.displayClassName }}">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <label class="form-label"><b>{{ pageField.label }}</b></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <app-dynamic-field-display [pageField]="pageField" [dataObject]="retrievedDataObject"></app-dynamic-field-display>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <!--END SECTIONS-->
+            <!--BEGIN LINE_ITEMS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <!--END LINE_ITEMS-->
+
+
+
+        </div>
+        <div style="display: flex;justify-content: space-between;gap: 8px;">
+            <button style="margin-right: 0px;padding-bottom: 0px;" *ngIf="doesUserHaveAccess('UpdateCountry')" [routerLink]="['/in/update-country']" [queryParams]="{id: selectedCountryUUID}"  class="btn btn-success pull-right m-l-20"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button style="margin-left: 0px;" *ngIf="doesUserHaveAccess('RetrieveCountryList')" [routerLink]="['/in/country-list']" class="btn btn-secondary m-l-20 back-btn">Back To List Page</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!--BEGIN SEARCH POPUPS-->
+
+<!--END SEARCH POPUPS-->

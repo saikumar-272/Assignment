@@ -1,0 +1,166 @@
+<section>
+  <div class="container1 dashboard-inner-pages">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="card-body">
+            <!--User Actions - Start-->
+            <div
+              ngbDropdown
+              class="d-inline-block"
+              style="float: right"
+              *ngIf="showUserActions()"
+            >
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                ngbDropdownToggle
+              >
+                Actions
+              </button>
+              <div ngbDropdownMenu>
+                <ng-container *ngFor="let userAction of userActions">
+                  <button
+                    ngbDropdownItem
+                    (click)="executeUserAction(userAction.actionName)"
+                  >
+                    {{ userAction.actionLabel }}
+                  </button>
+                </ng-container>
+              </div>
+            </div>
+            <!--User Actions - End-->
+          </div>
+        </div>
+      </div>
+
+      <!--BEGIN SECTIONS-->
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+        *ngIf="sectionsShowHideInfo.enableRetrieveParentSection"
+      >
+        <div class="card">
+          <div class="card-body">
+            <h2>Parent</h2>
+            <ng-container *ngFor="let pageField of retrieveParentFieldList">
+              <div class="row {{ pageField.displayClassName }}">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                  <div class="invoicelist-inner">
+                    <label class="form-label"
+                      ><b>{{ pageField.label }}</b></label
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                  <div class="invoicelist-inner">
+                    <app-dynamic-field-display
+                      [pageField]="pageField"
+                      [dataObject]="retrievedDataObject"
+                    ></app-dynamic-field-display>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <!--END SECTIONS-->
+      <!--BEGIN LINE_ITEMS-->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="card-body">
+            <div
+              *ngIf="
+                lineItemsSectionsShowHideInfo.enableRetrieveChildListSection
+              "
+            >
+              <div class="d-lg-flex align-items-center mb-2 gap-3">
+                <div style="float: left">
+                  <h2>Child List</h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="table-responsive mt-3"
+              *ngIf="
+                lineItemsSectionsShowHideInfo.enableRetrieveChildListSection
+              "
+            >
+              <table class="table mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <ng-container
+                      *ngFor="
+                        let retrieveChildListTableColumn of retrieveChildListTableColumns
+                      "
+                    >
+                      <th
+                        class="{{
+                          retrieveChildListTableColumn.displayClassName
+                        }}"
+                      >
+                        {{ retrieveChildListTableColumn.label }}
+                      </th>
+                    </ng-container>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let resultObject of retrieveChildListResultObjectsList
+                    "
+                  >
+                    <ng-container
+                      *ngFor="
+                        let retrieveChildListTableColumn of retrieveChildListTableColumns
+                      "
+                    >
+                      <td
+                        class="{{
+                          retrieveChildListTableColumn.displayClassName
+                        }}"
+                      >
+                        <app-dynamic-field-display
+                          [pageField]="retrieveChildListTableColumn"
+                          [dataObject]="resultObject"
+                        ></app-dynamic-field-display>
+                      </td>
+                    </ng-container>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--END LINE_ITEMS-->
+    </div>
+    <div style="display: flex; justify-content: space-between; gap: 8px">
+      <button
+        style="margin-right: 0px; padding-bottom: 0px"
+        *ngIf="doesUserHaveAccess('UpdateParent')"
+        [routerLink]="['/in/update-parent']"
+        [queryParams]="{ id: selectedParentUUID }"
+        class="btn btn-success pull-right m-l-20"
+      >
+        <i class="bi bi-pencil-square"></i> Edit
+      </button>
+      <button
+        style="margin-left: 0px"
+        *ngIf="doesUserHaveAccess('RetrieveParentList')"
+        [routerLink]="['/in/parent-list']"
+        class="btn btn-secondary m-l-20 back-btn"
+      >
+        Back To List Page
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!--BEGIN SEARCH POPUPS-->
+
+<!--END SEARCH POPUPS-->

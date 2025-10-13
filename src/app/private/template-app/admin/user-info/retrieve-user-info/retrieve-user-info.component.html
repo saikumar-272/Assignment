@@ -1,0 +1,244 @@
+<section>
+    <div class="container1 dashboard-inner-pages">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!--User Actions - Start-->
+                        <div ngbDropdown class="d-inline-block" style="float:right;"  *ngIf="showUserActions()">
+                            <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
+                                Actions
+                            </button>
+                            <div ngbDropdownMenu >
+                                <button ngbDropdownItem *ngIf="isUpdatePasswordByAdminEnabled && doesUserHaveAccess('UpdatePasswordByAdmin')"  (click)="openUpdatePasswordByAdminPopup(updatePasswordByAdminPopup)">
+                                    Update Password
+                                </button>
+                                <button ngbDropdownItem *ngIf="isUpdateEmailByAdminEnabled && doesUserHaveAccess('UpdateEmailByAdmin')"  (click)="openUpdateEmailByAdminPopup(updateEmailByAdminPopup)">
+                                    Update Email
+                                </button>
+                                <button ngbDropdownItem *ngIf="isUpdateContactByAdminEnabled && doesUserHaveAccess('UpdateContactByAdmin')"  (click)="openUpdateContactByAdminPopup(updateContactByAdminPopup)">
+                                    Update Contact
+                                </button>
+                                <button ngbDropdownItem *ngIf="isUpdateProfileDetailsSSStaffEnabled "  (click)="openUpdateProfileDetailsSSStaffPopup(updateProfileDetailsSSStaffPopup)">
+                                    Update Profile Details
+                                </button>
+                                <ng-container *ngFor="let userAction of userActions">
+                                    <button ngbDropdownItem   (click)="executeUserAction(userAction.actionName)">
+                                        {{userAction.actionLabel}}
+                                    </button>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <!--User Actions - End-->
+
+                    </div>
+                </div>
+            </div>
+
+            <!--BEGIN SECTIONS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="sectionsShowHideInfo.enableRetrieveUserInfoSection">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>User Info</h2>
+                        <ng-container *ngFor="let pageField of retrieveUserInfoFieldList">
+                            <div class="row {{ pageField.displayClassName }}">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <label class="form-label"><b>{{ pageField.label }}</b></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <app-dynamic-field-display [pageField]="pageField" [dataObject]="retrievedDataObject"></app-dynamic-field-display>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <!--END SECTIONS-->
+            <!--BEGIN LINE_ITEMS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <!--END LINE_ITEMS-->
+
+
+
+        </div>
+        <div style="display: flex;justify-content: space-between;gap: 8px;">
+            
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updatePasswordByAdminPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="update-password-by-admin-modal-title">
+            Update Password
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="update-password-by-admin-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="updatePasswordByAdminSectionFields" [childSectionData]="updatePasswordByAdminSectionData" [childSectionSelectOptionsData]="updatePasswordByAdminSelectOptionsData"  [childSectionSearchResponseListObject]="updatePasswordByAdminSelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="updatePasswordByAdmin(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateEmailByAdminPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="update-email-by-admin-modal-title">
+            Update Email
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="update-email-by-admin-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="updateEmailByAdminSectionFields" [childSectionData]="updateEmailByAdminSectionData" [childSectionSelectOptionsData]="updateEmailByAdminSelectOptionsData"  [childSectionSearchResponseListObject]="updateEmailByAdminSelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="updateEmailByAdmin(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateContactByAdminPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="update-contact-by-admin-modal-title">
+            Update Contact
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="update-contact-by-admin-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="updateContactByAdminSectionFields" [childSectionData]="updateContactByAdminSectionData" [childSectionSelectOptionsData]="updateContactByAdminSelectOptionsData"  [childSectionSearchResponseListObject]="updateContactByAdminSelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="updateContactByAdmin(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateProfileDetailsSSStaffPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="update-profile-details-ss-staff-modal-title">
+            Update Profile Details
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="update-profile-details-ss-staff-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="updateProfileDetailsSSStaffSectionFields" [childSectionData]="updateProfileDetailsSSStaffSectionData" [childSectionSelectOptionsData]="updateProfileDetailsSSStaffSelectOptionsData"  [childSectionSearchResponseListObject]="updateProfileDetailsSSStaffSelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="updateProfileDetailsSSStaff(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!--BEGIN SEARCH POPUPS-->
+
+<!--END SEARCH POPUPS-->

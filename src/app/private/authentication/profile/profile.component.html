@@ -1,0 +1,312 @@
+<!-- Main Title Start -->
+<section class="mainTitle2">
+    <div class="row">
+        <div class="col-sm-8">
+            <h1>My Profile</h1>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<!-- Main Title End -->
+<!-- Profile Details Form Container Start -->
+<div class="contanierfluid py-4">
+    <div class="row m-0">
+        <div class="col-md-8 col-lg-9">
+            <app-staff-profile  [reloadProfileData]="reloadProfileData">
+            </app-staff-profile>
+        </div>
+        <div class="col-md-4 col-lg-3">
+            <div class="mainForm">
+                <h2>Actions</h2>
+                <div class="row form-action-buttons m-b-10">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-info" aria-label="Close"
+                            (click)="toggleChangeEmailIdPopup(changeEmailIdPopup)">
+                            Change Email Id
+                        </button>
+                    </div>
+                </div>
+                <div class="row form-action-buttons m-b-10">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-success" aria-label="Close"
+                            (click)="toggleSendOtpForNewContactNumberPopup(sendOtpForNewContactNumberPopup)">
+                            Change Contact Number
+                        </button>
+                    </div>
+                </div>
+                <div class="row form-action-buttons">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-danger" aria-label="Close"
+                            (click)="toggleUpdatePasswordPopup(updatePasswordPopup)">
+                            Reset Password
+                        </button>
+                    </div>
+                </div>
+                <!-- Address Line Start -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Profile Details Form Container End-->
+<!-- Self-service actions Modals Start -->
+<ng-template #changeEmailIdPopup let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="change-email-modal-title">Change Email Id</h4>
+    </div>
+    <!-- show info/erro messages -->
+    <div *ngIf="requestFailureMsg" class="modal-title border-bottom-0">
+        <p>
+            <ngb-alert [dismissible]="false" type="danger">
+                {{ requestFailureMsg }}
+            </ngb-alert>
+        </p>
+    </div>
+    <div *ngIf="requestSuccessMsg" class="modal-title border-bottom-0">
+        <p>
+            <ngb-alert [dismissible]="false" type="success">
+                {{ requestSuccessMsg }}
+            </ngb-alert>
+        </p>
+    </div>
+    <form [formGroup]="changeEmailIdForm">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-floating">
+                        <input id="newEmailId" class="form-control" required type="text" formControlName="newEmailId"
+                            placeholder="Email Address">
+                        <label class="control-label required" for="newEmailId">New Email Id</label>
+                        <div *ngIf="newEmailId?.invalid && (newEmailId?.dirty || newEmailId?.touched)"
+                            class="input-error">
+                            <div *ngIf="newEmailId?.errors?.['errorMessage']">
+                                <small>New Email Id {{ newEmailId?.errors?.errorMessage }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-floating">
+                        <input id="password" class="form-control" required type="password"
+                            formControlName="passwordForEmailChange" placeholder="Password">
+                        <label class="control-label required" for="password">Password</label>
+                        <div *ngIf="passwordForEmailChange?.invalid && (passwordForEmailChange?.dirty || passwordForEmailChange?.touched)"
+                            class="input-error">
+                            <div *ngIf="passwordForEmailChange?.errors?.['errorMessage']">
+                                <small>Password {{ passwordForEmailChange?.errors?.errorMessage }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" aria-label="Close" (click)="modal.dismiss()">
+                    Cancel
+                </button>
+                <button type="button" class="btn btn-success" [disabled]="!changeEmailIdForm.valid"
+                    (click)="handleChangeEmail()">Save</button>
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #sendOtpForNewContactNumberPopup let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="send-otp-for-new-contact-number-modal-title">Change Contact Number</h4>
+    </div>
+    <!-- show info/erro messages -->
+    <div *ngIf="requestFailureMsg" class="modal-title border-bottom-0">
+        <p>
+            <ngb-alert [dismissible]="false" type="danger">
+                {{ requestFailureMsg }}
+            </ngb-alert>
+        </p>
+    </div>
+    <div *ngIf="requestSuccessMsg" class="modal-title border-bottom-0">
+        <p>
+            <ngb-alert [dismissible]="false" type="success">
+                {{ requestSuccessMsg }}
+            </ngb-alert>
+        </p>
+    </div>
+    <form [formGroup]="sendOtpForNewContactNumberForm">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-floating">
+                        <input id="newContactNumber" class="form-control" required type="text"
+                            formControlName="newContactNumber" placeholder="New Contact Number">
+                        <label class="control-label required" for="newContactNumber">New Contact Number</label>
+                        <div *ngIf="newContactNumber?.invalid && (newContactNumber?.dirty || newContactNumber?.touched)"
+                            class="input-error">
+                            <div *ngIf="newContactNumber?.errors?.['errorMessage']">
+                                <small>New Contact Number {{ newContactNumber?.errors?.errorMessage }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" aria-label="Close" (click)="modal.dismiss()">
+                Cancel
+            </button>
+            <button type="button" class="btn btn-success" [disabled]="!sendOtpForNewContactNumberForm.valid"
+                (click)="handleSendOtpForNewContactNumber(changeContactNumberPopup)">Send Otp</button>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #changeContactNumberPopup let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="change-contact-number-modal-title">Change Contact Number</h4>
+    </div>
+    <!-- show info/erro messages -->
+    <div *ngIf="requestFailureMsg" class="modal-title border-bottom-0">
+        <p>
+            <ngb-alert [dismissible]="false" type="danger">
+                {{ requestFailureMsg }}
+            </ngb-alert>
+        </p>
+    </div>
+    <div *ngIf="requestSuccessMsg" class="modal-title border-bottom-0">
+        <p>
+            <ngb-alert [dismissible]="false" type="success">
+                {{ requestSuccessMsg }}
+            </ngb-alert>
+        </p>
+    </div>
+    <form [formGroup]="changeContactNumberForm">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-floating">
+                        <input id="newContactNumber" class="form-control" required readonly type="text"
+                            formControlName="newContactNumber" placeholder="New Contact Number">
+                        <label class="control-label required" for="newContactNumber">New Contact Number</label>
+                        <div *ngIf="newContactNumber?.invalid && (newContactNumber?.dirty || newContactNumber?.touched)"
+                            class="input-error">
+                            <div *ngIf="newContactNumber?.errors?.['errorMessage']">
+                                <small>New Contact Number {{ newContactNumber?.errors?.errorMessage }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-floating">
+                        <input id="passwordForNumberChange" class="form-control" required type="password"
+                            formControlName="passwordForNumberChange" placeholder="Password">
+                        <label class="control-label required" for="passwordForNumberChange">Password</label>
+                        <div *ngIf="passwordForNumberChange?.invalid && (passwordForNumberChange?.dirty || passwordForNumberChange?.touched)"
+                            class="input-error">
+                            <div *ngIf="passwordForNumberChange?.errors?.['errorMessage']">
+                                <small>Password {{ passwordForNumberChange?.errors?.errorMessage }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-floating">
+                        <input id="otpForNumberChange" class="form-control" required type="text"
+                            formControlName="otpForNumberChange" placeholder="OTP">
+                        <label class="control-label required" for="otpForNumberChange">OTP</label>
+                        <div *ngIf="otpForNumberChange?.invalid && (otpForNumberChange?.dirty || otpForNumberChange?.touched)"
+                            class="input-error">
+                            <div *ngIf="otpForNumberChange?.errors?.['errorMessage']">
+                                <small>OTP {{ otpForNumberChange?.errors?.errorMessage }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" aria-label="Close"
+                (click)="toggleBackSendOtpForNewContactNumberPopup(sendOtpForNewContactNumberPopup)">
+                Cancel
+            </button>
+            <button type="button" class="btn btn-success" [disabled]="!changeContactNumberForm.valid"
+                (click)="handleChangeContactNumber()">Save</button>
+        </div>
+    </form>
+</ng-template>
+
+<ng-template #updatePasswordPopup let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="update-password-modal-title">Update Password</h4>
+    </div>
+    <!-- show info/erro messages -->
+    <div *ngIf="requestFailureMsg" class="modal-title border-bottom-0">
+        <p>
+            <ngb-alert [dismissible]="false" type="danger">
+                {{ requestFailureMsg }}
+            </ngb-alert>
+        </p>
+    </div>
+    <div *ngIf="requestSuccessMsg" class="modal-title border-bottom-0">
+        <p>
+            <ngb-alert [dismissible]="false" type="success">
+                {{ requestSuccessMsg }}
+            </ngb-alert>
+        </p>
+    </div>
+    <form [formGroup]="updatePasswordForm">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-floating">
+                        <input id="oldPassword" class="form-control" required type="password"
+                            formControlName="oldPassword" placeholder="Current Password">
+                        <label class="control-label required" for="oldPassword">Current Password</label>
+                        <div *ngIf="oldPassword?.invalid && (oldPassword?.dirty || oldPassword?.touched)"
+                            class="input-error">
+                            <div *ngIf="oldPassword?.errors?.['errorMessage']">
+                                <small>Current Password {{ oldPassword?.errors?.errorMessage }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-floating">
+                        <input id="newPassword" class="form-control" required type="password"
+                            formControlName="newPassword" placeholder="New Password">
+                        <label class="control-label required" for="newPassword">New Password</label>
+                        <div *ngIf="newPassword?.invalid && (newPassword?.dirty || newPassword?.touched)"
+                            class="input-error">
+                            <div *ngIf="newPassword?.errors?.['errorMessage']">
+                                <small>New Password {{ newPassword?.errors?.errorMessage }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-floating">
+                        <input id="retypePassword" class="form-control" required type="password"
+                            formControlName="retypePassword" placeholder="Retype Password">
+                        <label class="control-label required" for="retypePassword">Retype Password</label>
+                        <div *ngIf="retypePassword?.invalid && (retypePassword?.dirty || retypePassword?.touched)"
+                            class="input-error">
+                            <div *ngIf="retypePassword?.errors?.['errorMessage']">
+                                <small>Retype Password {{ retypePassword?.errors?.errorMessage }}</small>
+                            </div>
+                            <div *ngIf="retypePassword?.errors?.['passwordMismatch']">
+                                <small>Passwords should match</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" aria-label="Close" (click)="modal.dismiss()">
+                Cancel
+            </button>
+            <button type="button" class="btn btn-success" [disabled]="!updatePasswordForm.valid"
+                (click)="handleUpdatePassword()">Save</button>
+        </div>
+    </form>
+</ng-template>
+<!-- Self-service actions Modals End -->

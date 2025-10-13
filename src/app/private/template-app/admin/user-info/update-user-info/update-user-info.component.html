@@ -1,0 +1,64 @@
+<section>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="pageErrors.length > 0">
+        <button style="float:right;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Fix the below errors :
+        <br>
+        <br>
+        <ol>
+            <ng-container *ngFor="let pageError of pageErrors">
+                <li>
+                    <strong>{{ pageError }}</strong>
+                </li>
+            </ng-container>
+        </ol>
+    </div>
+
+    <div class="container1 dashboard-inner-pages">
+        <form (ngSubmit)="updateUserInfo()" id="update-user-info-form">
+            <div class="row" *ngIf="sectionsShowHideInfo.enableUpdateUserInfoSection">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>Edit User Info</h2>
+                            <app-child-section-form [childSectionRowFieldsCount]="2"  [pageComponentReference]="pageComponentReference" [childSectionFields]="updateUserInfoSectionFields" [childSectionData]="updateUserInfoSectionData" [childSectionSelectOptionsData]="updateUserInfoSelectOptionsData"  [childSectionSearchResponseListObject]="updateUserInfoSelectedLookupsDataListObj"></app-child-section-form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body m-auto">
+                            <div class="m-auto">
+                                <button style="float: left;" class="btn btn-success m-l-20">Save</button>
+                                <button style="margin-left: 15px; float: left;" *ngIf="doesUserHaveAccess('RetrieveUserInfo')" [routerLink]="['/in/retrieve-user-info']" [queryParams]="{id: selectedUserInfoUUID}"  class="btn btn-secondary m-l-20">Back To View Page</button>
+                                <button style="margin-left: 15px; float: left;" *ngIf="doesUserHaveAccess('RetrieveUserInfoList')" [routerLink]="['/in/user-info-list']" class="btn btn-secondary m-l-20">Back To List Page</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<!--BEGIN SEARCH POPUPS-->
+
+<!--END SEARCH POPUPS-->
+
+
+<!-- ************** popup  - end ************ -->

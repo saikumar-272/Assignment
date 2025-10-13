@@ -1,0 +1,8 @@
+templateFileName,outputFolderPath,outputFileName,processForAllEntitites,processForAllLoginEnabledEntitites,templateType,layoutFormat,copyFiles,overrideExistingFile,processForFileAttachmentEntitites,applicableCustomAPITypes,filterCriteria,serviceName
+,,,,,,,,,,,,
+/testservice2ui/others,/others,,No,,,,,,,,,
+/testservice2ui/apis,/apis,,Yes,,CustomApi,,,,,,processingServiceName:$$PROCESSING_SERVICE_NAME$$,
+/testservice2ui/tables,/tables,,Yes,,,,,,,,processingServiceName:$$PROCESSING_SERVICE_NAME$$,
+/testservice2ui/services,/services,,No,,,,,,,,,
+/testservice2ui/layouts/$$UILayoutName$$/apis,/layouts/apis,,Yes,,CustomApi,testformat1,,,,,processingServiceName:$$PROCESSING_SERVICE_NAME$$;EnableLayoutFormat:Yes,
+/testservice2ui/layouts/$$UILayoutName$$/apis,/layouts/apis,,Yes,,CustomApi,testformat2,,,,,processingServiceName:$$PROCESSING_SERVICE_NAME$$;EnableLayoutFormat:Yes,

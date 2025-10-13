@@ -1,0 +1,33 @@
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder} from '@angular/forms';
+import {Router} from '@angular/router';
+import {BackendService} from 'src/app/shared/services/backend.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
+import {CustomisationService} from 'src/app/customisation.service';
+import {FormFieldsImplComponent} from 'src/app/shared/forms-custom/form-fields-impl';
+import {AuthenticationService} from 'src/app/shared/services/authentication.service';
+import {ToastNotificationService} from 'src/app/toast-notification-service';
+
+@Component({
+  selector: 'app-retrieve-student-leave-list-component',
+  templateUrl: './retrieve-student-leave-list.component.html',
+  styleUrls: ['./retrieve-student-leave-list.component.scss']
+})
+export class RetrieveStudentLeaveListComponent extends FormFieldsImplComponent implements OnInit
+{
+  
+  constructor(private toastNotificationService : ToastNotificationService, private backendService: BackendService, private route: Router,
+    private fb: FormBuilder, private modalService: NgbModal, private customisationService : CustomisationService, private authService : AuthenticationService, private router: Router)
+  {
+      super();
+  }
+  doesUserHaveAccess(privilegeName: string) : boolean
+  {
+    return this.authService.doesUserHavePrivilege(privilegeName)
+  }
+  async ngOnInit(): Promise<void> {
+    
+  }
+
+}

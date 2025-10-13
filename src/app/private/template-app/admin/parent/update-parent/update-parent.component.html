@@ -1,0 +1,297 @@
+<section>
+  <div
+    class="alert alert-warning alert-dismissible fade show"
+    role="alert"
+    *ngIf="pageErrors.length > 0"
+  >
+    <button
+      style="float: right"
+      type="button"
+      class="close"
+      data-dismiss="alert"
+      aria-label="Close"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+    Fix the below errors :
+    <br />
+    <br />
+    <ol>
+      <ng-container *ngFor="let pageError of pageErrors">
+        <li>
+          <strong>{{ pageError }}</strong>
+        </li>
+      </ng-container>
+    </ol>
+  </div>
+
+  <div class="container1 dashboard-inner-pages">
+    <form (ngSubmit)="updateParent()" id="update-parent-form">
+      <div class="row" *ngIf="sectionsShowHideInfo.enableUpdateParentSection">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <h2>Edit Parent</h2>
+              <app-child-section-form
+                [childSectionRowFieldsCount]="2"
+                [pageComponentReference]="pageComponentReference"
+                [childSectionFields]="updateParentSectionFields"
+                [childSectionData]="updateParentSectionData"
+                [childSectionSelectOptionsData]="updateParentSelectOptionsData"
+                [childSectionSearchResponseListObject]="
+                  updateParentSelectedLookupsDataListObj
+                "
+              ></app-child-section-form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="card">
+            <div class="card-body m-auto">
+              <div class="m-auto">
+                <button style="float: left" class="btn btn-success m-l-20">
+                  Save
+                </button>
+                <button
+                  style="margin-left: 15px; float: left"
+                  *ngIf="doesUserHaveAccess('RetrieveParent')"
+                  [routerLink]="['/in/retrieve-parent']"
+                  [queryParams]="{ id: selectedParentUUID }"
+                  class="btn btn-secondary m-l-20"
+                >
+                  Back To View Page
+                </button>
+                <button
+                  style="margin-left: 15px; float: left"
+                  *ngIf="doesUserHaveAccess('RetrieveParentList')"
+                  [routerLink]="['/in/parent-list']"
+                  class="btn btn-secondary m-l-20"
+                >
+                  Back To List Page
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="card-body">
+            <div
+              class="d-lg-flex align-items-center mb-2 gap-3"
+              *ngIf="
+                lineItemsSectionsShowHideInfo.enableRetrieveChildListSection
+              "
+            >
+              <div style="float: left">
+                <h2>Child List</h2>
+              </div>
+              <div class="ms-auto">
+                <a
+                  href="javascript:;"
+                  class="btn btn-primary radius-30 mt-2 mt-lg-0"
+                  (click)="toggleCreateChildPopup(createChildPopup)"
+                >
+                  Add</a
+                >
+              </div>
+            </div>
+
+            <div
+              class="table-responsive mt-3"
+              *ngIf="
+                lineItemsSectionsShowHideInfo.enableRetrieveChildListSection
+              "
+            >
+              <table class="table mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <ng-container
+                      *ngFor="
+                        let retrieveChildListTableColumn of retrieveChildListTableColumns
+                      "
+                    >
+                      <th
+                        class="{{
+                          retrieveChildListTableColumn.displayClassName
+                        }}"
+                      >
+                        {{ retrieveChildListTableColumn.label }}
+                      </th>
+                    </ng-container>
+
+                    <th *ngIf="doesUserHaveAccess('UpdateChild')">Edit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let resultObject of retrieveChildListResultObjectsList
+                    "
+                  >
+                    <ng-container
+                      *ngFor="
+                        let retrieveChildListTableColumn of retrieveChildListTableColumns
+                      "
+                    >
+                      <td
+                        class="{{
+                          retrieveChildListTableColumn.displayClassName
+                        }}"
+                      >
+                        <app-dynamic-field-display
+                          [pageField]="retrieveChildListTableColumn"
+                          [dataObject]="resultObject"
+                        ></app-dynamic-field-display>
+                      </td>
+                    </ng-container>
+
+                    <td *ngIf="doesUserHaveAccess('UpdateChild')">
+                      <a
+                        (click)="
+                          toggleUpdateChildPopup(
+                            updateChildPopup,
+                            resultObject.childUUID
+                          )
+                        "
+                        class="btn btn-primary btn-sm btnView"
+                        >Edit</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--BEGIN SEARCH POPUPS-->
+
+<!--END SEARCH POPUPS-->
+
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+<ng-template #createChildPopup let-modal>
+  <div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+      <h2 id="create-child-modal-title">New Child</h2>
+      <button
+        type="button"
+        class="btn-close"
+        (click)="modal.dismiss()"
+      ></button>
+    </div>
+    <div class="modal-body" id="create-child-modal-body">
+      <section>
+        <div class="container1">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <app-child-section-form
+                    [childSectionRowFieldsCount]="1"
+                    [pageComponentReference]="pageComponentReference"
+                    [childSectionFields]="createChildSectionFields"
+                    [childSectionData]="createChildSectionData"
+                    [childSectionSelectOptionsData]="
+                      createChildSelectOptionsData
+                    "
+                    [childSectionSearchResponseListObject]="
+                      createChildSelectedLookupsDataListObj
+                    "
+                  ></app-child-section-form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-items-center mb-2 gap-3">
+            <div class="m-auto mt-3" style="float: right">
+              <a
+                href="javascript:;"
+                class="btn radius-30 mt-2 mt-lg-0"
+                (click)="modal.dismiss()"
+                >Cancel</a
+              >
+              <a
+                style="float: right"
+                href="javascript:;"
+                class="btn btn-success pull-right m-l-20"
+                (click)="handleCreateChild(modal)"
+                >Save</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</ng-template>
+
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+<ng-template #updateChildPopup let-modal>
+  <div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+      <h2 id="update-child-modal-title">Edit Child</h2>
+      <button
+        type="button"
+        class="btn-close"
+        (click)="modal.dismiss()"
+      ></button>
+    </div>
+    <div class="modal-body" id="update-child-modal-body">
+      <section>
+        <div class="container1">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <app-child-section-form
+                    [childSectionRowFieldsCount]="1"
+                    [pageComponentReference]="pageComponentReference"
+                    [childSectionFields]="updateChildSectionFields"
+                    [childSectionData]="updateChildSectionData"
+                    [childSectionSelectOptionsData]="
+                      updateChildSelectOptionsData
+                    "
+                    [childSectionSearchResponseListObject]="
+                      updateChildSelectedLookupsDataListObj
+                    "
+                  ></app-child-section-form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-items-center mb-2 gap-3">
+            <div class="m-auto mt-3" style="float: right">
+              <a
+                href="javascript:;"
+                class="btn radius-30 mt-2 mt-lg-0"
+                (click)="modal.dismiss()"
+                >Cancel</a
+              >
+              <a
+                style="float: right"
+                href="javascript:;"
+                class="btn btn-success pull-right m-l-20"
+                (click)="handleUpdateChild(modal)"
+                >Save</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</ng-template>
+
+<!-- ************** popup  - end ************ -->

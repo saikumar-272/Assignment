@@ -1,0 +1,6 @@
+menuItemName,menuItemDisplayLabel,parentMenuItem,apiName,tableName,apiType,disableAdminAccess,accessAllowedUsers
+,,,,,,,
+service1,service1,,,,,,
+service1submenu1,service1 submenu1,service1,,,,,
+service2,service2,,,,,,
+Admission,Admission,service1,retrieveAdmissionList,,,Yes,Faculty

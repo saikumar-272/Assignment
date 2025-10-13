@@ -1,0 +1,349 @@
+<section>
+    <div class="container1 dashboard-inner-pages">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="d-inline-block" style="padding-top: 8px;">{{ pageHeading }}</h2>
+                        <!--User Actions - Start-->
+                        <div ngbDropdown class="d-inline-block" style="float:right;"  *ngIf="showUserActions()">
+                            <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
+                                Actions
+                            </button>
+                            <div ngbDropdownMenu >
+                                <button ngbDropdownItem *ngIf="isUpdateStudentAllDetailsEnabled && doesUserHaveAccess('UpdateStudentAllDetails')"  (click)="openUpdateStudentAllDetailsPopup(updateStudentAllDetailsPopup)">
+                                    Update Student All Details
+                                </button>
+                                <button ngbDropdownItem *ngIf="isUpdateStudentFirstNameEnabled && doesUserHaveAccess('UpdateStudentFirstName')"  (click)="openUpdateStudentFirstNamePopup(updateStudentFirstNamePopup)">
+                                    Update Student First Name
+                                </button>
+                                <button ngbDropdownItem *ngIf="isUpdateStudentFirstName2Enabled && doesUserHaveAccess('UpdateStudentFirstName2')"  (click)="openUpdateStudentFirstName2Popup(updateStudentFirstName2Popup)">
+                                    Update Student First Name2
+                                </button>
+                                <button ngbDropdownItem *ngIf="isAssignToFacultyEnabled && doesUserHaveAccess('AssignToFaculty')"  (click)="openAssignToFacultyPopup(assignToFacultyPopup)">
+                                    Assign To Faculty
+                                </button>
+                                <button ngbDropdownItem *ngIf="isRemoveFromFacultyEnabled && doesUserHaveAccess('RemoveFromFaculty')"  (click)="openRemoveFromFacultyPopup(removeFromFacultyPopup)">
+                                    Remove From Faculty
+                                </button>
+                                <button ngbDropdownItem *ngIf="isMakeFeePaymentEnabled && doesUserHaveAccess('MakeFeePayment')"  (click)="openMakeFeePaymentPopup(makeFeePaymentPopup)">
+                                    Make Fee Payment
+                                </button>
+                                <ng-container *ngFor="let userAction of userActions">
+                                    <button ngbDropdownItem   (click)="executeUserAction(userAction.actionName)">
+                                        {{userAction.actionLabel}}
+                                    </button>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <!--User Actions - End-->
+
+                    </div>
+                </div>
+            </div>
+
+            <!--BEGIN SECTIONS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="sectionsShowHideInfo.enableSection1Section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Section1</h2>
+                        <ng-container *ngFor="let pageField of section1FieldList">
+                            <div class="row {{ pageField.displayClassName }}">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <label class="form-label"><b>{{ pageField.label }}</b></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <app-dynamic-field-display [pageField]="pageField" [dataObject]="retrievedDataObject"></app-dynamic-field-display>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="sectionsShowHideInfo.enableSection2Section">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Section2</h2>
+                        <ng-container *ngFor="let pageField of section2FieldList">
+                            <div class="row {{ pageField.displayClassName }}">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <label class="form-label"><b>{{ pageField.label }}</b></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <app-dynamic-field-display [pageField]="pageField" [dataObject]="retrievedDataObject"></app-dynamic-field-display>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <!--END SECTIONS-->
+            <!--BEGIN LINE_ITEMS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <!--END LINE_ITEMS-->
+
+
+
+        </div>
+        <div style="display: flex;justify-content: space-between;gap: 8px;">
+            <button style="margin-right: 0px;padding-bottom: 0px;" *ngIf="doesUserHaveAccess('UpdateStudent')" [routerLink]="['/in/update-student']" [queryParams]="{id: selectedStudentUUID}"  class="btn btn-success pull-right m-l-20"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button style="margin-left: 0px;" *ngIf="doesUserHaveAccess('RetrieveStudentList')" [routerLink]="['/in/student-list']" class="btn btn-secondary m-l-20 back-btn">Back To List Page</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateStudentAllDetailsPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="update-student-all-details-modal-title">
+            Update Student All Details
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="update-student-all-details-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="updateStudentAllDetailsSectionFields" [childSectionData]="updateStudentAllDetailsSectionData" [childSectionSelectOptionsData]="updateStudentAllDetailsSelectOptionsData" (openSearchPopup)="openSearchPopupInParent($event)" [childSectionSearchResponseListObject]="updateStudentAllDetailsSelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="updateStudentAllDetails(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateStudentFirstNamePopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="update-student-first-name-modal-title">
+            Update Student First Name
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="update-student-first-name-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="updateStudentFirstNameSectionFields" [childSectionData]="updateStudentFirstNameSectionData" [childSectionSelectOptionsData]="updateStudentFirstNameSelectOptionsData" (openSearchPopup)="openSearchPopupInParent($event)" [childSectionSearchResponseListObject]="updateStudentFirstNameSelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="updateStudentFirstName(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateStudentFirstName2Popup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="update-student-first-name2-modal-title">
+            Update Student First Name2
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="update-student-first-name2-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="updateStudentFirstName2SectionFields" [childSectionData]="updateStudentFirstName2SectionData" [childSectionSelectOptionsData]="updateStudentFirstName2SelectOptionsData" (openSearchPopup)="openSearchPopupInParent($event)" [childSectionSearchResponseListObject]="updateStudentFirstName2SelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="updateStudentFirstName2(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #assignToFacultyPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="assign-to-faculty-modal-title">
+            Assign To Faculty
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="assign-to-faculty-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="assignToFacultySectionFields" [childSectionData]="assignToFacultySectionData" [childSectionSelectOptionsData]="assignToFacultySelectOptionsData" (openSearchPopup)="openSearchPopupInParent($event)" [childSectionSearchResponseListObject]="assignToFacultySelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="assignToFaculty(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #removeFromFacultyPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="remove-from-faculty-modal-title">
+            Confirm ?
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="remove-from-faculty-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                Click 'Yes' to confirm this request.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="removeFromFaculty(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #makeFeePaymentPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="make-fee-payment-modal-title">
+            Make Fee Payment
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="make-fee-payment-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="makeFeePaymentSectionFields" [childSectionData]="makeFeePaymentSectionData" [childSectionSelectOptionsData]="makeFeePaymentSelectOptionsData" (openSearchPopup)="openSearchPopupInParent($event)" [childSectionSearchResponseListObject]="makeFeePaymentSelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="makeFeePayment(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!--BEGIN SEARCH POPUPS-->
+<retrieve-faculty-list-search-popup #retrieveFacultyListSearchPopupCompRef (retrieveFacultyListSearchPopupParentMethodRef)="setSearchPopupValue($event)"></retrieve-faculty-list-search-popup>
+<retrieve-emp-location-list-search-popup #retrieveEmpLocationListSearchPopupCompRef (retrieveEmpLocationListSearchPopupParentMethodRef)="setSearchPopupValue($event)"></retrieve-emp-location-list-search-popup>
+<!--END SEARCH POPUPS-->

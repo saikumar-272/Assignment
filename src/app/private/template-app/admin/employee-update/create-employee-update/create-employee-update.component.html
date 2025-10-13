@@ -1,0 +1,54 @@
+<section>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="pageErrors.length > 0">
+        <button style="float:right;" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Fix the below errors :
+        <br>
+        <br>
+        <ol>
+            <ng-container *ngFor="let pageError of pageErrors">
+                <li>
+                    <strong>{{ pageError }}</strong>
+                </li>
+            </ng-container>
+        </ol>
+    </div>
+
+    <div class="container1 dashboard-inner-pages">
+
+        <form (ngSubmit)="createEmployeeUpdate()" id="create-employee-update-form">
+            <div class="row" *ngIf="sectionsShowHideInfo.enableCreateEmployeeUpdateSection">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body">
+                                <h2>New Employee Update</h2>
+                                <app-child-section-form [childSectionRowFieldsCount]="2" [pageComponentReference]="pageComponentReference" [childSectionFields]="createEmployeeUpdateSectionFields" [childSectionData]="createEmployeeUpdateSectionData" [childSectionSelectOptionsData]="createEmployeeUpdateSelectOptionsData" ></app-child-section-form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="card-body  m-auto">
+                            <div class="m-auto">
+                                <button style="float: left;" class="btn btn-success m-l-20">Save</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+</section>
+
+<!--BEGIN SEARCH POPUPS-->
+
+<!--END SEARCH POPUPS-->
+
+

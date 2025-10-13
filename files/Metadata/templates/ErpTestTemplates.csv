@@ -1,0 +1,11 @@
+templateFileName,outputFolderPath,outputFileName,processForAllEntitites,processForAllLoginEnabledEntitites,templateType,layoutFormat,copyFiles,overrideExistingFile,processForFileAttachmentEntitites,applicableCustomAPITypes,filterCriteria
+,,,,,,,,,,,
+/erpTest/standard,/,,No,,,,,,,,
+/erpTest/customRequestModel,/,,Yes,,CustomApiRequestModel,,,,,"UpdateTableData,CreateTableData",enableTestCase:Yes
+/erpTest/customRequestModel,/,,Yes,,CustomApiRequestModel,,,,,"UpdateTableData,CreateTableData",isDependentApi:Yes
+/erpTest/nonDbEntity,/,,Yes,,,,,,,,entityType:NON_DB_TABLE;useInTestService:Yes
+/erpTest/customResponseModel,/,,Yes,,CustomApiResponseModel,,,,,,isValidationApi:Yes
+/erpTest/service/standard,/,,Yes,,BackendService,,,,,,
+/erpTest/service/custom,/,,Yes,,BackendService,,,No,,,
+/erpTest/apiGroup/custom,/,,Yes,,CustomApiGroup,,,No,,,useInTestService:Yes;excludeChildTableApiGroup:Yes
+/erpTest/apiGroup/standard,/,,Yes,,CustomApiGroup,,,,,,useInTestService:Yes;excludeChildTableApiGroup:Yes

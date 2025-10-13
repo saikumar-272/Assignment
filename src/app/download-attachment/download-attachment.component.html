@@ -1,0 +1,8 @@
+<div style="display: flex;justify-content: center;margin-top: 2%;margin-bottom: 2%;">    
+    <div *ngIf="imageEnabled">
+      <img [src]="imageUrl">        
+    </div>  
+    <div *ngIf="videoEnabled">
+      <video controls [src]="videoUrl"></video>
+    </div>      
+</div>

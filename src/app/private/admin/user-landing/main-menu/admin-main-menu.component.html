@@ -1,0 +1,80 @@
+<!--start header -->
+<header>
+  <div class="topbar">
+    <nav class="navbar navbar-expand gap-2 align-items-center">
+      <div class="mobile-toggle-menu d-flex" (click)="hideChildSideMenu()">
+        <i class="bx bx-menu"></i>
+      </div>
+
+      <div
+        class="search-bar d-lg-block d-none"
+        data-bs-toggle="modal"
+        data-bs-target="#SearchModal"
+      >
+        <a href="avascript:;" class="btn d-flex align-items-center"
+          ><i class="bx bx-search"></i>Search</a
+        >
+      </div>
+
+      <div class="top-menu ms-auto">
+        <ul class="navbar-nav align-items-center gap-1">
+          <li
+            class="nav-item mobile-search-icon d-flex d-lg-none"
+            data-bs-toggle="modal"
+            data-bs-target="#SearchModal"
+          >
+            <a class="nav-link" href="avascript:;"
+              ><i class="bx bx-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="user-box dropdown px-3 profile">
+        <a
+          class="d-flex align-items-center nav-link dropdown-toggle gap-3 dropdown-toggle-nocaret"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <ng-container *ngIf="isProfilePicPresent">
+            <img
+              [src]="userImageUrl"
+              alt=""
+              class="rounded-circle me-2"
+              width="40"
+              height="40"
+            />
+          </ng-container>
+          <ng-container *ngIf="!isProfilePicPresent">
+            <i class="fas fa-user-alt fa-2x text-info"></i>
+          </ng-container>
+          <div class="user-info">
+            <p class="user-name mb-0">{{ userDisplayName }}</p>
+          </div>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a
+              class="dropdown-item d-flex align-items-center"
+              [routerLink]="['/in/view-profile']"
+              ><i class="bx bx-user fs-5"></i><span>Profile</span></a
+            >
+          </li>
+          <li>
+            <div class="dropdown-divider mb-0"></div>
+          </li>
+          <li>
+            <a
+              class="dropdown-item d-flex align-items-center"
+              href="javascript:;"
+              (click)="handleSignout()"
+              ><i class="bx bx-log-out-circle"></i><span>Logout</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<!--end header -->

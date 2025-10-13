@@ -1,0 +1,14 @@
+name,serviceApplicationName,portNo,outputFolderPath,isAuthService,multitenancyEnabled,templatesFileName,appMetadataRelativeFolderPath,IsBackendService,backendServiceName,uiLayoutName,associatedServices,menuName,serviceDisplayLabel
+TemplateApp,TemplateApp,8085,templateapp,Yes,No,TemplatesJava21.csv,,Yes,,,,,
+TemplateAppUI,TemplateAppUI,4200,templateappui,Yes,No,AngularWithoutFormlyTemplates.csv,files/Metadata,,TemplateApp,schoollayout,,templateapp,templateapp
+tempappdummy,tempappdummy,8085,tempappdummy,Yes,No,EmptyList.csv,,Yes,,,,,
+tempappuischool,tempappuischool,4201,tempappuischool,Yes,No,AngularWithoutFormlyTemplates.csv,files/Metadata,,tempappdummy,schoollayout,,,
+TestService2,TestService2,4300,testservice2,No,No,TestService2Templates.csv,,Yes,,,,,
+TestService2UI,TestService2UI,4400,testservice2ui,No,No,TestService2UITemplates.csv,,,TestService2,testlayout1,,,
+TestSchoolBE,TestSchoolBE,4500,schoollayoutbackend,Yes,No,TemplatesJava21.csv,,Yes,,,,,
+TestSchoolFE,TestSchoolFE,4600,schoollayoutui,Yes,No,AngularWithoutFormlyTemplates.csv,files/Metadata,,TestSchoolBE,schoollayout,,,
+mockservice1,mockservice1,8087,mockservice1,Yes,No,TemplatesJava21.csv,,Yes,,,,,
+mockservice1ui,mockservice1ui,4520,mockservice1ui,Yes,No,AngularWithoutFormlyTemplates.csv,files/Metadata,,mockservice1,default,,mockservice1,Mock Service1
+mockservice3,mockservice3,8042,mockservice3,No,No,MockServiceTemplates.csv,,Yes,,,"TemplateApp,TestService2,TestSchoolBE,mockservice1",,
+mockservice2,mockservice2,8089,mockservice2,Yes,No,TemplatesJava21.csv,,Yes,,,,,
+mockservice2ui,mockservice2ui,4521,mockservice2ui,Yes,No,AngularWithoutFormlyTemplates.csv,files/Metadata,,mockservice2,default,,,

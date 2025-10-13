@@ -1,0 +1,670 @@
+<section>
+  <div class="container1 dashboard-inner-pages">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="d-inline-block" style="padding-top: 8px">
+              {{ pageHeading }}
+            </h2>
+            <!--User Actions - Start-->
+            <div
+              ngbDropdown
+              class="d-inline-block"
+              style="float: right"
+              *ngIf="showUserActions()"
+            >
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                ngbDropdownToggle
+              >
+                Actions
+              </button>
+              <div ngbDropdownMenu>
+                <button
+                  ngbDropdownItem
+                  *ngIf="
+                    isUpdateEmployeeAllDetailsEnabled &&
+                    doesUserHaveAccess('UpdateEmployeeAllDetails')
+                  "
+                  (click)="
+                    openUpdateEmployeeAllDetailsPopup(
+                      updateEmployeeAllDetailsPopup
+                    )
+                  "
+                >
+                  Update Employee All Details
+                </button>
+                <button
+                  ngbDropdownItem
+                  *ngIf="
+                    isUpdateEmployeeBasicDetailsEnabled &&
+                    doesUserHaveAccess('UpdateEmployeeBasicDetails')
+                  "
+                  (click)="
+                    openUpdateEmployeeBasicDetailsPopup(
+                      updateEmployeeBasicDetailsPopup
+                    )
+                  "
+                >
+                  Update Employee Basic Details
+                </button>
+                <button
+                  ngbDropdownItem
+                  *ngIf="
+                    isUpdateEmployeeAttachmentsEnabled &&
+                    doesUserHaveAccess('UpdateEmployeeAttachments')
+                  "
+                  (click)="
+                    openUpdateEmployeeAttachmentsPopup(
+                      updateEmployeeAttachmentsPopup
+                    )
+                  "
+                >
+                  Update Employee Attachments
+                </button>
+                <button
+                  ngbDropdownItem
+                  *ngIf="
+                    isUpdateEmployeeSSEnabled &&
+                    doesUserHaveAccess('UpdateEmployeeSS')
+                  "
+                  (click)="openUpdateEmployeeSSPopup(updateEmployeeSSPopup)"
+                >
+                  Update Employee S S
+                </button>
+                <button
+                  ngbDropdownItem
+                  *ngIf="
+                    isUpdateEmployeeNameEnabled &&
+                    doesUserHaveAccess('UpdateEmployeeName')
+                  "
+                  (click)="openUpdateEmployeeNamePopup(updateEmployeeNamePopup)"
+                >
+                  Update Employee Name
+                </button>
+                <ng-container *ngFor="let userAction of userActions">
+                  <button
+                    ngbDropdownItem
+                    (click)="executeUserAction(userAction.actionName)"
+                  >
+                    {{ userAction.actionLabel }}
+                  </button>
+                </ng-container>
+              </div>
+            </div>
+            <!--User Actions - End-->
+          </div>
+        </div>
+      </div>
+
+      <!--BEGIN SECTIONS-->
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+        *ngIf="sectionsShowHideInfo.enableBasicDetailsSection"
+      >
+        <div class="card">
+          <div class="card-body">
+            <h2>Basic Details</h2>
+            <ng-container *ngFor="let pageField of basicDetailsFieldList">
+              <div class="row {{ pageField.displayClassName }}">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                  <div class="invoicelist-inner">
+                    <label class="form-label"
+                      ><b>{{ pageField.label }}</b></label
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                  <div class="invoicelist-inner">
+                    <app-dynamic-field-display
+                      [pageField]="pageField"
+                      [dataObject]="retrievedDataObject"
+                    ></app-dynamic-field-display>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+        *ngIf="sectionsShowHideInfo.enableJobDetailsSection"
+      >
+        <div class="card">
+          <div class="card-body">
+            <h2>Job Details</h2>
+            <ng-container *ngFor="let pageField of jobDetailsFieldList">
+              <div class="row {{ pageField.displayClassName }}">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                  <div class="invoicelist-inner">
+                    <label class="form-label"
+                      ><b>{{ pageField.label }}</b></label
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                  <div class="invoicelist-inner">
+                    <app-dynamic-field-display
+                      [pageField]="pageField"
+                      [dataObject]="retrievedDataObject"
+                    ></app-dynamic-field-display>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <!--END SECTIONS-->
+      <!--BEGIN LINE_ITEMS-->
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="card-body">
+            <div
+              *ngIf="
+                lineItemsSectionsShowHideInfo.enableRetrieveEmployeeSectionListSection
+              "
+            >
+              <div class="d-lg-flex align-items-center mb-2 gap-3">
+                <div style="float: left">
+                  <h2>Retrieve Employee Section List</h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="table-responsive mt-3"
+              *ngIf="
+                lineItemsSectionsShowHideInfo.enableRetrieveEmployeeSectionListSection
+              "
+            >
+              <table class="table mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <ng-container
+                      *ngFor="
+                        let retrieveEmployeeSectionListTableColumn of retrieveEmployeeSectionListTableColumns
+                      "
+                    >
+                      <th
+                        class="{{
+                          retrieveEmployeeSectionListTableColumn.displayClassName
+                        }}"
+                      >
+                        {{ retrieveEmployeeSectionListTableColumn.label }}
+                      </th>
+                    </ng-container>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let resultObject of retrieveEmployeeSectionListResultObjectsList
+                    "
+                  >
+                    <ng-container
+                      *ngFor="
+                        let retrieveEmployeeSectionListTableColumn of retrieveEmployeeSectionListTableColumns
+                      "
+                    >
+                      <td
+                        class="{{
+                          retrieveEmployeeSectionListTableColumn.displayClassName
+                        }}"
+                      >
+                        <app-dynamic-field-display
+                          [pageField]="retrieveEmployeeSectionListTableColumn"
+                          [dataObject]="resultObject"
+                        ></app-dynamic-field-display>
+                      </td>
+                    </ng-container>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              *ngIf="
+                lineItemsSectionsShowHideInfo.enableRetrieveEmpDependentListSection
+              "
+            >
+              <div class="d-lg-flex align-items-center mb-2 gap-3">
+                <div style="float: left">
+                  <h2>Employee Dependent List</h2>
+                </div>
+              </div>
+            </div>
+            <div
+              class="table-responsive mt-3"
+              *ngIf="
+                lineItemsSectionsShowHideInfo.enableRetrieveEmpDependentListSection
+              "
+            >
+              <table class="table mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <ng-container
+                      *ngFor="
+                        let retrieveEmpDependentListTableColumn of retrieveEmpDependentListTableColumns
+                      "
+                    >
+                      <th
+                        class="{{
+                          retrieveEmpDependentListTableColumn.displayClassName
+                        }}"
+                      >
+                        {{ retrieveEmpDependentListTableColumn.label }}
+                      </th>
+                    </ng-container>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="
+                      let resultObject of retrieveEmpDependentListResultObjectsList
+                    "
+                  >
+                    <ng-container
+                      *ngFor="
+                        let retrieveEmpDependentListTableColumn of retrieveEmpDependentListTableColumns
+                      "
+                    >
+                      <td
+                        class="{{
+                          retrieveEmpDependentListTableColumn.displayClassName
+                        }}"
+                      >
+                        <app-dynamic-field-display
+                          [pageField]="retrieveEmpDependentListTableColumn"
+                          [dataObject]="resultObject"
+                        ></app-dynamic-field-display>
+                      </td>
+                    </ng-container>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--END LINE_ITEMS-->
+      <!-- Start page total attributes-->
+      <div class="row m-0" style="padding-top: 20px; padding-left: 30px">
+        <div class="col-md-12 m-0 p-0">
+          <p class="control-label pull-right">
+            <span style="font-weight: bold">Experience : </span>{{ experience }}
+          </p>
+        </div>
+      </div>
+      <!-- End page total attributes-->
+    </div>
+    <div style="display: flex; justify-content: space-between; gap: 8px">
+      <button
+        style="margin-right: 0px; padding-bottom: 0px"
+        *ngIf="doesUserHaveAccess('UpdateEmployee')"
+        [routerLink]="['/in/update-employee']"
+        [queryParams]="{ id: selectedEmployeeUUID }"
+        class="btn btn-success pull-right m-l-20"
+      >
+        <i class="bi bi-pencil-square"></i> Edit
+      </button>
+      <button
+        style="margin-left: 0px"
+        *ngIf="doesUserHaveAccess('RetrieveEmployeeList')"
+        [routerLink]="['/in/employee-list']"
+        class="btn btn-secondary m-l-20 back-btn"
+      >
+        Back To List Page
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateEmployeeAllDetailsPopup let-modal>
+  <div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+      <h2 id="update-employee-all-details-modal-title">
+        Update Employee All Details
+      </h2>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body" id="update-employee-all-details-modal-body">
+      <section>
+        <div class="container1">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <app-child-section-form
+                    [childSectionRowFieldsCount]="1"
+                    [pageComponentReference]="pageComponentReference"
+                    [childSectionFields]="updateEmployeeAllDetailsSectionFields"
+                    [childSectionData]="updateEmployeeAllDetailsSectionData"
+                    [childSectionSelectOptionsData]="
+                      updateEmployeeAllDetailsSelectOptionsData
+                    "
+                    (openSearchPopup)="openSearchPopupInParent($event)"
+                    [childSectionSearchResponseListObject]="
+                      updateEmployeeAllDetailsSelectedLookupsDataListObj
+                    "
+                  ></app-child-section-form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-items-center mb-2 gap-3">
+            <div class="m-auto mt-3" style="float: right">
+              <a
+                href="javascript:;"
+                class="btn radius-30 mt-2 mt-lg-0"
+                (click)="modal.dismiss()"
+                >Cancel</a
+              >
+              <a
+                style="float: right"
+                href="javascript:;"
+                class="btn btn-success pull-right m-l-20"
+                (click)="updateEmployeeAllDetails(modal)"
+                >Save</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateEmployeeBasicDetailsPopup let-modal>
+  <div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+      <h2 id="update-employee-basic-details-modal-title">
+        Update Employee Basic Details
+      </h2>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body" id="update-employee-basic-details-modal-body">
+      <section>
+        <div class="container1">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <app-child-section-form
+                    [childSectionRowFieldsCount]="1"
+                    [pageComponentReference]="pageComponentReference"
+                    [childSectionFields]="
+                      updateEmployeeBasicDetailsSectionFields
+                    "
+                    [childSectionData]="updateEmployeeBasicDetailsSectionData"
+                    [childSectionSelectOptionsData]="
+                      updateEmployeeBasicDetailsSelectOptionsData
+                    "
+                    (openSearchPopup)="openSearchPopupInParent($event)"
+                    [childSectionSearchResponseListObject]="
+                      updateEmployeeBasicDetailsSelectedLookupsDataListObj
+                    "
+                  ></app-child-section-form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-items-center mb-2 gap-3">
+            <div class="m-auto mt-3" style="float: right">
+              <a
+                href="javascript:;"
+                class="btn radius-30 mt-2 mt-lg-0"
+                (click)="modal.dismiss()"
+                >Cancel</a
+              >
+              <a
+                style="float: right"
+                href="javascript:;"
+                class="btn btn-success pull-right m-l-20"
+                (click)="updateEmployeeBasicDetails(modal)"
+                >Save</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateEmployeeAttachmentsPopup let-modal>
+  <div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+      <h2 id="update-employee-attachments-modal-title">
+        Update Employee Attachments
+      </h2>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body" id="update-employee-attachments-modal-body">
+      <section>
+        <div class="container1">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <app-child-section-form
+                    [childSectionRowFieldsCount]="1"
+                    [pageComponentReference]="pageComponentReference"
+                    [childSectionFields]="
+                      updateEmployeeAttachmentsSectionFields
+                    "
+                    [childSectionData]="updateEmployeeAttachmentsSectionData"
+                    [childSectionSelectOptionsData]="
+                      updateEmployeeAttachmentsSelectOptionsData
+                    "
+                    (openSearchPopup)="openSearchPopupInParent($event)"
+                    [childSectionSearchResponseListObject]="
+                      updateEmployeeAttachmentsSelectedLookupsDataListObj
+                    "
+                  ></app-child-section-form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-items-center mb-2 gap-3">
+            <div class="m-auto mt-3" style="float: right">
+              <a
+                href="javascript:;"
+                class="btn radius-30 mt-2 mt-lg-0"
+                (click)="modal.dismiss()"
+                >Cancel</a
+              >
+              <a
+                style="float: right"
+                href="javascript:;"
+                class="btn btn-success pull-right m-l-20"
+                (click)="updateEmployeeAttachments(modal)"
+                >Save</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateEmployeeSSPopup let-modal>
+  <div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+      <h2 id="update-employee-ss-modal-title">Update Employee S S</h2>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body" id="update-employee-ss-modal-body">
+      <section>
+        <div class="container1">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <app-child-section-form
+                    [childSectionRowFieldsCount]="1"
+                    [pageComponentReference]="pageComponentReference"
+                    [childSectionFields]="updateEmployeeSSSectionFields"
+                    [childSectionData]="updateEmployeeSSSectionData"
+                    [childSectionSelectOptionsData]="
+                      updateEmployeeSSSelectOptionsData
+                    "
+                    (openSearchPopup)="openSearchPopupInParent($event)"
+                    [childSectionSearchResponseListObject]="
+                      updateEmployeeSSSelectedLookupsDataListObj
+                    "
+                  ></app-child-section-form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-items-center mb-2 gap-3">
+            <div class="m-auto mt-3" style="float: right">
+              <a
+                href="javascript:;"
+                class="btn radius-30 mt-2 mt-lg-0"
+                (click)="modal.dismiss()"
+                >Cancel</a
+              >
+              <a
+                style="float: right"
+                href="javascript:;"
+                class="btn btn-success pull-right m-l-20"
+                (click)="updateEmployeeSS(modal)"
+                >Save</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #updateEmployeeNamePopup let-modal>
+  <div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+      <h2 id="update-employee-name-modal-title">Update Employee Name</h2>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body" id="update-employee-name-modal-body">
+      <section>
+        <div class="container1">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="card">
+                <div class="card-body">
+                  <app-child-section-form
+                    [childSectionRowFieldsCount]="1"
+                    [pageComponentReference]="pageComponentReference"
+                    [childSectionFields]="updateEmployeeNameSectionFields"
+                    [childSectionData]="updateEmployeeNameSectionData"
+                    [childSectionSelectOptionsData]="
+                      updateEmployeeNameSelectOptionsData
+                    "
+                    (openSearchPopup)="openSearchPopupInParent($event)"
+                    [childSectionSearchResponseListObject]="
+                      updateEmployeeNameSelectedLookupsDataListObj
+                    "
+                  ></app-child-section-form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-items-center mb-2 gap-3">
+            <div class="m-auto mt-3" style="float: right">
+              <a
+                href="javascript:;"
+                class="btn radius-30 mt-2 mt-lg-0"
+                (click)="modal.dismiss()"
+                >Cancel</a
+              >
+              <a
+                style="float: right"
+                href="javascript:;"
+                class="btn btn-success pull-right m-l-20"
+                (click)="updateEmployeeName(modal)"
+                >Save</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<!-- ************** popup  - end ************ -->
+<!--BEGIN SEARCH POPUPS-->
+<retrieve-emp-location-list-search-popup
+  #retrieveEmpLocationListSearchPopupCompRef
+  (retrieveEmpLocationListSearchPopupParentMethodRef)="
+    setSearchPopupValue($event)
+  "
+></retrieve-emp-location-list-search-popup>
+<!--END SEARCH POPUPS-->

@@ -1,0 +1,90 @@
+<ng-template #retrieveEmpLocationListSearchPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2>Employee Location Label</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"  (click)="modal.dismiss()"></button>
+    </div>
+    <div class="modal-body">
+        <section>
+
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="2"  [pageComponentReference]="pageComponentReference" [childSectionFields]="retrieveEmpLocationListSectionFields" [childSectionData]="retrieveEmpLocationListSectionData" [childSectionSelectOptionsData]="retrieveEmpLocationListSelectOptionsData" ></app-child-section-form>
+                                <div class="d-lg-flex align-items-center mb-2 gap-3">
+                                    <div class="ms-auto">
+                                        <a href="javascript:;"
+                                           class="btn btn-primary radius-30 mt-2 mt-lg-0"  (click)="search()"><i
+                                                class="bx bxs-plus-square"></i>
+                                            Search
+                                        </a>
+                                        <a href="javascript:;"
+                                           class="btn btn-primary radius-30 mt-2 mt-lg-0"  (click)="resetSearchCriteria()"><i
+                                                class="bx bxs-plus-square"></i>
+                                            Reset
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive mt-3">
+                                    <table class="table mb-0">
+                                        <thead class="table-light">
+                                        <tr>
+                                            <ng-container *ngFor="let retrieveEmpLocationListTableColumn of retrieveEmpLocationListTableColumns">
+                                                <th class="{{ retrieveEmpLocationListTableColumn.displayClassName }}"><span>{{ retrieveEmpLocationListTableColumn.label }}</span></th>
+                                            </ng-container>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr *ngFor="let searchResultObject of searchResultObjectsList" (click)="setSelectedValue(searchResultObject)">
+                                            <ng-container *ngFor="let retrieveEmpLocationListTableColumn of retrieveEmpLocationListTableColumns">
+                                                <td class="{{ retrieveEmpLocationListTableColumn.displayClassName }}">
+                                                    <app-dynamic-field-display [pageField]="retrieveEmpLocationListTableColumn" [dataObject]="searchResultObject"></app-dynamic-field-display>
+                                                </td>
+                                            </ng-container>
+                                        </tr>
+                                        <tr *ngIf="!searchResultObjectsList.length">
+                                            <div class="row noDataFound">
+                                                <div class="col">
+                                                    <img src="http://static.htsbusiness.com.s3-website.ap-south-1.amazonaws.com/assets/images/no-data-found.png" alt="">
+                                                </div>
+                                            </div>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- Pagination Start -->
+                                    <div class="pagination round-pagination">
+                                        <nav aria-label="Page navigation example">
+                                            <ngb-pagination class="col" [(page)]="currentPage" [pageSize]="pageSize"
+                                                            (pageChange)="handleEmpLocationListPageChange()" [collectionSize]="collectionSize" [maxSize]="5"
+                                                            [boundaryLinks]="true">
+                                                <ng-template ngbPaginationPrevious>Prev</ng-template>
+                                                <ng-template ngbPaginationNext>Next</ng-template>
+                                                <ng-template ngbPaginationFirst>First</ng-template>
+                                                <ng-template ngbPaginationLast>Last</ng-template>
+                                                <ng-template ngbPaginationNumber let-page>{{ page }}
+                                                </ng-template>
+                                            </ngb-pagination>
+                                        </nav>
+                                    </div>
+                                    <!-- Pagination End -->
+                                </div>
+                                <div class="d-lg-flex align-items-center mb-2 gap-3">
+                                    <div class="ms-auto">
+                                        <a href="javascript:;"
+                                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Close</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</div>
+</ng-template>

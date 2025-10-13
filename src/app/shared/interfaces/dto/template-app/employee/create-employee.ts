@@ -1,0 +1,21 @@
+export interface ICreateEmployeeRequestModel {
+  firstName: string,
+  enableJobDetails: boolean, 
+  skills: string,
+  attachments?: File,
+  locationUUID: string,
+  joininigDate: string, 
+  gender: string, 
+  dateTimeField: string,
+  dateTimeWithSecondsField: string,
+  timeField: string,
+  timeWithSecondsField: string,
+  location1UUID: string,
+  location2UUID: string,
+  noOfChildren: number, 
+  salary: number, 
+  hike: number, 
+  objectId: number,
+  isUserValidated: boolean, 
+  timeZone ? : string
+}

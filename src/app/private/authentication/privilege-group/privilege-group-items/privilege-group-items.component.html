@@ -1,0 +1,48 @@
+<!-- Main Title Start -->
+<section class="mainTitle2" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <div class="col-sm-8">
+            <h1>Update Privilege Group Items</h1>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<!-- Main Title End -->
+<!-- Update form Start -->
+<div class="container-fluid py-4">
+    <div class="row m-0 no-gutters">
+      <div class="col-xs-12">
+        <label style="color: lightslategray;font-weight: bold;font-size: 20px"><input type="checkbox" (click)="toggleAllServicesSelectionCheckbox()" [(ngModel)]="allServicesCheckBox"> All</label>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 m-l-20" *ngFor="let serviceInfo of serviceList">
+            <label style="color: lightslategray;font-weight: bold;font-size: 18px"><input type="checkbox" (click)="toggleServicePrivilegeGroupsSelectionCheckbox(serviceInfo)" [(ngModel)]="serviceInfo.checked">{{ serviceInfo.description }} </label>
+            <div class="row">
+              <div class="col-sm-3" *ngFor="let privilegeGroup of serviceInfo.privilegeGroups">
+                <div class="m-l-20">
+                  <label style="color: dimgray;font-weight: bold;font-size: 15px"><input type="checkbox" (click)="togglePrivilegeGroupSelectionCheckbox(privilegeGroup, serviceInfo)" [(ngModel)]="privilegeGroup.checked"> {{ privilegeGroup.description }}</label>
+                  <ng-container *ngIf="privilegeGroup.privilegeGroupItems?.length">
+                    <div class="m-l-20">
+                      <div *ngFor="let privilegeGroupItem of privilegeGroup.privilegeGroupItems">
+                        <label><input type="checkbox" (click)="togglePrivilegeGroupItemSelectionCheckbox(privilegeGroup, serviceInfo)" [(ngModel)]="privilegeGroupItem.checked"> {{ privilegeGroupItem.description }}</label><br>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col pull-right">
+          <button type="button" class="btn btn-outline-secondary pull-right m-l-20" aria-label="View" (click)="updateUserRolePrivileges()">
+              Save
+          </button>
+    </div>
+    <div style="padding:20px;"></div>
+  </div>
+  
+<!-- Update form End-->
+<div style="padding:20px;"></div>

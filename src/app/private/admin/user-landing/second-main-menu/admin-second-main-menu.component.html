@@ -1,0 +1,94 @@
+<!--sidebar wrapper -->
+<div
+  class="sidebar-wrapper"
+  data-simplebar="true"
+  *ngIf="menus?.length"
+  (mouseenter)="childMouseEnter()"
+  (mouseleave)="childMouseLeave()"
+>
+  <div class="sidebar-header">
+    <div>
+      <img
+        src="https://static.htsbusiness.com/assets/images/inner-images/logo.png"
+        class="logo-icon"
+        alt="logo icon"
+      />
+    </div>
+    <div class="mobile-toggle-icon ms-auto" (click)="showChildSideMenu()">
+      <i class="bx bx-x"></i>
+    </div>
+  </div>
+  <!--navigation-->
+  <ul class="metismenu" id="menu123">
+    <ng-container
+      [ngTemplateOutlet]="parentMenu"
+      [ngTemplateOutletContext]="{ $implicit: menus }"
+    ></ng-container>
+  </ul>
+  <!--end navigation-->
+</div>
+<!--end sidebar wrapper -->
+<ng-template #parentMenu let-menus>
+  <li class="" *ngFor="let menu of menus">
+    <a
+      class="has-arrow"
+      href="javascript:;"
+      onclick="menuClicked(this)"
+      aria-expanded="false"
+    >
+      <div class="parent-icon"><i class="bx bx-menu"></i></div>
+      <div class="menu-title">{{ menu.name }}</div>
+    </a>
+    <ng-container
+      [ngTemplateOutlet]="subMenuLink"
+      [ngTemplateOutletContext]="{ $implicit: menu }"
+    ></ng-container>
+    <ul *ngIf="menu.menus?.length" class="mm-collapse" style="height: 0px">
+      <ng-container
+        *ngIf="menu.menus?.length"
+        [ngTemplateOutlet]="subMenu"
+        [ngTemplateOutletContext]="{ $implicit: menu.menus }"
+      ></ng-container>
+    </ul>
+  </li>
+</ng-template>
+
+<ng-template #subMenu let-subMenus>
+  <li *ngFor="let menu of subMenus">
+    <a
+      *ngIf="menu.menus?.length"
+      class="has-arrow"
+      href="javascript:;"
+      onclick="menuClicked(this)"
+      ><i class="bx bx-radio-circle"></i>{{ menu.name }}</a
+    >
+    <ng-container
+      [ngTemplateOutlet]="subMenuLink"
+      [ngTemplateOutletContext]="{ $implicit: menu }"
+    ></ng-container>
+    <ul *ngIf="menu.menus?.length" class="mm-collapse" style="height: 0px">
+      <ng-container
+        *ngIf="menu.menus?.length"
+        [ngTemplateOutlet]="subMenu"
+        [ngTemplateOutletContext]="{ $implicit: menu.menus }"
+      ></ng-container>
+    </ul>
+  </li>
+</ng-template>
+
+<ng-template #subMenuLink let-menu>
+  <a
+    *ngIf="
+      !menu.menus?.length && doesServiceBelongsToCodeService(menu.serviceName)
+    "
+    [routerLink]="menu.url"
+    ><i class="bx bx-radio-circle"></i>{{ menu.name }}</a
+  >
+  <a
+    *ngIf="
+      !menu.menus?.length && !doesServiceBelongsToCodeService(menu.serviceName)
+    "
+    href="{{ getServicePageUrl(menu.serviceName, menu.url) }}"
+    ><i class="bx bx-radio-circle"></i>{{ menu.name }}</a
+  >
+</ng-template>

@@ -1,0 +1,138 @@
+[
+  {
+    "code": "", "name": "service1", "url": "", "menus": [
+      
+      {
+        "code": "", "name": "service1 submenu1", "url": "", "menus": [
+          {
+            "code": "RetrieveAdmissionList", "name": "Admissions", "url": "admission-list","serviceName" : "","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+          },
+          
+          {}
+        ]
+      },
+      {
+        "code": "RetrieveAdmissionList", "name": "Admission", "url": "admission-list","serviceName" : "","isAdminAccessDisabled" : true,"accessAllowedUsers" : "Faculty"
+      },
+      
+      {
+        "code": "RetrieveClassInfoList", "name": "Classs", "url": "class-info-list","serviceName" : "","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveStateForUploadList", "name": "States", "url": "state-for-upload-list","serviceName" : "","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveCounryForUploadList", "name": "Countrys", "url": "counry-for-upload-list","serviceName" : "","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {}
+    ]
+  },
+  {
+    "code": "", "name": "service2", "url": "", "menus": [
+      
+      {}
+    ]
+  },
+  {
+    "code": "", "name": "templateapp", "url": "", "menus": [
+      {
+        "code": "RetrievePrivilegeGroupList", "name": "Privilege Groups", "url": "privilege-group-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveUserRoleList", "name": "User Roles", "url": "user-role-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveEmpLocationList", "name": "Employee Location Label", "url": "emp-location-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveTaxTypeList", "name": "Tax Types", "url": "tax-type-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveTaxAccountList", "name": "Tax Accounts", "url": "tax-account-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveSalesInvoice2List", "name": "Sales Invoice2s", "url": "sales-invoice2-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveOrganisationList", "name": "Organisations", "url": "organisation-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrievePersonList", "name": "Persons", "url": "person-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveBuyerList", "name": "Buyers", "url": "buyer-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveSellerList", "name": "Sellers", "url": "seller-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveSalesInvoiceList", "name": "Sales Invoices", "url": "sales-invoice-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveStudentExamResultList", "name": "Student Exam Results", "url": "student-exam-result-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveFlexFieldList", "name": "Flex Fields", "url": "flex-field-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveFlexfieldContextValueList", "name": "Flexfield Context Values", "url": "flexfield-context-value-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveCountryList", "name": "Countrys", "url": "country-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveStateList", "name": "States", "url": "state-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveAssetList", "name": "Assets", "url": "asset-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveSectionList", "name": "Sections", "url": "section-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveEmailNotificationTestList", "name": "Email Notification Tests", "url": "email-notification-test-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrieveStudentLeaveList", "name": "StudentLeaves", "url": "student-leave-list","serviceName" : "TemplateAppUI","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {}
+    ]
+  },
+  {
+    "code": "", "name": "Mock Service1", "url": "", "menus": [
+      {
+        "code": "RetrieveVehicleList", "name": "Vehicles", "url": "vehicle-list","serviceName" : "Mockservice1ui","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {
+        "code": "RetrievePartSupplierList", "name": "PartSuppliers", "url": "part-supplier-list","serviceName" : "Mockservice1ui","isAdminAccessDisabled" : false,"accessAllowedUsers" : ""
+      },
+      
+      {}
+    ]
+  },
+  {}
+]

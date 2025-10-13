@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--favicon-->
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+    <title>HTS</title>
+  </head>
+
+  <body>
+    <app-root></app-root>
+    <!--plugins-->
+    <script src="https://static.htsbusiness.com/assets/js/jquery.min.js"></script>
+    <script src="https://static.htsbusiness.com/assets/js/bootstrap/bootstrap.bundle.js"></script>
+    <script src="https://static.htsbusiness.com/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://static.htsbusiness.com/assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="https://static.htsbusiness.com/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <!-- <script src="https://static.htsbusiness.com/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script> -->
+    <!-- <script src="https://static.htsbusiness.com/assets/js/app.js"></script> -->
+
+    <script src="https://static.htsbusiness.com/assets/plugins/peity/jquery.peity.min.js"></script>
+    <script>
+      $(".data-attributes span").peity("donut");
+
+      function menuClicked(element) {
+        var currentElement = $(element);
+        var parentLiElement = $(element).parent();
+        var firstChildUlElement = parentLiElement.children("ul").first();
+        var parentUlElement = parentLiElement.parent();
+        var siblingMenuLiItems = parentUlElement.children("li");
+
+        if (parentLiElement.hasClass("mm-active")) {
+          parentLiElement.removeClass("mm-active");
+          firstChildUlElement.removeClass("mm-show");
+          firstChildUlElement.css("height", "0px");
+          currentElement.attr("aria-expanded", "false");
+
+          console.log("Class removed !!");
+        } else {
+          siblingMenuLiItems.removeClass("mm-active");
+          siblingMenuLiItems.children("ul").removeClass("mm-show");
+          siblingMenuLiItems.children("ul").css("height", "0px");
+          siblingMenuLiItems.children("a").attr("aria-expanded", "false");
+
+          parentLiElement.addClass("mm-active");
+          firstChildUlElement.addClass("mm-show");
+          currentElement.attr("aria-expanded", "true");
+          firstChildUlElement.css("height", "");
+          console.log("Class added !!");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+export const environment = {
+  serviceName : 'TemplateApp',
+  uiServiceName : 'templateappui',
+  production: {{production}},
+  statusCheckDelay: 10000,
+  apiUrl: '{% if enable_https %}https://{% else %}http://{% endif %}$$BACKEND_DOMAIN_PREFIX$${{templateapp_sub_domain}}.{{application_domain_name}}:{{templateapp_port}}/',
+  templateappServiceApiUrl: '{% if enable_https %}https://{% else %}http://{% endif %}$$BACKEND_DOMAIN_PREFIX$${{templateapp_sub_domain}}.{{application_domain_name}}:{{templateapp_port}}',
+  tempappdummyServiceApiUrl: '{% if enable_https %}https://{% else %}http://{% endif %}$$BACKEND_DOMAIN_PREFIX$${{tempappdummy_sub_domain}}.{{application_domain_name}}:{{tempappdummy_port}}',
+  testservice2ServiceApiUrl: '{% if enable_https %}https://{% else %}http://{% endif %}$$BACKEND_DOMAIN_PREFIX$${{testservice2_sub_domain}}.{{application_domain_name}}:{{testservice2_port}}',
+  testschoolbeServiceApiUrl: '{% if enable_https %}https://{% else %}http://{% endif %}$$BACKEND_DOMAIN_PREFIX$${{testschoolbe_sub_domain}}.{{application_domain_name}}:{{testschoolbe_port}}',
+  mockservice1ServiceApiUrl: '{% if enable_https %}https://{% else %}http://{% endif %}$$BACKEND_DOMAIN_PREFIX$${{mockservice1_sub_domain}}.{{application_domain_name}}:{{mockservice1_port}}',
+  mockservice3ServiceApiUrl: '{% if enable_https %}https://{% else %}http://{% endif %}$$BACKEND_DOMAIN_PREFIX$${{mockservice3_sub_domain}}.{{application_domain_name}}:{{mockservice3_port}}',
+  mockservice2ServiceApiUrl: '{% if enable_https %}https://{% else %}http://{% endif %}$$BACKEND_DOMAIN_PREFIX$${{mockservice2_sub_domain}}.{{application_domain_name}}:{{mockservice2_port}}',
+  
+  templateappUrl: '/',
+  tempappdummyUrl: '/',
+  testservice2Url: '/testservice2/',
+  testschoolbeUrl: '/',
+  mockservice1Url: '/',
+  mockservice2Url: '/',
+  
+};

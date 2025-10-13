@@ -1,0 +1,2467 @@
+[
+  {
+    "name": "TEMPLATE_APP", "description": "Template App", "privilegeGroups":
+    [
+      {
+        "name": "EMP_DEPENDENT", "description": "Emp Dependent", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateEmpDependent", "description": "New Employee Dependent"
+          },
+          {
+            "name": "UpdateEmpDependent", "description": "Edit Employee Dependent"
+          },
+          {
+            "name": "RetrieveEmpDependent", "description": "Employee Dependent"
+          },
+          {
+            "name": "RetrieveEmpDependentList", "description": "Employee Dependent List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMPLOYEE_SECTION", "description": "Employee Section", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateEmployeeSection", "description": "Create Employee Section"
+          },
+          {
+            "name": "RetrieveEmployeeSectionList", "description": "Retrieve Employee Section List"
+          },
+          {
+            "name": "UpdateEmployeeSection", "description": "Update Employee Section"
+          },
+          {
+            "name": "RetrieveEmployeeSection", "description": "Retrieve Employee Section"
+          },
+          {
+            "name": "RetrieveEmployeeSectionListForLookup", "description": "Retrieve Employee Section List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "TAX_ACCOUNT", "description": "Tax Account", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateTaxAccount", "description": "New Tax Account"
+          },
+          {
+            "name": "UpdateTaxAccount", "description": "Edit Tax Account"
+          },
+          {
+            "name": "RetrieveTaxAccount", "description": "Tax Account"
+          },
+          {
+            "name": "RetrieveTaxAccountListForLookup", "description": "Retrieve Tax Account List For Lookup"
+          },
+          {
+            "name": "RetrieveTaxAccountList", "description": "Search Tax Account"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "PARENT_MOBILE_NUMBER", "description": "Parent Mobile Number", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateParentMobileNumber", "description": "New Parent Mobile Number"
+          },
+          {
+            "name": "UpdateParentMobileNumber", "description": "Edit Parent Mobile Number"
+          },
+          {
+            "name": "RetrieveParentMobileNumber", "description": "Parent Mobile Number"
+          },
+          {
+            "name": "RetrieveParentMobileNumberList", "description": "Search Parent Mobile Number"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "ITEM", "description": "Item", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "ASSET", "description": "Asset", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateAsset", "description": "New Asset"
+          },
+          {
+            "name": "UpdateAsset", "description": "Edit Asset"
+          },
+          {
+            "name": "RetrieveAsset", "description": "Asset"
+          },
+          {
+            "name": "RetrieveAssetListForLookup", "description": "Retrieve Asset List For Lookup"
+          },
+          {
+            "name": "RetrieveAssetList", "description": "Search Asset"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "CHILD", "description": "Child", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateChild", "description": "New Child"
+          },
+          {
+            "name": "UpdateChild", "description": "Edit Child"
+          },
+          {
+            "name": "RetrieveChild", "description": "Child"
+          },
+          {
+            "name": "RetrieveChildList", "description": "Child List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "APPLICATION_USER", "description": "Application User", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "PENDING_TRANSACTION", "description": "Pending Transaction", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "PRIVILEGE_GROUP_ITEM", "description": "Privilege Group Item", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrievePrivilegeGroupItemList", "description": "Retrieve Privilege Group Item List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STUDENT", "description": "Student", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateStudentAllDetails", "description": "Update Student All Details"
+          },
+          {
+            "name": "UpdateStudentFirstName", "description": "Update Student First Name"
+          },
+          {
+            "name": "UpdateStudentFirstName2", "description": "Update Student First Name2"
+          },
+          {
+            "name": "DeleteStudentsByIds", "description": "Delete Students By Ids"
+          },
+          {
+            "name": "UpdateStudentByIds", "description": "Update Student By Ids"
+          },
+          {
+            "name": "RetrieveStudentList", "description": "View Students List"
+          },
+          {
+            "name": "SendSmsToSelectedStudents", "description": "Send Sms To Selected Students"
+          },
+          {
+            "name": "GetStudentGraphData", "description": "Student Graph Data"
+          },
+          {
+            "name": "UpdateStudentUsingHeaders", "description": "Update Student Using Headers"
+          },
+          {
+            "name": "CreateStudentForFlexfields", "description": "Create Student For Flexfields"
+          },
+          {
+            "name": "AssignToFaculty", "description": "Assign To Faculty"
+          },
+          {
+            "name": "RemoveFromFaculty", "description": "Remove From Faculty"
+          },
+          {
+            "name": "RetrieveStudentListForFaculty", "description": "Retrieve Student List For Faculty"
+          },
+          {
+            "name": "RetrieveStudentListWithJoin", "description": "Retrieve Student List With Join"
+          },
+          {
+            "name": "MakeFeePayment", "description": "Make Fee Payment"
+          },
+          {
+            "name": "RetrieveMaleGenderStudents", "description": "Retrieve Male Gender Students"
+          },
+          {
+            "name": "CreateStudent", "description": "Create Student"
+          },
+          {
+            "name": "RetrieveStudent", "description": "Retrieve Student"
+          },
+          {
+            "name": "UpdateAgeAndGender", "description": "Update Age And Gender"
+          },
+          {
+            "name": "UpdateStudent", "description": "Edit Student"
+          },
+          {
+            "name": "RetrieveStudentListForLookup", "description": "Retrieve Student List For Lookup"
+          },
+          {
+            "name": "DeleteStudent", "description": "Delete Student"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "TAX_TYPE", "description": "Tax Type", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateTaxType", "description": "New Tax Type"
+          },
+          {
+            "name": "UpdateTaxType", "description": "Edit Tax Type"
+          },
+          {
+            "name": "RetrieveTaxType", "description": "Tax Type"
+          },
+          {
+            "name": "RetrieveTaxTypeListForLookup", "description": "Retrieve Tax Type List For Lookup"
+          },
+          {
+            "name": "RetrieveTaxTypeList", "description": "Search Tax Type"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMPLOYEE_UPDATE", "description": "Employee Update", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateEmployeeUpdate", "description": "New Employee Update"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "PRIVILEGE_GROUP", "description": "Privilege Group", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdatePrivilegeGroupItems", "description": "Update Privilege Group Items"
+          },
+          {
+            "name": "CreatePrivilegeGroup", "description": "New Privilege Group"
+          },
+          {
+            "name": "UpdatePrivilegeGroup", "description": "Edit Privilege Group"
+          },
+          {
+            "name": "RetrievePrivilegeGroup", "description": "Privilege Group"
+          },
+          {
+            "name": "RetrievePrivilegeGroupListForLookup", "description": "Retrieve Privilege Group List For Lookup"
+          },
+          {
+            "name": "RetrievePrivilegeGroupList", "description": "Search Privilege Group"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMPLOYEE_DETAILS_RETRIEVE", "description": "Employee Details Retrieve", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrieveEmployeeBasicDetails", "description": "Retrieve Employee Basic Details"
+          },
+          {
+            "name": "RetrieveEmployeeBasicDetailsList", "description": "Retrieve Employee Basic Details List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMPLOYEE", "description": "Employee", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateEmployeeSS", "description": "Update Employee S S"
+          },
+          {
+            "name": "UpdateSelectedEmployees", "description": "Update Selected Employees"
+          },
+          {
+            "name": "RetrieveEmployeeList", "description": "Retrieve Employee List"
+          },
+          {
+            "name": "CreateEmployeeForFlexfields", "description": "Create Employee For Flexfields"
+          },
+          {
+            "name": "UpdateEmployeeName", "description": "Update Employee Name"
+          },
+          {
+            "name": "CreateEmployee", "description": "New Employee"
+          },
+          {
+            "name": "UpdateEmployee", "description": "Edit Employee"
+          },
+          {
+            "name": "RetrieveEmployee", "description": "Employee"
+          },
+          {
+            "name": "RetrieveEmployeeListForLookup", "description": "Retrieve Employee List For Lookup"
+          },
+          {
+            "name": "DeleteEmployee", "description": "Delete Employee"
+          },
+          {
+            "name": "DeleteEmployeeByIds", "description": "Delete Selected Employees"
+          },
+          {
+            "name": "DownloadEmployeeAttachment", "description": "Download Employee Attachment"
+          },
+          {
+            "name": "DeleteEmployeeAttachment", "description": "Delete Employee Attachment"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "COMPONENT_SPARE", "description": "Component Spare", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateComponentSpare", "description": "New Component Spare"
+          },
+          {
+            "name": "UpdateComponentSpare", "description": "Edit Component Spare"
+          },
+          {
+            "name": "RetrieveComponentSpare", "description": "Component Spare"
+          },
+          {
+            "name": "RetrieveComponentSpareList", "description": "Component Spare List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STATE", "description": "State", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateState", "description": "New State"
+          },
+          {
+            "name": "UpdateState", "description": "Edit State"
+          },
+          {
+            "name": "RetrieveState", "description": "State"
+          },
+          {
+            "name": "RetrieveStateListForLookup", "description": "Retrieve State List For Lookup"
+          },
+          {
+            "name": "RetrieveStateList", "description": "Search State"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SELF_SERVICE_USER", "description": "Self Service User", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "COUNTRY", "description": "Country", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateCountry", "description": "New Country"
+          },
+          {
+            "name": "UpdateCountry", "description": "Edit Country"
+          },
+          {
+            "name": "RetrieveCountry", "description": "Country"
+          },
+          {
+            "name": "RetrieveCountryListForLookup", "description": "Retrieve Country List For Lookup"
+          },
+          {
+            "name": "RetrieveCountryList", "description": "Search Country"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FLEX_FIELD", "description": "Flex Field", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateFlexField", "description": "Edit Flex Field"
+          },
+          {
+            "name": "RetrieveFlexField", "description": "Flex Field"
+          },
+          {
+            "name": "RetrieveFlexFieldListForLookup", "description": "Retrieve Flex Field List For Lookup"
+          },
+          {
+            "name": "RetrieveFlexFieldList", "description": "Search Flex Field"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMAIL_NOTIFICATION_TEST", "description": "Email Notification Test", "privilegeGroupItems":
+        [
+          {
+            "name": "CorrelateEmailNotificationTest", "description": "Correlate Email Notification Test"
+          },
+          {
+            "name": "CreateEmailNotificationTest", "description": "New Email Notification Test"
+          },
+          {
+            "name": "UpdateEmailNotificationTest", "description": "Edit Email Notification Test"
+          },
+          {
+            "name": "RetrieveEmailNotificationTest", "description": "Email Notification Test"
+          },
+          {
+            "name": "RetrieveEmailNotificationTestList", "description": "Search Email Notification Test"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "PERSON", "description": "Person", "privilegeGroupItems":
+        [
+          {
+            "name": "CreatePerson", "description": "New Person"
+          },
+          {
+            "name": "UpdatePerson", "description": "Edit Person"
+          },
+          {
+            "name": "RetrievePerson", "description": "Person"
+          },
+          {
+            "name": "RetrievePersonListForLookup", "description": "Retrieve Person List For Lookup"
+          },
+          {
+            "name": "RetrievePersonList", "description": "Search Person"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STUDENT_EXAM_RESULT", "description": "Student Exam Result", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrieveStudentExamResultListForFaculty", "description": "Retrieve Student Exam Result List For Faculty"
+          },
+          {
+            "name": "CreateStudentExamResult", "description": "New Student Exam Result"
+          },
+          {
+            "name": "UpdateStudentExamResult", "description": "Edit Student Exam Result"
+          },
+          {
+            "name": "RetrieveStudentExamResult", "description": "Student Exam Result"
+          },
+          {
+            "name": "RetrieveStudentExamResultList", "description": "Search Student Exam Result"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STATE_FOR_UPLOAD", "description": "State For Upload", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateStateForUpload", "description": "New State"
+          },
+          {
+            "name": "UpdateStateForUpload", "description": "Edit State"
+          },
+          {
+            "name": "UploadStateForUpload", "description": "Upload State"
+          },
+          {
+            "name": "RetrieveStateForUpload", "description": "State"
+          },
+          {
+            "name": "RetrieveStateForUploadListForLookup", "description": "Retrieve State For Upload List For Lookup"
+          },
+          {
+            "name": "RetrieveStateForUploadList", "description": "Search State"
+          },
+          {
+            "name": "DeleteStateForUpload", "description": "Delete State"
+          },
+          {
+            "name": "DeleteStateForUploadByIds", "description": "Delete Selected States"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "USER_PROFILE", "description": "User Profile", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "PARENT", "description": "Parent", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrieveParentList", "description": "Retrieve Parent List"
+          },
+          {
+            "name": "UpdateParentsMobileNumber", "description": "Update Mobile Number"
+          },
+          {
+            "name": "CreateParent", "description": "New Parent"
+          },
+          {
+            "name": "UpdateParent", "description": "Edit Parent"
+          },
+          {
+            "name": "RetrieveParent", "description": "Parent"
+          },
+          {
+            "name": "RetrieveParentListForLookup", "description": "Retrieve Parent List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STUDENT_LEAVE", "description": "Student Leave", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateStudentLeave", "description": "New StudentLeave"
+          },
+          {
+            "name": "UpdateStudentLeave", "description": "Edit StudentLeave"
+          },
+          {
+            "name": "RetrieveStudentLeave", "description": "StudentLeave"
+          },
+          {
+            "name": "RetrieveStudentLeaveList", "description": "Search StudentLeave"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "USER_INFO", "description": "User Info", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateNewStaffUser", "description": "Create User"
+          },
+          {
+            "name": "RetrieveUserInfo", "description": "Retrieve User Info"
+          },
+          {
+            "name": "RetrieveUserInfoList", "description": "Staff Users"
+          },
+          {
+            "name": "UpdatePasswordByAdmin", "description": "Update Password"
+          },
+          {
+            "name": "UpdateEmailByAdmin", "description": "Update Email"
+          },
+          {
+            "name": "UpdateContactByAdmin", "description": "Update Contact"
+          },
+          {
+            "name": "UpdateUserInfo", "description": "Edit User Info"
+          },
+          {
+            "name": "RetrieveUserInfoListForLookup", "description": "Retrieve User Info List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "BUYER", "description": "Buyer", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateBuyer", "description": "New Buyer"
+          },
+          {
+            "name": "UpdateBuyer", "description": "Edit Buyer"
+          },
+          {
+            "name": "RetrieveBuyer", "description": "Buyer"
+          },
+          {
+            "name": "RetrieveBuyerList", "description": "Search Buyer"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FORM_FIELD_API", "description": "Form Field Api", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateFormFieldApi", "description": "New Form Field Api"
+          },
+          {
+            "name": "UpdateFormFieldApi", "description": "Edit Form Field Api"
+          },
+          {
+            "name": "RetrieveFormFieldApi", "description": "Form Field Api"
+          },
+          {
+            "name": "RetrieveFormFieldApiList", "description": "Form Field Api List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SALES_INVOICE", "description": "Sales Invoice", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateSalesInvoice", "description": "New Sales Invoice"
+          },
+          {
+            "name": "UpdateSalesInvoice", "description": "Edit Sales Invoice"
+          },
+          {
+            "name": "RetrieveSalesInvoice", "description": "Sales Invoice"
+          },
+          {
+            "name": "RetrieveSalesInvoiceList", "description": "Search Sales Invoice"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "CALCULATOR", "description": "Calculator", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "FACULTY", "description": "Faculty", "privilegeGroupItems":
+        [
+          {
+            "name": "GetFacultyUsingReqParams", "description": "Get Faculty Using Req Params"
+          },
+          {
+            "name": "GetFacultyUsingReqModel", "description": "Get Faculty Using Req Model"
+          },
+          {
+            "name": "UpdatePasswordForFaculty", "description": "Update Password"
+          },
+          {
+            "name": "UpdateEmailIdForFaculty", "description": "Update Email"
+          },
+          {
+            "name": "UpdateContactNoForFaculty", "description": "Update Contact"
+          },
+          {
+            "name": "UpdateProfileDetailsForFaculty", "description": "Update Profile"
+          },
+          {
+            "name": "RetrieveFacultyList", "description": "Retrieve Faculty List"
+          },
+          {
+            "name": "UpdateFacultyFirstName", "description": "Update Faculty First Name"
+          },
+          {
+            "name": "CreateFaculty", "description": "New Faculty"
+          },
+          {
+            "name": "UpdateFaculty", "description": "Edit Faculty"
+          },
+          {
+            "name": "RetrieveFaculty", "description": "Faculty"
+          },
+          {
+            "name": "RetrieveFacultyListForLookup", "description": "Retrieve Faculty List For Lookup"
+          },
+          {
+            "name": "UpdateSelfServiceAccessForFaculty", "description": "Update Access"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMPLOYEE_DETAILS_UPDATE", "description": "Employee Details Update", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateEmployeeAllDetails", "description": "Update Employee All Details"
+          },
+          {
+            "name": "UpdateEmployeeBasicDetails", "description": "Update Employee Basic Details"
+          },
+          {
+            "name": "UpdateEmployeeAttachments", "description": "Update Employee Attachments"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "ORGANISATION", "description": "Organisation", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateOrganisation", "description": "New Organisation"
+          },
+          {
+            "name": "UpdateOrganisation", "description": "Edit Organisation"
+          },
+          {
+            "name": "RetrieveOrganisation", "description": "Organisation"
+          },
+          {
+            "name": "RetrieveOrganisationListForLookup", "description": "Retrieve Organisation List For Lookup"
+          },
+          {
+            "name": "RetrieveOrganisationList", "description": "Search Organisation"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STUDENT_FEE_PAYMENT", "description": "Student Fee Payment", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateStudentFeePayment", "description": "Create Student Fee Payment"
+          },
+          {
+            "name": "UpdateStudentFeePaymentStatus", "description": "Update Student Fee Payment Status"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FLEXFIELD_SEGMENT", "description": "Flexfield Segment", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrieveFlexfieldContextSegmentsMap", "description": "Retrieve Flexfield Context Segments Map"
+          },
+          {
+            "name": "CreateFlexfieldSegment", "description": "New Flexfield Segment"
+          },
+          {
+            "name": "UpdateFlexfieldSegment", "description": "Edit Flexfield Segment"
+          },
+          {
+            "name": "RetrieveFlexfieldSegment", "description": "Flexfield Segment"
+          },
+          {
+            "name": "RetrieveFlexfieldSegmentList", "description": "Flexfield Segment List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "UPLOAD_PERSON", "description": "Upload Person", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrieveUploadPersonList", "description": "Retrieve Upload Person List"
+          },
+          {
+            "name": "CreateUploadPerson", "description": "New UploadPerson"
+          },
+          {
+            "name": "UpdateUploadPerson", "description": "Edit UploadPerson"
+          },
+          {
+            "name": "UploadUploadPerson", "description": "Upload UploadPerson"
+          },
+          {
+            "name": "RetrieveUploadPerson", "description": "UploadPerson"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SECTION", "description": "Section", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateSection", "description": "New Section"
+          },
+          {
+            "name": "UpdateSection", "description": "Edit Section"
+          },
+          {
+            "name": "RetrieveSection", "description": "Section"
+          },
+          {
+            "name": "RetrieveSectionListForLookup", "description": "Retrieve Section List For Lookup"
+          },
+          {
+            "name": "RetrieveSectionList", "description": "Search Section"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "ASSET_COMPONENT", "description": "Asset Component", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateAssetComponent", "description": "New Asset Component"
+          },
+          {
+            "name": "UpdateAssetComponent", "description": "Edit Asset Component"
+          },
+          {
+            "name": "RetrieveAssetComponent", "description": "Asset Component"
+          },
+          {
+            "name": "RetrieveAssetComponentList", "description": "Asset Component List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "COST_CENTER_LINE_ITEM", "description": "Cost Center Line Item", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateCostCenterLineItem", "description": "Create Cost Center Line Item"
+          },
+          {
+            "name": "RetrieveCostCenterLineItemList", "description": "Retrieve Cost Center Line Item List"
+          },
+          {
+            "name": "UpdateCostCenterLineItem", "description": "Update Cost Center Line Item"
+          },
+          {
+            "name": "RetrieveCostCenterLineItem", "description": "Retrieve Cost Center Line Item"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "USER_ROLE", "description": "User Role", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateUserRole", "description": "New User Role"
+          },
+          {
+            "name": "RetrieveUserRole", "description": "User Role"
+          },
+          {
+            "name": "RetrieveUserRoleList", "description": "Search User Role"
+          },
+          {
+            "name": "DeleteUserRole", "description": "Delete User Role"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "API_PARAMETERS", "description": "Api Parameters", "privilegeGroupItems":
+        [
+          {
+            "name": "GetUpdatedApiParameters", "description": "Get Updated Api Parameters"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "INVOICE_LINE_ITEM", "description": "Invoice Line Item", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateInvoiceLineItem", "description": "New Invoice Line Item"
+          },
+          {
+            "name": "UpdateInvoiceLineItem", "description": "Edit Invoice Line Item"
+          },
+          {
+            "name": "RetrieveInvoiceLineItem", "description": "Invoice Line Item"
+          },
+          {
+            "name": "RetrieveInvoiceLineItemList", "description": "Invoice Line Item List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "COUNRY_FOR_UPLOAD", "description": "Counry For Upload", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateCounryForUpload", "description": "New Country"
+          },
+          {
+            "name": "UpdateCounryForUpload", "description": "Edit Country"
+          },
+          {
+            "name": "UploadCounryForUpload", "description": "Upload Country"
+          },
+          {
+            "name": "RetrieveCounryForUpload", "description": "Country"
+          },
+          {
+            "name": "RetrieveCounryForUploadListForLookup", "description": "Retrieve Counry For Upload List For Lookup"
+          },
+          {
+            "name": "RetrieveCounryForUploadList", "description": "Search Country"
+          },
+          {
+            "name": "DeleteCounryForUpload", "description": "Delete Country"
+          },
+          {
+            "name": "DeleteCounryForUploadByIds", "description": "Delete Selected Countrys"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "CUSTOM_FORM_FIELD", "description": "Custom Form Field", "privilegeGroupItems":
+        [
+          {
+            "name": "GetApiCustomFormFieldList", "description": "Api Form Field List"
+          },
+          {
+            "name": "CreateCustomFormField", "description": "Create Custom Form Field"
+          },
+          {
+            "name": "UpdateCustomFormField", "description": "Update Custom Form Field"
+          },
+          {
+            "name": "RetrieveCustomFormField", "description": "Custom Form Field"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SELLER", "description": "Seller", "privilegeGroupItems":
+        [
+          {
+            "name": "GetSellerDataForRegistration", "description": "Get Seller Data For Registration"
+          },
+          {
+            "name": "CreateSeller", "description": "New Seller"
+          },
+          {
+            "name": "UpdateSeller", "description": "Edit Seller"
+          },
+          {
+            "name": "RetrieveSeller", "description": "Seller"
+          },
+          {
+            "name": "RetrieveSellerList", "description": "Search Seller"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SALES_INVOICE2", "description": "Sales Invoice2", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateSalesInvoice2", "description": "New Sales Invoice2"
+          },
+          {
+            "name": "UpdateSalesInvoice2", "description": "Edit Sales Invoice2"
+          },
+          {
+            "name": "RetrieveSalesInvoice2", "description": "Sales Invoice2"
+          },
+          {
+            "name": "RetrieveSalesInvoice2List", "description": "Search Sales Invoice2"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FLEXFIELD_CONTEXT_VALUE", "description": "Flexfield Context Value", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateFlexfieldContextValue", "description": "New Flexfield Context Value"
+          },
+          {
+            "name": "UpdateFlexfieldContextValue", "description": "Edit Flexfield Context Value"
+          },
+          {
+            "name": "RetrieveFlexfieldContextValue", "description": "Flexfield Context Value"
+          },
+          {
+            "name": "RetrieveFlexfieldContextValueListForLookup", "description": "Retrieve Flexfield Context Value List For Lookup"
+          },
+          {
+            "name": "RetrieveFlexfieldContextValueList", "description": "Search Flexfield Context Value"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMP_LOCATION", "description": "Emp Location", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateEmpLocationName", "description": "Update Emp Location Name"
+          },
+          {
+            "name": "VerifyEmpLocation", "description": "Verify Emp Location"
+          },
+          {
+            "name": "SendClientRequestToTestSerializableParams", "description": "Send Client Request To Test Serializable Params"
+          },
+          {
+            "name": "CreateEmpLocation", "description": "New Employee Location"
+          },
+          {
+            "name": "UpdateEmpLocation", "description": "Edit Employee Location"
+          },
+          {
+            "name": "RetrieveEmpLocation", "description": "Employee Location"
+          },
+          {
+            "name": "RetrieveEmpLocationListForLookup", "description": "Retrieve Emp Location List For Lookup"
+          },
+          {
+            "name": "RetrieveEmpLocationList", "description": "Employee Location Label"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "CLASS_INFO", "description": "Class Info", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateClassInfo", "description": "New Class"
+          },
+          {
+            "name": "RetrieveClassInfoListForLookup", "description": "Retrieve Class Info List For Lookup"
+          },
+          {
+            "name": "RetrieveClassInfoList", "description": "Search Class"
+          },
+          {}
+        ]
+      },
+      
+      {}
+    ]
+  },
+  {
+    "name": "TEMPAPPDUMMY", "description": "Tempappdummy", "privilegeGroups":
+    [
+      {
+        "name": "EMP_DEPENDENT", "description": "Emp Dependent", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateEmpDependent", "description": "New Employee Dependent"
+          },
+          {
+            "name": "UpdateEmpDependent", "description": "Edit Employee Dependent"
+          },
+          {
+            "name": "RetrieveEmpDependent", "description": "Employee Dependent"
+          },
+          {
+            "name": "RetrieveEmpDependentList", "description": "Employee Dependent List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMPLOYEE_SECTION", "description": "Employee Section", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateEmployeeSection", "description": "Create Employee Section"
+          },
+          {
+            "name": "RetrieveEmployeeSectionList", "description": "Retrieve Employee Section List"
+          },
+          {
+            "name": "UpdateEmployeeSection", "description": "Update Employee Section"
+          },
+          {
+            "name": "RetrieveEmployeeSection", "description": "Retrieve Employee Section"
+          },
+          {
+            "name": "RetrieveEmployeeSectionListForLookup", "description": "Retrieve Employee Section List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "TAX_ACCOUNT", "description": "Tax Account", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateTaxAccount", "description": "New Tax Account"
+          },
+          {
+            "name": "UpdateTaxAccount", "description": "Edit Tax Account"
+          },
+          {
+            "name": "RetrieveTaxAccount", "description": "Tax Account"
+          },
+          {
+            "name": "RetrieveTaxAccountListForLookup", "description": "Retrieve Tax Account List For Lookup"
+          },
+          {
+            "name": "RetrieveTaxAccountList", "description": "Search Tax Account"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "ITEM", "description": "Item", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "ASSET", "description": "Asset", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateAsset", "description": "New Asset"
+          },
+          {
+            "name": "UpdateAsset", "description": "Edit Asset"
+          },
+          {
+            "name": "RetrieveAsset", "description": "Asset"
+          },
+          {
+            "name": "RetrieveAssetListForLookup", "description": "Retrieve Asset List For Lookup"
+          },
+          {
+            "name": "RetrieveAssetList", "description": "Search Asset"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "APPLICATION_USER", "description": "Application User", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "PRIVILEGE_GROUP_ITEM", "description": "Privilege Group Item", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrievePrivilegeGroupItemList", "description": "Retrieve Privilege Group Item List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STUDENT", "description": "Student", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateStudentAllDetails", "description": "Update Student All Details"
+          },
+          {
+            "name": "UpdateStudentFirstName", "description": "Update Student First Name"
+          },
+          {
+            "name": "UpdateStudentFirstName2", "description": "Update Student First Name2"
+          },
+          {
+            "name": "DeleteStudentsByIds", "description": "Delete Students By Ids"
+          },
+          {
+            "name": "UpdateStudentByIds", "description": "Update Student By Ids"
+          },
+          {
+            "name": "RetrieveStudentList", "description": "View Students List"
+          },
+          {
+            "name": "SendSmsToSelectedStudents", "description": "Send Sms To Selected Students"
+          },
+          {
+            "name": "UpdateStudentUsingHeaders", "description": "Update Student Using Headers"
+          },
+          {
+            "name": "CreateStudentForFlexfields", "description": "Create Student For Flexfields"
+          },
+          {
+            "name": "AssignToFaculty", "description": "Assign To Faculty"
+          },
+          {
+            "name": "RemoveFromFaculty", "description": "Remove From Faculty"
+          },
+          {
+            "name": "RetrieveStudentListForFaculty", "description": "Retrieve Student List For Faculty"
+          },
+          {
+            "name": "RetrieveStudentListWithJoin", "description": "Retrieve Student List With Join"
+          },
+          {
+            "name": "MakeFeePayment", "description": "Make Fee Payment"
+          },
+          {
+            "name": "RetrieveMaleGenderStudents", "description": "Retrieve Male Gender Students"
+          },
+          {
+            "name": "CreateStudent", "description": "Create Student"
+          },
+          {
+            "name": "RetrieveStudent", "description": "Retrieve Student"
+          },
+          {
+            "name": "UpdateAgeAndGender", "description": "Update Age And Gender"
+          },
+          {
+            "name": "UpdateStudent", "description": "Edit Student"
+          },
+          {
+            "name": "RetrieveStudentListForLookup", "description": "Retrieve Student List For Lookup"
+          },
+          {
+            "name": "DeleteStudent", "description": "Delete Student"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "TAX_TYPE", "description": "Tax Type", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateTaxType", "description": "New Tax Type"
+          },
+          {
+            "name": "UpdateTaxType", "description": "Edit Tax Type"
+          },
+          {
+            "name": "RetrieveTaxType", "description": "Tax Type"
+          },
+          {
+            "name": "RetrieveTaxTypeListForLookup", "description": "Retrieve Tax Type List For Lookup"
+          },
+          {
+            "name": "RetrieveTaxTypeList", "description": "Search Tax Type"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "PRIVILEGE_GROUP", "description": "Privilege Group", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdatePrivilegeGroupItems", "description": "Update Privilege Group Items"
+          },
+          {
+            "name": "CreatePrivilegeGroup", "description": "New Privilege Group"
+          },
+          {
+            "name": "UpdatePrivilegeGroup", "description": "Edit Privilege Group"
+          },
+          {
+            "name": "RetrievePrivilegeGroup", "description": "Privilege Group"
+          },
+          {
+            "name": "RetrievePrivilegeGroupListForLookup", "description": "Retrieve Privilege Group List For Lookup"
+          },
+          {
+            "name": "RetrievePrivilegeGroupList", "description": "Search Privilege Group"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMPLOYEE_DETAILS_RETRIEVE", "description": "Employee Details Retrieve", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrieveEmployeeBasicDetails", "description": "Retrieve Employee Basic Details"
+          },
+          {
+            "name": "RetrieveEmployeeBasicDetailsList", "description": "Retrieve Employee Basic Details List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMPLOYEE", "description": "Employee", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateEmployeeSS", "description": "Update Employee S S"
+          },
+          {
+            "name": "UpdateSelectedEmployees", "description": "Update Selected Employees"
+          },
+          {
+            "name": "RetrieveEmployeeList", "description": "Retrieve Employee List"
+          },
+          {
+            "name": "CreateEmployeeForFlexfields", "description": "Create Employee For Flexfields"
+          },
+          {
+            "name": "UpdateEmployeeName", "description": "Update Employee Name"
+          },
+          {
+            "name": "CreateEmployee", "description": "New Employee"
+          },
+          {
+            "name": "UpdateEmployee", "description": "Edit Employee"
+          },
+          {
+            "name": "RetrieveEmployee", "description": "Employee"
+          },
+          {
+            "name": "RetrieveEmployeeListForLookup", "description": "Retrieve Employee List For Lookup"
+          },
+          {
+            "name": "DeleteEmployee", "description": "Delete Employee"
+          },
+          {
+            "name": "DeleteEmployeeByIds", "description": "Delete Selected Employees"
+          },
+          {
+            "name": "DownloadEmployeeAttachment", "description": "Download Employee Attachment"
+          },
+          {
+            "name": "DeleteEmployeeAttachment", "description": "Delete Employee Attachment"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "COMPONENT_SPARE", "description": "Component Spare", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateComponentSpare", "description": "New Component Spare"
+          },
+          {
+            "name": "UpdateComponentSpare", "description": "Edit Component Spare"
+          },
+          {
+            "name": "RetrieveComponentSpare", "description": "Component Spare"
+          },
+          {
+            "name": "RetrieveComponentSpareList", "description": "Component Spare List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STATE", "description": "State", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateState", "description": "New State"
+          },
+          {
+            "name": "UpdateState", "description": "Edit State"
+          },
+          {
+            "name": "RetrieveState", "description": "State"
+          },
+          {
+            "name": "RetrieveStateListForLookup", "description": "Retrieve State List For Lookup"
+          },
+          {
+            "name": "RetrieveStateList", "description": "Search State"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SELF_SERVICE_USER", "description": "Self Service User", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "COUNTRY", "description": "Country", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateCountry", "description": "New Country"
+          },
+          {
+            "name": "UpdateCountry", "description": "Edit Country"
+          },
+          {
+            "name": "RetrieveCountry", "description": "Country"
+          },
+          {
+            "name": "RetrieveCountryListForLookup", "description": "Retrieve Country List For Lookup"
+          },
+          {
+            "name": "RetrieveCountryList", "description": "Search Country"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FLEX_FIELD", "description": "Flex Field", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateFlexField", "description": "Edit Flex Field"
+          },
+          {
+            "name": "RetrieveFlexField", "description": "Flex Field"
+          },
+          {
+            "name": "RetrieveFlexFieldListForLookup", "description": "Retrieve Flex Field List For Lookup"
+          },
+          {
+            "name": "RetrieveFlexFieldList", "description": "Search Flex Field"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMAIL_NOTIFICATION_TEST", "description": "Email Notification Test", "privilegeGroupItems":
+        [
+          {
+            "name": "CorrelateEmailNotificationTest", "description": "Correlate Email Notification Test"
+          },
+          {
+            "name": "CreateEmailNotificationTest", "description": "New Email Notification Test"
+          },
+          {
+            "name": "UpdateEmailNotificationTest", "description": "Edit Email Notification Test"
+          },
+          {
+            "name": "RetrieveEmailNotificationTest", "description": "Email Notification Test"
+          },
+          {
+            "name": "RetrieveEmailNotificationTestList", "description": "Search Email Notification Test"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "PERSON", "description": "Person", "privilegeGroupItems":
+        [
+          {
+            "name": "CreatePerson", "description": "New Person"
+          },
+          {
+            "name": "UpdatePerson", "description": "Edit Person"
+          },
+          {
+            "name": "RetrievePerson", "description": "Person"
+          },
+          {
+            "name": "RetrievePersonListForLookup", "description": "Retrieve Person List For Lookup"
+          },
+          {
+            "name": "RetrievePersonList", "description": "Search Person"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STUDENT_EXAM_RESULT", "description": "Student Exam Result", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrieveStudentExamResultListForFaculty", "description": "Retrieve Student Exam Result List For Faculty"
+          },
+          {
+            "name": "CreateStudentExamResult", "description": "New Student Exam Result"
+          },
+          {
+            "name": "UpdateStudentExamResult", "description": "Edit Student Exam Result"
+          },
+          {
+            "name": "RetrieveStudentExamResult", "description": "Student Exam Result"
+          },
+          {
+            "name": "RetrieveStudentExamResultList", "description": "Search Student Exam Result"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "USER_PROFILE", "description": "User Profile", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "USER_INFO", "description": "User Info", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateNewStaffUser", "description": "Create User"
+          },
+          {
+            "name": "RetrieveUserInfo", "description": "Retrieve User Info"
+          },
+          {
+            "name": "RetrieveUserInfoList", "description": "Staff Users"
+          },
+          {
+            "name": "UpdatePasswordByAdmin", "description": "Update Password"
+          },
+          {
+            "name": "UpdateEmailByAdmin", "description": "Update Email"
+          },
+          {
+            "name": "UpdateContactByAdmin", "description": "Update Contact"
+          },
+          {
+            "name": "UpdateUserInfo", "description": "Edit User Info"
+          },
+          {
+            "name": "RetrieveUserInfoListForLookup", "description": "Retrieve User Info List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FORM_FIELD_API", "description": "Form Field Api", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateFormFieldApi", "description": "New Form Field Api"
+          },
+          {
+            "name": "UpdateFormFieldApi", "description": "Edit Form Field Api"
+          },
+          {
+            "name": "RetrieveFormFieldApi", "description": "Form Field Api"
+          },
+          {
+            "name": "RetrieveFormFieldApiList", "description": "Form Field Api List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SALES_INVOICE", "description": "Sales Invoice", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateSalesInvoice", "description": "New Sales Invoice"
+          },
+          {
+            "name": "UpdateSalesInvoice", "description": "Edit Sales Invoice"
+          },
+          {
+            "name": "RetrieveSalesInvoice", "description": "Sales Invoice"
+          },
+          {
+            "name": "RetrieveSalesInvoiceList", "description": "Search Sales Invoice"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FACULTY", "description": "Faculty", "privilegeGroupItems":
+        [
+          {
+            "name": "GetFacultyUsingReqParams", "description": "Get Faculty Using Req Params"
+          },
+          {
+            "name": "GetFacultyUsingReqModel", "description": "Get Faculty Using Req Model"
+          },
+          {
+            "name": "UpdatePasswordForFaculty", "description": "Update Password"
+          },
+          {
+            "name": "UpdateEmailIdForFaculty", "description": "Update Email"
+          },
+          {
+            "name": "UpdateContactNoForFaculty", "description": "Update Contact"
+          },
+          {
+            "name": "UpdateProfileDetailsForFaculty", "description": "Update Profile"
+          },
+          {
+            "name": "RetrieveFacultyList", "description": "Retrieve Faculty List"
+          },
+          {
+            "name": "UpdateFacultyFirstName", "description": "Update Faculty First Name"
+          },
+          {
+            "name": "CreateFaculty", "description": "New Faculty"
+          },
+          {
+            "name": "UpdateFaculty", "description": "Edit Faculty"
+          },
+          {
+            "name": "RetrieveFaculty", "description": "Faculty"
+          },
+          {
+            "name": "RetrieveFacultyListForLookup", "description": "Retrieve Faculty List For Lookup"
+          },
+          {
+            "name": "UpdateSelfServiceAccessForFaculty", "description": "Update Access"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMPLOYEE_DETAILS_UPDATE", "description": "Employee Details Update", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateEmployeeAllDetails", "description": "Update Employee All Details"
+          },
+          {
+            "name": "UpdateEmployeeBasicDetails", "description": "Update Employee Basic Details"
+          },
+          {
+            "name": "UpdateEmployeeAttachments", "description": "Update Employee Attachments"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "ORGANISATION", "description": "Organisation", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateOrganisation", "description": "New Organisation"
+          },
+          {
+            "name": "UpdateOrganisation", "description": "Edit Organisation"
+          },
+          {
+            "name": "RetrieveOrganisation", "description": "Organisation"
+          },
+          {
+            "name": "RetrieveOrganisationListForLookup", "description": "Retrieve Organisation List For Lookup"
+          },
+          {
+            "name": "RetrieveOrganisationList", "description": "Search Organisation"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "STUDENT_FEE_PAYMENT", "description": "Student Fee Payment", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateStudentFeePayment", "description": "Create Student Fee Payment"
+          },
+          {
+            "name": "UpdateStudentFeePaymentStatus", "description": "Update Student Fee Payment Status"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FLEXFIELD_SEGMENT", "description": "Flexfield Segment", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrieveFlexfieldContextSegmentsMap", "description": "Retrieve Flexfield Context Segments Map"
+          },
+          {
+            "name": "CreateFlexfieldSegment", "description": "New Flexfield Segment"
+          },
+          {
+            "name": "UpdateFlexfieldSegment", "description": "Edit Flexfield Segment"
+          },
+          {
+            "name": "RetrieveFlexfieldSegment", "description": "Flexfield Segment"
+          },
+          {
+            "name": "RetrieveFlexfieldSegmentList", "description": "Flexfield Segment List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SECTION", "description": "Section", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateSection", "description": "New Section"
+          },
+          {
+            "name": "UpdateSection", "description": "Edit Section"
+          },
+          {
+            "name": "RetrieveSection", "description": "Section"
+          },
+          {
+            "name": "RetrieveSectionListForLookup", "description": "Retrieve Section List For Lookup"
+          },
+          {
+            "name": "RetrieveSectionList", "description": "Search Section"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "ASSET_COMPONENT", "description": "Asset Component", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateAssetComponent", "description": "New Asset Component"
+          },
+          {
+            "name": "UpdateAssetComponent", "description": "Edit Asset Component"
+          },
+          {
+            "name": "RetrieveAssetComponent", "description": "Asset Component"
+          },
+          {
+            "name": "RetrieveAssetComponentList", "description": "Asset Component List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "COST_CENTER_LINE_ITEM", "description": "Cost Center Line Item", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateCostCenterLineItem", "description": "Create Cost Center Line Item"
+          },
+          {
+            "name": "RetrieveCostCenterLineItemList", "description": "Retrieve Cost Center Line Item List"
+          },
+          {
+            "name": "UpdateCostCenterLineItem", "description": "Update Cost Center Line Item"
+          },
+          {
+            "name": "RetrieveCostCenterLineItem", "description": "Retrieve Cost Center Line Item"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "USER_ROLE", "description": "User Role", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateUserRole", "description": "New User Role"
+          },
+          {
+            "name": "RetrieveUserRole", "description": "User Role"
+          },
+          {
+            "name": "RetrieveUserRoleList", "description": "Search User Role"
+          },
+          {
+            "name": "DeleteUserRole", "description": "Delete User Role"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "API_PARAMETERS", "description": "Api Parameters", "privilegeGroupItems":
+        [
+          {
+            "name": "GetUpdatedApiParameters", "description": "Get Updated Api Parameters"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "INVOICE_LINE_ITEM", "description": "Invoice Line Item", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateInvoiceLineItem", "description": "New Invoice Line Item"
+          },
+          {
+            "name": "UpdateInvoiceLineItem", "description": "Edit Invoice Line Item"
+          },
+          {
+            "name": "RetrieveInvoiceLineItem", "description": "Invoice Line Item"
+          },
+          {
+            "name": "RetrieveInvoiceLineItemList", "description": "Invoice Line Item List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "CUSTOM_FORM_FIELD", "description": "Custom Form Field", "privilegeGroupItems":
+        [
+          {
+            "name": "GetApiCustomFormFieldList", "description": "Api Form Field List"
+          },
+          {
+            "name": "CreateCustomFormField", "description": "Create Custom Form Field"
+          },
+          {
+            "name": "UpdateCustomFormField", "description": "Update Custom Form Field"
+          },
+          {
+            "name": "RetrieveCustomFormField", "description": "Custom Form Field"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FLEXFIELD_CONTEXT_VALUE", "description": "Flexfield Context Value", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateFlexfieldContextValue", "description": "New Flexfield Context Value"
+          },
+          {
+            "name": "UpdateFlexfieldContextValue", "description": "Edit Flexfield Context Value"
+          },
+          {
+            "name": "RetrieveFlexfieldContextValue", "description": "Flexfield Context Value"
+          },
+          {
+            "name": "RetrieveFlexfieldContextValueListForLookup", "description": "Retrieve Flexfield Context Value List For Lookup"
+          },
+          {
+            "name": "RetrieveFlexfieldContextValueList", "description": "Search Flexfield Context Value"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "EMP_LOCATION", "description": "Emp Location", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateEmpLocationName", "description": "Update Emp Location Name"
+          },
+          {
+            "name": "VerifyEmpLocation", "description": "Verify Emp Location"
+          },
+          {
+            "name": "SendClientRequestToTestSerializableParams", "description": "Send Client Request To Test Serializable Params"
+          },
+          {
+            "name": "CreateEmpLocation", "description": "New Employee Location"
+          },
+          {
+            "name": "UpdateEmpLocation", "description": "Edit Employee Location"
+          },
+          {
+            "name": "RetrieveEmpLocation", "description": "Employee Location"
+          },
+          {
+            "name": "RetrieveEmpLocationListForLookup", "description": "Retrieve Emp Location List For Lookup"
+          },
+          {
+            "name": "RetrieveEmpLocationList", "description": "Employee Location Label"
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  },
+  {
+    "name": "TEST_SERVICE2", "description": "Test Service2", "privilegeGroups":
+    [
+      {
+        "name": "MULTIPLICATION_TABLE", "description": "Multiplication Table", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateMultiplicationTable", "description": "Edit MultiplicationTable"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SERVICE2_CALCULATOR", "description": "Service2 Calculator", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {}
+    ]
+  },
+  {
+    "name": "TEST_SCHOOL_BE", "description": "Test School B E", "privilegeGroups":
+    [
+      {
+        "name": "ASSET", "description": "Asset", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateAsset", "description": "New Asset"
+          },
+          {
+            "name": "UpdateAsset", "description": "Edit Asset"
+          },
+          {
+            "name": "RetrieveAsset", "description": "Asset"
+          },
+          {
+            "name": "RetrieveAssetListForLookup", "description": "Retrieve Asset List For Lookup"
+          },
+          {
+            "name": "RetrieveAssetList", "description": "Search Asset"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "CHILD", "description": "Child", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateChild", "description": "New Child"
+          },
+          {
+            "name": "UpdateChild", "description": "Edit Child"
+          },
+          {
+            "name": "RetrieveChild", "description": "Child"
+          },
+          {
+            "name": "RetrieveChildList", "description": "Child List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SALES_ORDER", "description": "Sales Order", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateSalesOrderStatus", "description": "Update Sales Order Status"
+          },
+          {
+            "name": "ApproveSalesOrders", "description": "Approve Sales Orders"
+          },
+          {
+            "name": "RetrieveSalesOrderList", "description": "Search Sales Order"
+          },
+          {
+            "name": "CreateSalesOrder", "description": "New Sales Order"
+          },
+          {
+            "name": "UpdateSalesOrder", "description": "Edit Sales Order"
+          },
+          {
+            "name": "RetrieveSalesOrder", "description": "Sales Order"
+          },
+          {
+            "name": "RetrieveSalesOrderListForLookup", "description": "Retrieve Sales Order List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "APPLICATION_USER", "description": "Application User", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "PRIVILEGE_GROUP_ITEM", "description": "Privilege Group Item", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrievePrivilegeGroupItemList", "description": "Retrieve Privilege Group Item List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "PRIVILEGE_GROUP", "description": "Privilege Group", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdatePrivilegeGroupItems", "description": "Update Privilege Group Items"
+          },
+          {
+            "name": "CreatePrivilegeGroup", "description": "New Privilege Group"
+          },
+          {
+            "name": "UpdatePrivilegeGroup", "description": "Edit Privilege Group"
+          },
+          {
+            "name": "RetrievePrivilegeGroup", "description": "Privilege Group"
+          },
+          {
+            "name": "RetrievePrivilegeGroupListForLookup", "description": "Retrieve Privilege Group List For Lookup"
+          },
+          {
+            "name": "RetrievePrivilegeGroupList", "description": "Search Privilege Group"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "COMPONENT_SPARE", "description": "Component Spare", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateComponentSpare", "description": "New Component Spare"
+          },
+          {
+            "name": "UpdateComponentSpare", "description": "Edit Component Spare"
+          },
+          {
+            "name": "RetrieveComponentSpare", "description": "Component Spare"
+          },
+          {
+            "name": "RetrieveComponentSpareList", "description": "Component Spare List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SELF_SERVICE_USER", "description": "Self Service User", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "SALES_ORDER_ITEM", "description": "Sales Order Item", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateSalesOrderItem", "description": "New Order Item"
+          },
+          {
+            "name": "UpdateSalesOrderItem", "description": "Edit Order Item"
+          },
+          {
+            "name": "RetrieveSalesOrderItem", "description": "Order Item"
+          },
+          {
+            "name": "RetrieveSalesOrderItemList", "description": "Order Item List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "USER_PROFILE", "description": "User Profile", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "PARENT", "description": "Parent", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrieveParentList", "description": "Retrieve Parent List"
+          },
+          {
+            "name": "UpdateParentsMobileNumber", "description": "Update Mobile Number"
+          },
+          {
+            "name": "CreateParent", "description": "New Parent"
+          },
+          {
+            "name": "UpdateParent", "description": "Edit Parent"
+          },
+          {
+            "name": "RetrieveParent", "description": "Parent"
+          },
+          {
+            "name": "RetrieveParentListForLookup", "description": "Retrieve Parent List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "USER_INFO", "description": "User Info", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateNewStaffUser", "description": "Create User"
+          },
+          {
+            "name": "RetrieveUserInfo", "description": "Retrieve User Info"
+          },
+          {
+            "name": "RetrieveUserInfoList", "description": "Staff Users"
+          },
+          {
+            "name": "UpdatePasswordByAdmin", "description": "Update Password"
+          },
+          {
+            "name": "UpdateEmailByAdmin", "description": "Update Email"
+          },
+          {
+            "name": "UpdateContactByAdmin", "description": "Update Contact"
+          },
+          {
+            "name": "UpdateUserInfo", "description": "Edit User Info"
+          },
+          {
+            "name": "RetrieveUserInfoListForLookup", "description": "Retrieve User Info List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "BRANCH", "description": "Branch", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateBranch", "description": "New Branch"
+          },
+          {
+            "name": "UpdateBranch", "description": "Edit Branch"
+          },
+          {
+            "name": "RetrieveBranch", "description": "Branch"
+          },
+          {
+            "name": "RetrieveBranchListForLookup", "description": "Retrieve Branch List For Lookup"
+          },
+          {
+            "name": "RetrieveBranchList", "description": "Search Branch"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "FACULTY", "description": "Faculty", "privilegeGroupItems":
+        [
+          {
+            "name": "GetFacultyUsingReqParams", "description": "Get Faculty Using Req Params"
+          },
+          {
+            "name": "GetFacultyUsingReqModel", "description": "Get Faculty Using Req Model"
+          },
+          {
+            "name": "UpdatePasswordForFaculty", "description": "Update Password"
+          },
+          {
+            "name": "UpdateEmailIdForFaculty", "description": "Update Email"
+          },
+          {
+            "name": "UpdateContactNoForFaculty", "description": "Update Contact"
+          },
+          {
+            "name": "UpdateProfileDetailsForFaculty", "description": "Update Profile"
+          },
+          {
+            "name": "RetrieveFacultyList", "description": "Retrieve Faculty List"
+          },
+          {
+            "name": "UpdateFacultyFirstName", "description": "Update Faculty First Name"
+          },
+          {
+            "name": "CreateFaculty", "description": "New Faculty"
+          },
+          {
+            "name": "UpdateFaculty", "description": "Edit Faculty"
+          },
+          {
+            "name": "RetrieveFaculty", "description": "Faculty"
+          },
+          {
+            "name": "RetrieveFacultyListForLookup", "description": "Retrieve Faculty List For Lookup"
+          },
+          {
+            "name": "UpdateSelfServiceAccessForFaculty", "description": "Update Access"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "ASSET_COMPONENT", "description": "Asset Component", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateAssetComponent", "description": "New Asset Component"
+          },
+          {
+            "name": "UpdateAssetComponent", "description": "Edit Asset Component"
+          },
+          {
+            "name": "RetrieveAssetComponent", "description": "Asset Component"
+          },
+          {
+            "name": "RetrieveAssetComponentList", "description": "Asset Component List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "USER_ROLE", "description": "User Role", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateUserRole", "description": "New User Role"
+          },
+          {
+            "name": "RetrieveUserRole", "description": "User Role"
+          },
+          {
+            "name": "RetrieveUserRoleList", "description": "Search User Role"
+          },
+          {
+            "name": "DeleteUserRole", "description": "Delete User Role"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "ADMISSION", "description": "Admission", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateAdmission", "description": "New Admission"
+          },
+          {
+            "name": "UpdateAdmission", "description": "Edit Admission"
+          },
+          {
+            "name": "RetrieveAdmission", "description": "Admission"
+          },
+          {
+            "name": "RetrieveAdmissionListForLookup", "description": "Retrieve Admission List For Lookup"
+          },
+          {
+            "name": "RetrieveAdmissionList", "description": "Search Admission"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "CLASS_INFO", "description": "Class Info", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateClassInfo", "description": "New Class"
+          },
+          {
+            "name": "RetrieveClassInfoListForLookup", "description": "Retrieve Class Info List For Lookup"
+          },
+          {
+            "name": "RetrieveClassInfoList", "description": "Search Class"
+          },
+          {}
+        ]
+      },
+      
+      {}
+    ]
+  },
+  {
+    "name": "MOCKSERVICE1", "description": "Mockservice1", "privilegeGroups":
+    [
+      {
+        "name": "VEHICLE", "description": "Vehicle", "privilegeGroupItems":
+        [
+          {
+            "name": "ApproveVehicles", "description": "Approve Vehicles"
+          },
+          {
+            "name": "CreateVehicle", "description": "New Vehicle"
+          },
+          {
+            "name": "UpdateVehicle", "description": "Edit Vehicle"
+          },
+          {
+            "name": "RetrieveVehicle", "description": "Vehicle"
+          },
+          {
+            "name": "RetrieveVehicleListForLookup", "description": "Retrieve Vehicle List For Lookup"
+          },
+          {
+            "name": "RetrieveVehicleList", "description": "Search Vehicle"
+          },
+          {
+            "name": "DeleteVehicle", "description": "Delete Vehicle"
+          },
+          {
+            "name": "DeleteVehicleByIds", "description": "Delete Selected Vehicles"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "VOUCHER_ITEM", "description": "Voucher Item", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateVoucherItem", "description": "New VoucherItem"
+          },
+          {
+            "name": "UpdateVoucherItem", "description": "Edit VoucherItem"
+          },
+          {
+            "name": "RetrieveVoucherItem", "description": "VoucherItem"
+          },
+          {
+            "name": "RetrieveVoucherItemList", "description": "VoucherItem List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "APPLICATION_USER", "description": "Application User", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "PRIVILEGE_GROUP_ITEM", "description": "Privilege Group Item", "privilegeGroupItems":
+        [
+          {
+            "name": "RetrievePrivilegeGroupItemList", "description": "Retrieve Privilege Group Item List"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "PRIVILEGE_GROUP", "description": "Privilege Group", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdatePrivilegeGroupItems", "description": "Update Privilege Group Items"
+          },
+          {
+            "name": "CreatePrivilegeGroup", "description": "New Privilege Group"
+          },
+          {
+            "name": "UpdatePrivilegeGroup", "description": "Edit Privilege Group"
+          },
+          {
+            "name": "RetrievePrivilegeGroup", "description": "Privilege Group"
+          },
+          {
+            "name": "RetrievePrivilegeGroupListForLookup", "description": "Retrieve Privilege Group List For Lookup"
+          },
+          {
+            "name": "RetrievePrivilegeGroupList", "description": "Search Privilege Group"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "SELF_SERVICE_USER", "description": "Self Service User", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "USER_PROFILE", "description": "User Profile", "privilegeGroupItems":
+        [
+          {}
+        ]
+      },
+      {
+        "name": "USER_INFO", "description": "User Info", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateNewStaffUser", "description": "Create User"
+          },
+          {
+            "name": "RetrieveUserInfo", "description": "Retrieve User Info"
+          },
+          {
+            "name": "RetrieveUserInfoList", "description": "Staff Users"
+          },
+          {
+            "name": "UpdatePasswordByAdmin", "description": "Update Password"
+          },
+          {
+            "name": "UpdateEmailByAdmin", "description": "Update Email"
+          },
+          {
+            "name": "UpdateContactByAdmin", "description": "Update Contact"
+          },
+          {
+            "name": "UpdateUserInfo", "description": "Edit User Info"
+          },
+          {
+            "name": "RetrieveUserInfoListForLookup", "description": "Retrieve User Info List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "PART_SUPPLIER", "description": "Part Supplier", "privilegeGroupItems":
+        [
+          {
+            "name": "CreatePartSupplier", "description": "New PartSupplier"
+          },
+          {
+            "name": "UpdatePartSupplier", "description": "Edit PartSupplier"
+          },
+          {
+            "name": "RetrievePartSupplier", "description": "PartSupplier"
+          },
+          {
+            "name": "RetrievePartSupplierListForLookup", "description": "Retrieve Part Supplier List For Lookup"
+          },
+          {
+            "name": "RetrievePartSupplierList", "description": "Search PartSupplier"
+          },
+          {
+            "name": "DeletePartSupplier", "description": "Delete PartSupplier"
+          },
+          {
+            "name": "DeletePartSupplierByIds", "description": "Delete Selected PartSuppliers"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "VOUCHER", "description": "Voucher", "privilegeGroupItems":
+        [
+          {
+            "name": "UpdateVoucherStatus", "description": "Update Voucher Status"
+          },
+          {
+            "name": "ApproveVouchers", "description": "Approve Vouchers"
+          },
+          {
+            "name": "RetrieveVoucherList", "description": "Search Voucher"
+          },
+          {
+            "name": "CreateVoucher", "description": "New Voucher"
+          },
+          {
+            "name": "UpdateVoucher", "description": "Edit Voucher"
+          },
+          {
+            "name": "RetrieveVoucher", "description": "Voucher"
+          },
+          {
+            "name": "RetrieveVoucherListForLookup", "description": "Retrieve Voucher List For Lookup"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "USER_ROLE", "description": "User Role", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateUserRole", "description": "New User Role"
+          },
+          {
+            "name": "RetrieveUserRole", "description": "User Role"
+          },
+          {
+            "name": "RetrieveUserRoleList", "description": "Search User Role"
+          },
+          {
+            "name": "DeleteUserRole", "description": "Delete User Role"
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  },
+  {
+    "name": "MOCKSERVICE3", "description": "Mockservice3", "privilegeGroups":
+    [
+      
+      {}
+    ]
+  },
+  {
+    "name": "MOCKSERVICE2", "description": "Mockservice2", "privilegeGroups":
+    [
+      {
+        "name": "HOSTEL", "description": "Hostel", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateHostel", "description": "New Hostel"
+          },
+          {
+            "name": "UpdateHostel", "description": "Edit Hostel"
+          },
+          {
+            "name": "RetrieveHostel", "description": "Hostel"
+          },
+          {
+            "name": "RetrieveHostelListForLookup", "description": "Retrieve Hostel List For Lookup"
+          },
+          {
+            "name": "RetrieveHostelList", "description": "Search Hostel"
+          },
+          {
+            "name": "DeleteHostel", "description": "Delete Hostel"
+          },
+          {}
+        ]
+      },
+      {
+        "name": "RESIDENT", "description": "Resident", "privilegeGroupItems":
+        [
+          {
+            "name": "CreateResident", "description": "New Resident"
+          },
+          {
+            "name": "UpdateResident", "description": "Edit Resident"
+          },
+          {
+            "name": "RetrieveResident", "description": "Resident"
+          },
+          {
+            "name": "RetrieveResidentListForLookup", "description": "Retrieve Resident List For Lookup"
+          },
+          {
+            "name": "RetrieveResidentList", "description": "Search Resident"
+          },
+          {
+            "name": "DeleteResident", "description": "Delete Resident"
+          },
+          {}
+        ]
+      },
+      {}
+    ]
+  },
+  
+  {}
+]

@@ -1,0 +1,117 @@
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let i of [].constructor(childSectionRowsCount); let rowNumberIndex = index">
+            <ng-container *ngFor="let childSectionField of childSectionFields">
+                <ng-container *ngIf="(rowNumberIndex + 1) === +childSectionField.rowNumber">  <!-- +childSectionField.rowNumber converts it to a number, Safe and works even if it's already a number-->
+                    <div [ngClass]="childSectionField.hide ? 'hide' : 'col-lg-' + childSectionField.gridColumnsCount + ' col-md-' + childSectionField.gridColumnsCount + ' col-sm-12 col-xs-12'">
+                        <div class="invoicelist-inner">
+                            <label for="input1" class="form-label">{{ childSectionField.label }}</label>
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='Input'">
+                                <input type="text" class="form-control" placeholder="{{ childSectionField.label }}" [(ngModel)]="childSectionData[childSectionField.key]">
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='Password' ">
+                                <input type="password" class="form-control" placeholder="{{ childSectionField.label }}" [(ngModel)]="childSectionData[childSectionField.key]">
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='Combo' ">
+                                <select [(ngModel)]="childSectionData[childSectionField.key]" class="form-select mb-3" (change)="onChangeForCombo($event, childSectionField)">
+                                    <ng-container *ngFor="let selectOption of childSectionSelectOptionsData[childSectionField.key]">
+                                        <option value="{{ selectOption.id }}">{{ selectOption.value }}</option>
+                                    </ng-container>
+                                </select>
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='Boolean' ">
+                                <select [(ngModel)]="childSectionData[childSectionField.key]" class="form-select mb-3" (change)="onChangeForBoolean($event, childSectionField)">
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='Text'">
+                                <textarea class="form-control" [(ngModel)]="childSectionData[childSectionField.key]"></textarea>
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='RichText'">
+                                <textarea class="form-control" [(ngModel)]="childSectionData[childSectionField.key]"></textarea>
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='Lookup'">
+                                <div>
+                                    <!--
+                                    To call an API when typing in an ng-select component in Angular, use the (search) event.
+                                    This event is emitted whenever the input value of the ng-select changes.
+
+                                    • Bind the (search) event to the subject.
+                                    • Use [loading] to display a loading indicator.
+                                    -->
+                                    <ng-select
+                                            [items]="childSectionSearchResponseListObject[childSectionField.key] | async"
+                                            [(ngModel)]="childSectionData[childSectionField.key]"
+                                            [loading]="loading"
+                                            (search)="input$.next({'event' : $event, 'fieldInfo' : childSectionField})"
+                                            bindLabel="value"
+                                            bindValue="id"
+                                            placeholder="{{ childSectionField.placeholder }}"
+                                            (change)="onChangeForLookup($event, childSectionField)"
+                                    >
+                                    </ng-select>
+
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='Calender'">
+                                <input class="form-control" type="date" [(ngModel)]="childSectionData[childSectionField.key]">
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='DateTime'">
+                                <input class="form-control" type="datetime-local"
+                                       [value]="convertSqlToIsoLocal(childSectionData[childSectionField.key])"
+                                       (change)="onDateTimeInput($event, childSectionField.key)">
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='DateTimeWithSeconds'">
+                                <input class="form-control" type="datetime-local" [step]="1"
+                                       [value]="convertSqlToIsoLocal(childSectionData[childSectionField.key])"
+                                       (change)="onDateTimeInput($event, childSectionField.key, true)">
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='Time'">
+                                <input class="form-control" type="time" [(ngModel)]="childSectionData[childSectionField.key]">
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='TimeWithSeconds'">
+                                <input class="form-control" type="time" [step]="1" [(ngModel)]="childSectionData[childSectionField.key]">
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType=='SearchPopup'">
+                                <div>
+                                    <input class="form-control" readonly="true" id="{{ childSectionField.key}}">
+                                    <input class="form-control" readonly="true" style="display:none;">
+                                    <button class="btn btn-outline-secondary fa fa-search" type="button" (click)="openSearchPopupInParent({'event' : $event, 'fieldKey' : childSectionField.key, 'sectionName' : childSectionField.sectionName})"></button>
+                                </div>
+                            </ng-container>
+
+                            <ng-container *ngIf="childSectionField?.uiFieldType == 'File'">
+                                <div>
+                                    <input
+                                            class="form-control"
+                                            type="file"
+                                            (change)="onFileSelected($event, childSectionField.key)"
+                                            #fileInput
+                                    />
+                                </div>
+                                <div *ngFor="let attachment of childSectionData[childSectionField.key]">
+                                    <div class="input-group pb-1">
+                                        <input class="form-control" type="text" disabled value="{{ attachment.fileName }}" placeholder="-">
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

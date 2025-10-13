@@ -1,0 +1,17 @@
+propertyName,propertyValue
+,
+EnableMultitenancy,No
+EnableBranches,No
+DefaultMenuName,
+HomePageAfterLoginUrl,/home.html
+HomePageBeforeLoginUrl,/
+UILayoutName,
+EnableCaptcha,No
+ReportElementLevelFormat,src\main\resources\templates\reports\DigixLayoutElementLevelHTMLFormat.txt
+ReportLevelFormat,layouts/digix/PageLayout.tpl
+ReportPopupLookupFormat,layouts/digix/EntityLKSearch.tpl
+TemplatesFileName,AngularWithoutFormlyTemplates.csv
+EnableMicroservices,Yes
+EnableCustomFormFields,No
+useNewSchoolLayout,No
+DefaultPageStructure,Admin

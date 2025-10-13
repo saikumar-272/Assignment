@@ -1,0 +1,126 @@
+<ng-container [ngSwitch]="pageField.type">
+    <!-- BOOLEAN -->
+    <ng-container *ngSwitchCase="'boolean'">
+    <span>
+        {{
+        dataObject[pageField.key] === null || dataObject[pageField.key] === undefined || dataObject[pageField.key] === ''
+            ? ''
+            : (dataObject[pageField.key] ? 'Yes' : 'No')
+        }}
+    </span>
+    </ng-container>
+
+    <!-- DATE -->
+    <ng-container *ngSwitchCase="'date'">
+        <span>
+        {{ convertDBDateToUI(dataObject[pageField.key]) }}
+        </span>
+    </ng-container>
+
+    <!-- DATETIME -->
+    <ng-container *ngSwitchCase="'dateTime'">
+        <span>
+        {{ convertDBDateTimeToUI(dataObject[pageField.key]) }}
+        </span>
+    </ng-container>
+
+    <!-- DATETIMEWITHSECONDS -->
+    <ng-container *ngSwitchCase="'dateTimeWithSeconds'">
+        <span>
+        {{ convertDBDateTimeWithSecondsToUI(dataObject[pageField.key]) }}
+        </span>
+    </ng-container>
+
+    <!-- LOOKUP -->
+    <ng-container *ngSwitchCase="'lookup'">
+        <span *ngIf="isValueNotBlank(dataObject[pageField.key]); else emptyLookup">
+            <ng-container *ngIf="dataObject[pageField.key] as displayText">
+                <!-- Show as plain text if retrievePageUrl is blank -->
+                <ng-container *ngIf="isValueNotBlank(pageField.retrievePageUrl); else plainText">
+                    <!-- Use routerLink if not other service -->
+                    <ng-container *ngIf="!pageField.isOtherService; else otherServiceLink">
+                        <ng-container *ngIf="getLookupViewRouterLink(pageField, dataObject) as routerLinkData">
+                            <a [routerLink]="routerLinkData.path"
+                               [queryParams]="routerLinkData.queryParams"
+                               target="_blank">
+                            {{ displayText }}
+                            </a>
+                        </ng-container>
+                    </ng-container>
+                    <!-- Use href if other service -->
+                    <ng-template #otherServiceLink>
+                    <a [href]="getLookupViewLink(pageField, dataObject)"
+                       target="_blank">
+                        {{ displayText }}
+                    </a>
+                    </ng-template>
+                </ng-container>
+                <!-- Fallback plain text -->
+                <ng-template #plainText>
+                    {{ displayText }}
+                </ng-template>
+            </ng-container>
+        </span>
+        <ng-template #emptyLookup>
+            <span></span>
+        </ng-template>
+    </ng-container>
+
+    <!-- FILE -->
+    <ng-container *ngSwitchCase="'file'">
+    <ng-container *ngIf="dataObject[pageField.key]?.length > 0; else noAttachment">
+        <ng-container *ngIf="pageField.showImage 
+                            && dataObject[pageField.key][0].fileType === 'Image'; 
+                            else fileLinkText">                                                
+        <!-- Show image preview -->
+        <a [href]="dataObject[pageField.key][0].fileUrl" target="_blank">
+            <img [src]="dataObject[pageField.key][0].imageRenderingUrl"
+                [alt]="dataObject[pageField.key][0].fileName"
+                width="60" height="60">
+        </a>
+
+        </ng-container>
+
+        <!-- Show file name if not image or not image rendering mode -->
+        <ng-template #fileLinkText>
+        <a [href]="dataObject[pageField.key][0].fileUrl" target="_blank">
+            {{ dataObject[pageField.key][0].fileName }}
+        </a>
+        </ng-template>
+    </ng-container>
+
+    <!-- No attachment -->
+    <ng-template #noAttachment>
+        <span>No Attachment</span>
+    </ng-template>
+    </ng-container>
+
+    <!-- COMBO -->
+    <ng-container *ngSwitchCase="'combo'">
+        <span>
+            {{ getSelectedComboDisplayText(dataObject[pageField.key], pageField.optionsListName) }}
+        </span>
+    </ng-container>
+
+    <!-- BIGDECIMAL handled via type if present -->
+    <ng-container *ngSwitchCase="'bigdecimal'">
+        <span *ngIf="!pageField.disableCommasInNumberDisplay">
+        {{ getNumberWithCommaSeparated(dataObject[pageField.key]) }}
+        </span>
+        <span *ngIf="pageField.disableCommasInNumberDisplay">
+        {{ dataObject[pageField.key] }}
+        </span>
+    </ng-container>
+
+    <!-- TEXTAREA -->
+    <ng-container *ngSwitchCase="'textArea'">
+        <pre>{{ dataObject[pageField.key] }}</pre>
+    </ng-container>
+
+    <!-- DEFAULT (OTHER TYPES) -->
+    <ng-container *ngSwitchDefault>
+        <span>
+        {{ dataObject[pageField.key] }}
+        </span>
+    </ng-container>
+</ng-container>

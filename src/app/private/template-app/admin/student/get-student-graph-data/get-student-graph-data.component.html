@@ -1,0 +1,35 @@
+<div class="container marketing">
+    <div style="height:15px;">&nbsp;</div>
+    <!-- search section start -->
+    <div style="float: left;">
+        <h4>Search Student Graph Data</h4>
+    </div>
+    <div style="clear: both;">
+    </div>
+    <hr class="featurette-divider" style="margin-top:0rem;">
+
+    <div class="row">
+        <app-child-section-form [childSectionRowFieldsCount]="3"  [pageComponentReference]="pageComponentReference" [childSectionFields]="getStudentGraphDataSectionFields" [childSectionData]="getStudentGraphDataSectionData" [childSectionSelectOptionsData]="getStudentGraphDataSelectOptionsData" ></app-child-section-form>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+        <div class="form-group row">
+            <div class="col-sm-3">&nbsp;</div>
+            <div class="col-sm-9">
+                <button *ngIf="doesUserHaveAccess('GetStudentGraphData')" type="submit" class="btn btn-primary" (click)="search()">Search</button>
+                &nbsp;
+                <button class="btn btn-secondary"  (click)="resetSearchCriteria()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <!-- search section end -->
+    <!-- Graph start -->
+    <div style="clear: both;">
+    </div>
+    <hr class="featurette-divider" style="margin-top:0rem;">
+    <div class="container">
+        <barchart></barchart>
+    </div>
+    <!-- Graph end -->
+    <div style="clear:both;">
+    </div>
+</div>

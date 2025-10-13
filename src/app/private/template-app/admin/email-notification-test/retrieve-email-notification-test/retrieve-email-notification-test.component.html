@@ -1,0 +1,113 @@
+<section>
+    <div class="container1 dashboard-inner-pages">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <!--User Actions - Start-->
+                        <div ngbDropdown class="d-inline-block" style="float:right;"  *ngIf="showUserActions()">
+                            <button type="button" class="btn btn-outline-primary" ngbDropdownToggle>
+                                Actions
+                            </button>
+                            <div ngbDropdownMenu >
+                                <button ngbDropdownItem *ngIf="isCorrelateEmailNotificationTestEnabled && doesUserHaveAccess('CorrelateEmailNotificationTest')"  (click)="openCorrelateEmailNotificationTestPopup(correlateEmailNotificationTestPopup)">
+                                    Correlate Email Notification Test
+                                </button>
+                                <ng-container *ngFor="let userAction of userActions">
+                                    <button ngbDropdownItem   (click)="executeUserAction(userAction.actionName)">
+                                        {{userAction.actionLabel}}
+                                    </button>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <!--User Actions - End-->
+
+                    </div>
+                </div>
+            </div>
+
+            <!--BEGIN SECTIONS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="sectionsShowHideInfo.enableRetrieveEmailNotificationTestSection">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Email Notification Test</h2>
+                        <ng-container *ngFor="let pageField of retrieveEmailNotificationTestFieldList">
+                            <div class="row {{ pageField.displayClassName }}">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <label class="form-label"><b>{{ pageField.label }}</b></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="invoicelist-inner">
+                                        <app-dynamic-field-display [pageField]="pageField" [dataObject]="retrievedDataObject"></app-dynamic-field-display>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <!--END SECTIONS-->
+            <!--BEGIN LINE_ITEMS-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <!--END LINE_ITEMS-->
+
+
+
+        </div>
+        <div style="display: flex;justify-content: space-between;gap: 8px;">
+            <button style="margin-right: 0px;padding-bottom: 0px;" *ngIf="doesUserHaveAccess('UpdateEmailNotificationTest')" [routerLink]="['/in/update-email-notification-test']" [queryParams]="{id: selectedEmailNotificationTestUUID}"  class="btn btn-success pull-right m-l-20"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button style="margin-left: 0px;" *ngIf="doesUserHaveAccess('RetrieveEmailNotificationTestList')" [routerLink]="['/in/email-notification-test-list']" class="btn btn-secondary m-l-20 back-btn">Back To List Page</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- ************** Popup - start ********** -->
+<!-- Button trigger modal -->
+
+<ng-template #correlateEmailNotificationTestPopup let-modal>
+<div class="dashboard-inner-pages dashboard-inner-pages-modal">
+    <div class="modal-header">
+        <h2 id="correlate-email-notification-test-modal-title">
+            Correlate Email Notification Test
+        </h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body" id="correlate-email-notification-test-modal-body">
+        <section>
+            <div class="container1">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <app-child-section-form [childSectionRowFieldsCount]="1"  [pageComponentReference]="pageComponentReference" [childSectionFields]="correlateEmailNotificationTestSectionFields" [childSectionData]="correlateEmailNotificationTestSectionData" [childSectionSelectOptionsData]="correlateEmailNotificationTestSelectOptionsData"  [childSectionSearchResponseListObject]="correlateEmailNotificationTestSelectedLookupsDataListObj"></app-child-section-form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-items-center mb-2 gap-3">
+                    <div class="m-auto mt-3"  style="float:right;">
+                        <a href="javascript:;"
+                           class="btn radius-30 mt-2 mt-lg-0" (click)="modal.dismiss()">Cancel</a>
+                        <a style="float:right;" href="javascript:;"
+                           class="btn btn-success pull-right m-l-20" (click)="correlateEmailNotificationTest(modal)">Save</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</ng-template>
+<!-- ************** popup  - end ************ -->
+<!--BEGIN SEARCH POPUPS-->
+
+<!--END SEARCH POPUPS-->

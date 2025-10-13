@@ -1,0 +1,32 @@
+<!--wrapper-->
+<div class="wrapper" id="page-wrapper-div">
+  <app-second-main-menu
+    [userType]="userType"
+    (mouseEnter)="mouseEnter($event)"
+    (mouseLeave)="mouseLeave($event)"
+    (showSideMenu)="showSideMenu($event)"
+  ></app-second-main-menu>
+  <app-main-menu
+    [userDisplayName]="userFullName"
+    (hideSideMenu)="hideSideMenu($event)"
+  ></app-main-menu>
+  <!--start page wrapper -->
+  <div class="page-wrapper">
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!--end page wrapper -->
+  <!--start overlay-->
+  <div class="overlay mobile-toggle-icon"></div>
+  <!--end overlay-->
+  <!--Start Back To Top Button-->
+  <a href="javaScript:;" class="back-to-top"
+    ><i class="bx bxs-up-arrow-alt"></i
+  ></a>
+  <!--End Back To Top Button-->
+  <footer class="page-footer">
+    <p class="mb-0">Copyright © 2025. All right reserved.</p>
+  </footer>
+</div>
+<!--end wrapper-->

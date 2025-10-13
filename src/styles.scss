@@ -1,0 +1,234 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+body{
+  font-family: "Poppins", sans-serif !important;
+}
+
+.input-error{
+    color:red;
+}
+
+.Validation{
+    color:red;
+}
+
+.pagination{
+    /* margin: auto;
+    display: block; */
+    float: inline-end;
+    padding-top: 16px;
+}
+
+.hide {
+  display:none !important;
+}
+.footer-text{
+  position: absolute;
+  bottom: 10px;
+  z-index: 99999;
+}
+.footer-text {
+  color:#fff;
+}
+.login .form-section .form-check-label:hover{
+  padding-left: 0px !important;
+
+}
+.login .form-section .form-check-label{
+  padding-left:0px !important;
+}
+.login .form-section .form-group {
+  margin-bottom: 18px;
+}
+.checkbox.form-group.form-box:focus-visible {
+  outline:none;
+}
+.login .form-section input[type=checkbox], input[type=radio] {
+  margin-right: 8px;
+}
+.login .form-section .form-check-input {
+  position: unset;
+  margin-left: 0px;
+}
+.form-check-input:focus {
+  border-color:unset;
+  outline:none;
+  box-shadow:none;
+}
+.login .form-section input[type=checkbox]:checked + label:before{
+  width: 1em;
+  height: 1em;
+}
+.profile h3{
+  font-size: 32px;
+  font-family: "Poppins", sans-serif !important;
+  color: #000;
+  letter-spacing: normal;
+}
+.welcome-page-text h4{
+  font-family: "Poppins", sans-serif !important;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000000;
+  letter-spacing: normal;
+
+}
+.welcome-page-text p{
+  font-family: "Poppins", sans-serif !important;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: normal;
+}
+.contact-mail{
+  font-weight:600;
+}
+.profile .card{
+  padding: 50px;
+}
+.dashboard-inner-pages h2{
+  font-size: 22px;
+  font-weight: 800;
+}
+.dashboard-inner-pages .invoicelist-inner label {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+.dashboard-inner-pages .ng-select.ng-select-single .ng-select-container{
+  border-radius: 50px !important;
+  height: 40px;
+  padding: 0 16px;
+}
+.dashboard-inner-pages .ng-select .ng-select-container .ng-value-container .ng-input>input {
+  padding: 0 16px;
+}
+.dashboard-inner-pages .ng-select .ng-select-container .ng-value-container .ng-placeholder {
+  color: #000000c7;
+  font-size: 16px;
+}
+.dashboard-inner-pages .btn-success{
+  padding: 8px 28px;
+  border-radius: 50px;
+  margin: auto;
+  display: block;
+  background-color:#0c3b85;
+    border-color:#0c3b85;
+    font-size: 14px;
+    font-weight: 600;
+}
+.dashboard-inner-pages::placeholder{
+  color: #000000c7;
+}
+
+.dashboard-inner-pages .invoicelist-inner .form-control:focus{
+  border-radius: 50px;
+}
+
+.dashboard-inner-pages select:focus, .form-control:focus, .form-select:focus, textarea:focus, input:focus {
+  font-size: 15px;
+  outline: none;
+  color: #000000;
+  border-radius:50px;
+  padding: 8px 16px;
+}
+.dashboard-inner-pages button.btn.btn-success.m-l-20.edit i{
+  font-size: 14px;
+}
+.dashboard-inner-pages .search{
+  padding: 8px 28px;
+  border-radius: 50px;
+  margin: auto;
+  background-color: #157347;
+  border-color: #157347;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dashboard-inner-pages .search i{
+  font-size: 14px;
+}
+.dashboard-inner-pages .reset{
+  padding: 8px 28px;
+  border-radius: 50px;
+  margin: auto;
+  // display: block;
+  background-color:#f50002;
+    border-color:#f50002;
+    font-size: 14px;
+    font-weight: 600;
+}
+.dashboard-inner-pages .reset i{
+  font-size: 14px;
+}
+.dashboard-inner-pages .btnView{
+  font-size: 12px;
+}
+.dashboard-inner-pages .btnView i{
+  font-size: 14px;
+}
+.dashboard-inner-pages button.dropdown-toggle.btn.btn-outline-primary {
+  padding: 8px 28px;
+  border-radius: 50px;
+}
+.dashboard-inner-pages .table-light th{
+  padding: 9px 20px;
+  text-align: left !important;
+}
+.addnew{
+  padding: 8px 28px;
+  border-radius: 50px;
+}
+.dashboard-inner-pages .addnew i{
+  font-size: 14px;
+}
+.dashboard-inner-pages .card-body{
+  padding: 30px;
+}
+.profile i{
+  font-size: 20px;
+  color: #000000b3 !important;
+}
+
+.back-btn{
+  padding: 8px 28px;
+  border-radius: 50px;
+  margin: auto;
+  display: block;
+  background-color:#0475a7;
+  border-color:#0475a7;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dashboard-inner-pages-modal .modal-header{
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+}
+.dashboard-inner-pages-modal .modal-body{
+  padding-top:6px;
+  padding-bottom: 0;
+}
+.dashboard-inner-pages-modal{
+  padding:22px;
+  border: 4px solid #e3e3e38f;
+  border-radius: 12px;
+}
+
+.dashboard-inner-pages-modal .modal-title{
+font-size: 18px !important;
+font-weight: 600;
+}
+.dashboard-inner-pages-modal .btn-close{
+  font-size: 12px !important;
+}
+.dashboard-inner-pages-modal .btn-close:hover{
+  box-shadow:none !important;
+}
+.dashboard-inner-pages .invoicelist-inner .form-control:focus {
+    border-radius: 50px;
+    padding: 8px 16px !important;
+    font-size:15px !important;
+}

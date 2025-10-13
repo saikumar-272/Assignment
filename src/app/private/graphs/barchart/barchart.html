@@ -1,0 +1,17 @@
+<h4 style="text-align: center">{{graphHeaderLabel}} <br /><br /></h4>
+<br />
+<div>
+  <div style="display: block">
+    <canvas
+      baseChart
+      [datasets]="barChartData"
+      [labels]="mbarChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"
+    ></canvas>
+  </div>
+</div>
+<!-- // [chartType]="barChartType"
+      [colors]="barChartColors" **********************  these two para meters  to be added to canvas component-->

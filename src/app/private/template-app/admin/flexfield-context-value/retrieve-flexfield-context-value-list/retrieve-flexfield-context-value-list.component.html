@@ -1,0 +1,210 @@
+<section>
+  <div class="container1 dashboard-inner-pages">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="card-body" style="padding: 15px; margin-left: 20px">
+            <h2>Search Flexfield Context Value</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div
+            class="card-body"
+            id="retrieve-flexfield-context-value-list-form"
+          >
+            <app-child-section-form
+              [childSectionRowFieldsCount]="2"
+              [pageComponentReference]="pageComponentReference"
+              [childSectionFields]="
+                retrieveFlexfieldContextValueListSectionFields
+              "
+              [childSectionData]="retrieveFlexfieldContextValueListSectionData"
+              [childSectionSelectOptionsData]="
+                retrieveFlexfieldContextValueListSelectOptionsData
+              "
+            ></app-child-section-form>
+            <div class="d-lg-flex align-items-center mt-3 mb-4 gap-3">
+              <div class="ms-auto">
+                <a
+                  href="javascript:;"
+                  class="btn btn-primary radius-30 mt-2 mt-lg-0 search"
+                  (click)="search()"
+                >
+                  <i class="bi bi-search"></i> Search</a
+                >
+                &nbsp;
+                <a
+                  href="javascript:;"
+                  class="btn btn-primary radius-30 mt-2 mt-lg-0 reset"
+                  (click)="resetSearchCriteria()"
+                >
+                  <i class="bi bi-arrow-clockwise"></i> Reset</a
+                >
+                &nbsp;
+                <a
+                  [routerLink]="['/in/create-flexfield-context-value']"
+                  *ngIf="doesUserHaveAccess('CreateFlexfieldContextValue')"
+                  class="btn btn-primary btn-sm addnew"
+                  ><i class="fa fa-plus m-r-10" aria-hidden="true"></i>Add
+                  New</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="card-body">
+            <h2>Search Results</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive mt-3">
+              <table class="table mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <ng-container
+                      *ngFor="
+                        let retrieveFlexfieldContextValueListTableColumn of retrieveFlexfieldContextValueListTableColumns
+                      "
+                    >
+                      <th
+                        class="{{
+                          retrieveFlexfieldContextValueListTableColumn.displayClassName
+                        }}"
+                      >
+                        {{ retrieveFlexfieldContextValueListTableColumn.label }}
+                      </th>
+                    </ng-container>
+                    <ng-container *ngFor="let userAction of userActions">
+                      <th>{{ userAction.actionLabel }}</th>
+                    </ng-container>
+                    <th
+                      *ngIf="
+                        doesUserHaveAccess('RetrieveFlexfieldContextValue')
+                      "
+                    >
+                      View
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let searchResultObject of searchResultObjectsList"
+                  >
+                    <ng-container
+                      *ngFor="
+                        let retrieveFlexfieldContextValueListTableColumn of retrieveFlexfieldContextValueListTableColumns
+                      "
+                    >
+                      <td
+                        class="{{
+                          retrieveFlexfieldContextValueListTableColumn.displayClassName
+                        }}"
+                      >
+                        <app-dynamic-field-display
+                          [pageField]="
+                            retrieveFlexfieldContextValueListTableColumn
+                          "
+                          [dataObject]="searchResultObject"
+                        ></app-dynamic-field-display>
+                      </td>
+                    </ng-container>
+                    <ng-container *ngFor="let userAction of userActions">
+                      <td>
+                        <a
+                          (click)="
+                            executeUserAction(
+                              userAction.actionName,
+                              searchResultObject
+                            )
+                          "
+                          class="btn btn-primary btn-sm btnView"
+                          >{{ userAction.actionLabel }}</a
+                        >
+                      </td>
+                    </ng-container>
+                    <td
+                      *ngIf="
+                        doesUserHaveAccess('RetrieveFlexfieldContextValue')
+                      "
+                    >
+                      <a
+                        [routerLink]="['/in/retrieve-flexfield-context-value']"
+                        [queryParams]="{
+                          id: searchResultObject.flexfieldContextValueUUID
+                        }"
+                        class="btn btn-primary btn-sm btnView"
+                        ><i class="fa fa-eye m-r-10" aria-hidden="true"></i
+                        >VIEW</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="clear: both; padding-top: 20px">
+              <!-- Start  Bulk update apis -->
+              <!-- End  Bulk update apis -->
+              <!-- Pagination Start -->
+              <div style="float: right">
+                <div
+                  *ngIf="noOfPages > 0"
+                  class="flex-content-valign-center"
+                  style="float: left; padding-top: 42px; padding-right: 15px"
+                >
+                  <span
+                    >Showing Page {{ currentPage }} of {{ noOfPages }}. Total
+                    {{ collectionSize }} matching records.</span
+                  >
+                </div>
+                <div class="pagination round-pagination" style="float: right">
+                  <nav aria-label="Page navigation example">
+                    <ngb-pagination
+                      class="col"
+                      [(page)]="currentPage"
+                      [pageSize]="pageSize"
+                      (pageChange)="handleFlexfieldContextValueListPageChange()"
+                      [collectionSize]="collectionSize"
+                      [maxSize]="5"
+                      [boundaryLinks]="true"
+                    >
+                      <ng-template ngbPaginationPrevious>Prev</ng-template>
+                      <ng-template ngbPaginationNext>Next</ng-template>
+                      <ng-template ngbPaginationFirst>First</ng-template>
+                      <ng-template ngbPaginationLast>Last</ng-template>
+                      <ng-template ngbPaginationNumber let-page
+                        >{{ page }}
+                      </ng-template>
+                    </ngb-pagination>
+                  </nav>
+                </div>
+              </div>
+              <!-- Pagination End -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--BEGIN SEARCH POPUPS-->
+
+<!--END SEARCH POPUPS-->
+
+<!-- Start :  Bulk update apis  popups-->
+
+<!-- End : Bulk update apis  popups-->

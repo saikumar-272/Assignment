@@ -1,0 +1,136 @@
+{
+    
+    "FirstRunType":[
+        {"id":"Immediate", "value": "Immediate" }, 
+        {"id":"SpecifyDate", "value": "SpecifyDate" }, 
+        {"id":"Manual", "value": "Manual" }, 
+        {"id":"UseRelativeDate", "value": "UseRelativeDate" }
+    ],
+    "BuyerType":[
+        {"id":"Organisation", "value": "Organisation" }, 
+        {"id":"Individual", "value": "Individual" }
+    ],
+    "FirstRunDateCalculationMethod":[
+        {"id":"FORWARD", "value": "FORWARD" }, 
+        {"id":"BACKWARD", "value": "BACKWARD" }
+    ],
+    "Gender":[
+        {"id":"Male", "value": "Male" }, 
+        {"id":"Female", "value": "Female" }, 
+        {"id":"Other", "value": "Other" }
+    ],
+    "EmploymentType":[
+        {"id":"Permanent", "value": "Permanent" }, 
+        {"id":"Temp", "value": "Temp" }
+    ],
+    "SellerDataSourceType":[
+        {"id":"Buyer", "value": "Buyer" }, 
+        {"id":"Agent", "value": "Agent" }
+    ],
+    "QueueType":[
+        {"id":"PendingUpdates", "value": "PendingUpdates" }, 
+        {"id":"Notifications", "value": "Notifications" }
+    ],
+    "LayoutParameterValueType":[
+        {"id":"USER_ID", "value": "USER_ID" }, 
+        {"id":"ENTITY_ID", "value": "ENTITY_ID" }, 
+        {"id":"NOTIFICATION_START_DATE", "value": "NOTIFICATION_START_DATE" }, 
+        {"id":"NOTIFICATION_END_DATE", "value": "NOTIFICATION_END_DATE" }
+    ],
+    "TaskTimeCalculationType":[
+        {"id":"Immediate", "value": "Immediate" }, 
+        {"id":"UseRelativeDate", "value": "UseRelativeDate" }
+    ],
+    "BooleanString":[
+        {"id":"TRUE", "value": "TRUE" }, 
+        {"id":"FALSE", "value": "FALSE" }
+    ],
+    "NotificationMedium":[
+        {"id":"USER_ID", "value": "USER_ID" }, 
+        {"id":"NOTIFICATION_START_DATE", "value": "NOTIFICATION_START_DATE" }, 
+        {"id":"NOTIFICATION_END_DATE", "value": "NOTIFICATION_END_DATE" }
+    ],
+    "DurationUnitType":[
+        {"id":"YEAR", "value": "YEAR" }, 
+        {"id":"MONTH", "value": "MONTH" }, 
+        {"id":"WEEK", "value": "WEEK" }, 
+        {"id":"DAY", "value": "DAY" }, 
+        {"id":"HOUR", "value": "HOUR" }, 
+        {"id":"MINUTE", "value": "MINUTE" }, 
+        {"id":"SECOND", "value": "SECOND" }
+    ],
+    "TaskType":[
+        {"id":"Notification", "value": "Notification" }, 
+        {"id":"APICall", "value": "APICall" }
+    ],
+    "PaymentStatus":[
+        {"id":"Pending", "value": "Pending" }, 
+        {"id":"Completed", "value": "Completed" }
+    ],
+    "ResidentState":[
+        {"id":"TS", "value": "TS" }, 
+        {"id":"AP", "value": "AP" }
+    ],
+    "YesNoOption":[
+        {"id":"Yes", "value": "Yes" }, 
+        {"id":"No", "value": "No" }
+    ],
+    "ApplicationUserType":[
+        {"id":"Staff", "value": "Staff" }
+    ],
+    "Grade":[
+        {"id":"A", "value": "A" }, 
+        {"id":"B", "value": "B" }, 
+        {"id":"C", "value": "C" }
+    ],
+    "City":[
+        {"id":"HYD", "value": "Hyd" }, 
+        {"id":"MUMBAI", "value": "MUM" }
+    ],
+    "EmploymentTypeContext":[
+        {"id":"Permanent", "value": "Permanent" }, 
+        {"id":"Contract", "value": "Contract" }
+    ],
+    "CustomerType":[
+        {"id":"Individual", "value": "Individual" }, 
+        {"id":"Organisation", "value": "Organisation" }
+    ],
+    "UpdateType":[
+        {"id":"EnableAccess", "value": "EnableAccess" }, 
+        {"id":"DisableAccess", "value": "DisableAccess" }
+    ],
+    "CustomFormFieldDataType":[
+        {"id":"String", "value": "String" }, 
+        {"id":"Integer", "value": "Integer" }
+    ],
+    "EmployeeStatus":[
+        {"id":"GradeA", "value": "GradeA" }, 
+        {"id":"GradeB", "value": "GradeB" }
+    ],
+    "LocationContext":[
+        {"id":"US", "value": "US" }, 
+        {"id":"India", "value": "India" }
+    ],
+    "UserType":[
+        {"id":"Staff", "value": "Staff" }, 
+        {"id":"Admin", "value": "Admin" }, 
+        {"id":"SelfService", "value": "SelfService" }
+    ],
+    "LocationType":[
+        {"id":"Rural", "value": "Rural" }, 
+        {"id":"Urban", "value": "Urban" }
+    ],
+    "PrivilegeType":[
+        {"id":"Create", "value": "Create" }, 
+        {"id":"Search", "value": "Search" }, 
+        {"id":"View", "value": "View" }, 
+        {"id":"Update", "value": "Update" }, 
+        {"id":"Delete", "value": "Delete" }, 
+        {"id":"Verify", "value": "Verify" }
+    ],
+    "DegreeTypeContext":[
+        {"id":"ThreeYear", "value": "ThreeYear" }, 
+        {"id":"FourYear", "value": "FourYear" }
+    ],
+    "": []
+}

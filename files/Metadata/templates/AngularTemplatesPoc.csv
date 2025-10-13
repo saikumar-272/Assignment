@@ -1,0 +1,3 @@
+templateFileName,outputFolderPath,outputFileName,processForAllEntitites,processForAllLoginEnabledEntitites,templateType,layoutFormat,copyFiles,overrideExistingFile,processForFileAttachmentEntitites,applicableCustomAPITypes,filterCriteria
+,,,,,,,,,,,
+/angular-poc/apis,/,,Yes,,CustomApi,,,,,,generateUiPage:Yes;
