@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import {
     AdminChildSectionFormComponent
@@ -27,7 +28,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
   standalone: true,
   templateUrl: "./retrieve-asset-list.component.html",
   styleUrls: ["./retrieve-asset-list.component.scss"],
-  imports: [CommonModule, RouterModule, NgbModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbPaginationModule],
+  imports: [CommonModule, RouterModule, NgbModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbPaginationModule, FormsModule, ReactiveFormsModule],
 })
 export class RetrieveAssetListComponent
   extends FormFieldsTemplateAppImplComponent

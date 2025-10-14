@@ -1,4 +1,4 @@
-import { bootstrapApplication, BrowserModule } from "@angular/platform-browser";
+import { bootstrapApplication } from "@angular/platform-browser";
 import { provideRouter } from "@angular/router";
 import {
   HTTP_INTERCEPTORS,
@@ -68,8 +68,7 @@ bootstrapApplication(AppComponent, {
       FormsModule,
       ReactiveFormsModule,
       FormlyModule.forRoot({ extras: { lazyRender: true } }),
-      FormlyBootstrapModule,
-      BrowserModule
+      FormlyBootstrapModule
     ),
 
     // ✅ Initialize user session on startup

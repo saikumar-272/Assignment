@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -24,7 +25,7 @@ import {ToastNotificationService} from 'src/app/toast-notification-service';
 selector: 'app-create-custom-form-field',
   templateUrl: './create-custom-form-field.component.html',
   styleUrls: ['./create-custom-form-field.component.scss']
-, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule],
+, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class CreateCustomFormFieldComponent  extends FormFieldsTemplateAppImplComponent implements OnInit

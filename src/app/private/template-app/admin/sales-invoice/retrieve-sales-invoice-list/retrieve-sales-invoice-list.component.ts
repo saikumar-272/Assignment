@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import {
     AdminChildSectionFormComponent
@@ -28,7 +29,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 selector: "app-retrieve-sales-invoice-list",
   templateUrl: "./retrieve-sales-invoice-list.component.html",
   styleUrls: ["./retrieve-sales-invoice-list.component.scss"],
-  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbModule, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbPaginationModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveSalesInvoiceListComponent

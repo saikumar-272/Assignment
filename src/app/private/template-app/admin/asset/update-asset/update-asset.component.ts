@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {
     AdminChildSectionFormComponent
@@ -37,7 +38,7 @@ import {ToastNotificationService} from 'src/app/toast-notification-service';
 selector: 'app-update-asset',
   templateUrl: './update-asset.component.html',
   styleUrls: ['./update-asset.component.scss']
-, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbModule],
+, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class UpdateAssetComponent  extends FormFieldsTemplateAppImplComponent implements OnInit

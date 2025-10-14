@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
@@ -18,12 +19,7 @@ import { ToastNotificationService } from "src/app/toast-notification-service";
   selector: "app-update-class-info",
   templateUrl: "./update-class-info.component.html",
   styleUrls: ["./update-class-info.component.scss"],
-  imports: [
-    CommonModule,
-    RouterModule,
-    AdminChildSectionFormComponent,
-    NgbModule,
-  ],
+  imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true,
 })
 export class UpdateClassInfoComponent

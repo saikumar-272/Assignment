@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -19,7 +20,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 
 @Component({
 selector: "app-create-tax-account",
-  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule],
+  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./create-tax-account.component.html",
   styleUrls: ["./create-tax-account.component.scss"],
   standalone: true

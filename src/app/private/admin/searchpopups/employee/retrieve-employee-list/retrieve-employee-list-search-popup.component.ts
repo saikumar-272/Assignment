@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Component, EventEmitter, OnInit, Output, TemplateRef, ViewChild,} from "@angular/core";
 import {FormBuilder} from "@angular/forms";
 import {Router} from "@angular/router";
@@ -23,7 +24,7 @@ import { NgbModule, NgbPaginationModule, NgbModal, NgbModalRef } from '@ng-boots
 
 @Component({
 selector: "retrieve-employee-list-search-popup",
-  imports: [DynamicFieldDisplayComponent, NgbModule, CommonModule, AdminChildSectionFormComponent, NgbPaginationModule],
+  imports: [DynamicFieldDisplayComponent, NgbModule, CommonModule, AdminChildSectionFormComponent, NgbPaginationModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./retrieve-employee-list-search-popup.component.html",
   styleUrls: ["./retrieve-employee-list-search-popup.component.scss"],
   standalone: true

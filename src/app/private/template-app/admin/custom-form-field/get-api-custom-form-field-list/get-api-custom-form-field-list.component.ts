@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {
     AdminChildSectionFormComponent
@@ -26,7 +27,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 selector: 'app-get-api-custom-form-field-list',
   templateUrl: './get-api-custom-form-field-list.component.html',
   styleUrls: ['./get-api-custom-form-field-list.component.scss']
-, imports: [CommonModule, RouterModule, NgbModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbPaginationModule],
+, imports: [CommonModule, RouterModule, NgbModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbPaginationModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class GetApiCustomFormFieldListComponent extends FormFieldsTemplateAppImplComponent implements OnInit

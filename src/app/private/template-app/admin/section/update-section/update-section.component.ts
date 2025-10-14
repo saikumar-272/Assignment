@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from "@angular/common";
 import {Component, OnInit} from "@angular/core";
 import {FormBuilder} from "@angular/forms";
@@ -22,7 +23,7 @@ import {
 selector: "app-update-section",
   templateUrl: "./update-section.component.html",
   styleUrls: ["./update-section.component.scss"],
-  imports: [ AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class UpdateSectionComponent

@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Component, OnInit} from '@angular/core';
 import {BackendService} from 'src/app/shared/services/backend.service';
 import {Constants} from 'src/app/shared/util/constants';

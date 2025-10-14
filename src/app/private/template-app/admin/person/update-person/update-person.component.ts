@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from "@angular/common";
 import {Component, OnInit} from "@angular/core";
 import {FormBuilder} from "@angular/forms";
@@ -21,7 +22,7 @@ import {
 selector: "app-update-person",
   templateUrl: "./update-person.component.html",
   styleUrls: ["./update-person.component.scss"],
-  imports: [ AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class UpdatePersonComponent

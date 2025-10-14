@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
@@ -11,7 +12,7 @@ declare let $: any;
 
 @Component({
   selector: "app-second-main-menu",
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./admin-second-main-menu.component.html",
   styleUrls: ["./admin-second-main-menu.component.scss"],
   standalone: true,

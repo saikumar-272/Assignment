@@ -1,34 +1,48 @@
-import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
-import {
-    AdminChildSectionFormComponent
-} from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
+import { DynamicFieldDisplayComponent } from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
+import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
 
-import {ActivatedRoute, Router, RouterModule} from '@angular/router';
-import {CommonModule} from '@angular/common';
-import {Component, OnInit} from "@angular/core";
-import {FormBuilder, FormsModule,} from "@angular/forms";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {
-    retrieveTaxTypeListDataObject,
-    retrieveTaxTypeListSearchFilter,
+  retrieveTaxTypeListDataObject,
+  retrieveTaxTypeListSearchFilter,
 } from "src/app/shared/interfaces/dto/template-app/tax-type/retrieve-tax-type-list";
-import {BackendServiceTemplateApp} from "src/app/shared/services/backend.service.template-app";
-import {Constants, PAGE_SIZE_OPTIONS, YES_NO_OPTIONS,} from "src/app/shared/util/constants";
-import {RetrieveListResponseModel,} from "src/app/shared/interfaces/dto/dto-base";
+import { BackendServiceTemplateApp } from "src/app/shared/services/backend.service.template-app";
+import {
+  Constants,
+  PAGE_SIZE_OPTIONS,
+  YES_NO_OPTIONS,
+} from "src/app/shared/util/constants";
+import { RetrieveListResponseModel } from "src/app/shared/interfaces/dto/dto-base";
 
+import { CustomisationService } from "src/app/customisation.service";
+import { FormFieldsTemplateAppImplComponent } from "src/app/shared/forms-custom/form-fields-template-app-impl";
+import { AuthenticationService } from "src/app/shared/services/authentication.service";
+import { ToastNotificationService } from "src/app/toast-notification-service";
 
-import {CustomisationService} from "src/app/customisation.service";
-import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
-import {AuthenticationService} from "src/app/shared/services/authentication.service";
-import {ToastNotificationService} from "src/app/toast-notification-service";
-
-import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbModule,
+  NgbPaginationModule,
+  NgbModal,
+} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-selector: "app-retrieve-tax-type-list",
-  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, DynamicFieldDisplayComponent, NgbModule, FormsModule, NgbPaginationModule],
+  selector: "app-retrieve-tax-type-list",
+  imports: [
+    RouterModule,
+    AdminChildSectionFormComponent,
+    CommonModule,
+    DynamicFieldDisplayComponent,
+    NgbModule,
+    FormsModule,
+    NgbPaginationModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: "./retrieve-tax-type-list.component.html",
   styleUrls: ["./retrieve-tax-type-list.component.scss"],
-  standalone: true
+  standalone: true,
 })
 export class RetrieveTaxTypeListComponent
   extends FormFieldsTemplateAppImplComponent
@@ -117,7 +131,8 @@ export class RetrieveTaxTypeListComponent
       this
     );
     this.onPageInit("retrieveTaxTypeList", this.currentRoute, this, [
-      "retrieveTaxTypeListSC"]);
+      "retrieveTaxTypeListSC",
+    ]);
   }
 
   async resetSearchCriteria() {
@@ -218,7 +233,8 @@ export class RetrieveTaxTypeListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveTaxTypeListSC"]);
+      "retrieveTaxTypeListSC",
+    ]);
   }
 
   updateSelectOptionsData() {}

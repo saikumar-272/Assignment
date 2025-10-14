@@ -1,11 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
-import {
-  FormBuilder,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-} from "@angular/forms";
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators,  } from '@angular/forms';
 import { ActivatedRoute } from "@angular/router";
 import { IResponseMessage } from "src/app/shared/interfaces/dto/dto-base";
 import { BackendService } from "src/app/shared/services/backend.service";
@@ -21,13 +16,7 @@ import { AppRoutingAdminPrivateModule } from "src/app/app-routing-admin-private.
   selector: "app-forgot-password",
   templateUrl: "./forgot-password.component.html",
   styleUrls: ["./forgot-password.component.scss"],
-  imports: [
-    CommonModule,
-    NgbModule,
-    FormsModule,
-    ReactiveFormsModule,
-    NgbAlertModule,
-    AppRoutingAdminPrivateModule],
+  imports: [CommonModule, NgbModule, FormsModule, ReactiveFormsModule, NgbAlertModule, AppRoutingAdminPrivateModule],
   standalone: true,
 })
 export class ForgotPasswordComponent implements OnInit {

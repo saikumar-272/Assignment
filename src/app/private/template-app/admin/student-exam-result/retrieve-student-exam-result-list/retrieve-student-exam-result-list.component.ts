@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {
     AdminChildSectionFormComponent
@@ -25,7 +26,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 
 @Component({
 selector: "app-retrieve-student-exam-result-list",
-  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule, DynamicFieldDisplayComponent, NgbPaginationModule],
+  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule, DynamicFieldDisplayComponent, NgbPaginationModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./retrieve-student-exam-result-list.component.html",
   styleUrls: ["./retrieve-student-exam-result-list.component.scss"],
   standalone: true

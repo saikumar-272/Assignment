@@ -1,37 +1,32 @@
-import {FormBuilder, FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
-import {Component, OnInit} from "@angular/core";
-import {ActivatedRoute, Router} from "@angular/router";
-import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { NgbModal, NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import {
-    IResponseMessage,
-    PrivilegeGroupItemDataObject,
-    RetrieveListResponseModel,
+  IResponseMessage,
+  PrivilegeGroupItemDataObject,
+  RetrieveListResponseModel,
 } from "src/app/shared/interfaces/dto/dto-base";
 
-
-import {
-    retrievePrivilegeGroupItemListSearchFilter
-} from "src/app/shared/interfaces/dto/template-app/privilege-group-item/retrieve-privilege-group-item-list";
-import {
-    IUpdatePrivilegeGroupItemsRequestModel
-} from "src/app/shared/interfaces/dto/template-app/privilege-group/update-privilege-group-items";
+import { retrievePrivilegeGroupItemListSearchFilter } from "src/app/shared/interfaces/dto/template-app/privilege-group-item/retrieve-privilege-group-item-list";
+import { IUpdatePrivilegeGroupItemsRequestModel } from "src/app/shared/interfaces/dto/template-app/privilege-group/update-privilege-group-items";
 
 import PrivilegeGroup from "./PrivilegeGroup.json";
 
-import {ToastNotificationService} from "src/app/toast-notification-service";
-import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
-import {BackendServiceTemplateApp} from "src/app/shared/services/backend.service.template-app";
-import {CustomisationService} from "src/app/customisation.service";
-import {AuthenticationService} from "src/app/shared/services/authentication.service";
+import { ToastNotificationService } from "src/app/toast-notification-service";
+import { FormFieldsTemplateAppImplComponent } from "src/app/shared/forms-custom/form-fields-template-app-impl";
+import { BackendServiceTemplateApp } from "src/app/shared/services/backend.service.template-app";
+import { CustomisationService } from "src/app/customisation.service";
+import { AuthenticationService } from "src/app/shared/services/authentication.service";
 
 @Component({
-selector: "app-privilege-group-items",
-  imports: [FormsModule, CommonModule, NgbModule],
+  selector: "app-privilege-group-items",
+  imports: [FormsModule, CommonModule, NgbModule, ReactiveFormsModule],
   templateUrl: "./privilege-group-items.component.html",
   styleUrls: ["./privilege-group-items.component.scss"],
-  standalone: true
+  standalone: true,
 })
 export class PrivilegeGroupItemsComponent
   extends FormFieldsTemplateAppImplComponent

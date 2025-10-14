@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from "@angular/common";
 import {Component, OnInit} from "@angular/core";
 import {FormBuilder} from "@angular/forms";
@@ -22,7 +23,7 @@ import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display
 selector: "app-create-parent",
   templateUrl: "./create-parent.component.html",
   styleUrls: ["./create-parent.component.scss"],
-  imports: [ AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class CreateParentComponent

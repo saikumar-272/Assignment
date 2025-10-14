@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import {ActivatedRoute, Router, RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
@@ -15,7 +16,7 @@ import {TimeZoneService} from "src/app/shared/services/timeZone.service";
 selector: "app-retrieve-seller",
   templateUrl: "./retrieve-seller.component.html",
   styleUrls: ["./retrieve-seller.component.scss"],
-  imports: [ DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveSellerComponent

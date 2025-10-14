@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //User Actions request model
@@ -14,7 +15,7 @@ import {TimeZoneService} from "src/app/shared/services/timeZone.service";
 
 @Component({
 selector: "app-retrieve-student-leave",
-  imports: [RouterModule, CommonModule, NgbModule],
+  imports: [RouterModule, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./retrieve-student-leave.component.html",
   styleUrls: ["./retrieve-student-leave.component.scss"],
   standalone: true

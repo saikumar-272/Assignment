@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AuthenticationService} from 'src/app/shared/services/authentication.service';
 import {BackendService} from 'src/app/shared/services/backend.service';

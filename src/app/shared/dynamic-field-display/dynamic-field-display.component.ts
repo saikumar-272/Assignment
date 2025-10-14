@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {Component, Input, OnInit} from "@angular/core";
@@ -16,7 +17,7 @@ import OptionsList from "src/app/shared/forms-custom/OptionsList.json";
   standalone: true,
   templateUrl: "./dynamic-field-display.component.html",
   styleUrls: ["./dynamic-field-display.component.scss"],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
 })
 export class DynamicFieldDisplayComponent implements OnInit {
   @Input() pageField: any = {};

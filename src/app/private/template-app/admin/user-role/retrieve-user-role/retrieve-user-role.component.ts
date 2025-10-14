@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -16,7 +17,7 @@ import {TimeZoneService} from "src/app/shared/services/timeZone.service";
 @Component({
 selector: "app-retrieve-user-role",
   templateUrl: "./retrieve-user-role.component.html",
-  imports: [RouterModule, CommonModule, DynamicFieldDisplayComponent, NgbModule],
+  imports: [RouterModule, CommonModule, DynamicFieldDisplayComponent, NgbModule, FormsModule, ReactiveFormsModule],
   styleUrls: ["./retrieve-user-role.component.scss"],
   standalone: true
 })

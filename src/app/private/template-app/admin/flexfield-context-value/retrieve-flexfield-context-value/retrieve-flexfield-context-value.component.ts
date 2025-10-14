@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
@@ -20,7 +21,7 @@ import {
 selector: 'app-retrieve-flexfield-context-value',
   templateUrl: './retrieve-flexfield-context-value.component.html',
   styleUrls: ['./retrieve-flexfield-context-value.component.scss']
-, imports: [CommonModule, RouterModule, DynamicFieldDisplayComponent, NgbModule],
+, imports: [CommonModule, RouterModule, DynamicFieldDisplayComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveFlexfieldContextValueComponent  extends FormFieldsTemplateAppImplComponent implements OnInit

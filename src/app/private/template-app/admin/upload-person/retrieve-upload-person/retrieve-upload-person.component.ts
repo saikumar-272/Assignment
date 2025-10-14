@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -15,7 +16,7 @@ import {TimeZoneService} from "src/app/shared/services/timeZone.service";
 
 @Component({
 selector: "app-retrieve-upload-person",
-  imports: [CommonModule, DynamicFieldDisplayComponent, RouterModule, NgbModule],
+  imports: [CommonModule, DynamicFieldDisplayComponent, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./retrieve-upload-person.component.html",
   styleUrls: ["./retrieve-upload-person.component.scss"],
   standalone: true

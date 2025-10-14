@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {
     AdminChildSectionFormComponent
@@ -44,7 +45,7 @@ import {of} from "rxjs";
 selector: "app-update-sales-invoice",
   templateUrl: "./update-sales-invoice.component.html",
   styleUrls: ["./update-sales-invoice.component.scss"],
-  imports: [ AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RetrieveFacultyListSearchPopupComponent, RetrieveEmployeeListSearchPopupComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RetrieveFacultyListSearchPopupComponent, RetrieveEmployeeListSearchPopupComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class UpdateSalesInvoiceComponent

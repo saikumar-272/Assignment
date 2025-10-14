@@ -4,7 +4,7 @@ import {
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
 
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
-import {FormBuilder, FormsModule} from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {Component, OnInit} from "@angular/core";
 import {
@@ -29,7 +29,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 
 @Component({
 selector: "app-retrieve-state-for-upload-list",
-  imports: [CommonModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RouterModule, FormsModule, NgbModule, NgbPaginationModule],
+  imports: [CommonModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RouterModule, FormsModule, NgbModule, NgbPaginationModule, ReactiveFormsModule],
   templateUrl: "./retrieve-state-for-upload-list.component.html",
   styleUrls: ["./retrieve-state-for-upload-list.component.scss"],
   standalone: true

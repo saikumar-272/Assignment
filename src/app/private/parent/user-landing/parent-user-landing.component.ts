@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from "@angular/core";
 import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
@@ -9,10 +10,7 @@ import { AppRoutingAdminPrivateModule } from "src/app/app-routing-admin-private.
 
 @Component({
   selector: "app-parent-user-landing",
-  imports: [
-    ParentMainMenuComponent,
-    ParentSecondMainMenuComponent,
-    AppRoutingAdminPrivateModule],
+  imports: [ParentMainMenuComponent, ParentSecondMainMenuComponent, AppRoutingAdminPrivateModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./parent-user-landing.component.html",
   styleUrls: ["./parent-user-landing.component.scss"],
   encapsulation: ViewEncapsulation.None,

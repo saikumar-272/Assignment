@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {FormBuilder} from "@angular/forms";
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Router} from "@angular/router";
 import {BackendService} from "src/app/shared/services/backend.service";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';

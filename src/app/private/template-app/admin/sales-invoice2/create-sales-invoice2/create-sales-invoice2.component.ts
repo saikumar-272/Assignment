@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
@@ -27,7 +28,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 selector: "app-create-sales-invoice2",
   templateUrl: "./create-sales-invoice2.component.html",
   styleUrls: ["./create-sales-invoice2.component.scss"],
-  imports: [ AdminChildSectionFormComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, RetrieveEmpLocationListSearchPopupComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class CreateSalesInvoice2Component

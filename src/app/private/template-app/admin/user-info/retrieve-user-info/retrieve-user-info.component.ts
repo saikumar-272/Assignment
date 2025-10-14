@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {
     AdminChildSectionFormComponent
@@ -25,7 +26,7 @@ import {
 
 @Component({
 selector: "app-retrieve-user-info",
-  imports: [DynamicFieldDisplayComponent, AdminChildSectionFormComponent, CommonModule, NgbModule],
+  imports: [DynamicFieldDisplayComponent, AdminChildSectionFormComponent, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./retrieve-user-info.component.html",
   styleUrls: ["./retrieve-user-info.component.scss"],
   standalone: true

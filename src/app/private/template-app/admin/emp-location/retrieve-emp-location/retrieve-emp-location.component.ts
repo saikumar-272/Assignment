@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {
     AdminChildSectionFormComponent
@@ -27,7 +28,7 @@ import {RichTextEditorComponent} from 'src/app/private/editor/rich-text-editor.c
 selector: 'app-retrieve-emp-location',
   templateUrl: './retrieve-emp-location.component.html',
   styleUrls: ['./retrieve-emp-location.component.scss']
-, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbModule],
+, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveEmpLocationComponent  extends FormFieldsTemplateAppImplComponent implements OnInit

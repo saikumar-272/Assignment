@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {
     AdminChildSectionFormComponent
@@ -33,7 +34,7 @@ import OptionsList from 'src/app/shared/forms-custom/OptionsList.json';
 selector: 'app-retrieve-faculty',
   templateUrl: './retrieve-faculty.component.html',
   styleUrls: ['./retrieve-faculty.component.scss']
-, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbModule],
+, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveFacultyComponent  extends FormFieldsTemplateAppImplComponent implements OnInit

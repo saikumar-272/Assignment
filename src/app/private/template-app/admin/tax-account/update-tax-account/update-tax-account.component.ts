@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -21,7 +22,7 @@ import {of} from "rxjs";
 
 @Component({
 selector: "app-update-tax-account",
-  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, NgbModule],
+  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./update-tax-account.component.html",
   styleUrls: ["./update-tax-account.component.scss"],
   standalone: true

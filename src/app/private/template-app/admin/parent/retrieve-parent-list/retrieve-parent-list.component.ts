@@ -1,6 +1,6 @@
 import {CommonModule} from "@angular/common";
 import {Component, OnInit} from "@angular/core";
-import {FormBuilder, FormsModule} from "@angular/forms";
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ActivatedRoute, Router, RouterModule} from "@angular/router";
 import {
     retrieveParentListDataObject,
@@ -30,7 +30,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 selector: "app-retrieve-parent-list",
   templateUrl: "./retrieve-parent-list.component.html",
   styleUrls: ["./retrieve-parent-list.component.scss"],
-  imports: [AdminChildSectionFormComponent,  DynamicFieldDisplayComponent, NgbModule, FormsModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbModule, FormsModule, CommonModule, RouterModule, NgbPaginationModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveParentListComponent

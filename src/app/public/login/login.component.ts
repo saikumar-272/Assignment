@@ -1,7 +1,7 @@
 import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
 import { CommonModule } from "@angular/common";
 import { Component, OnInit, TemplateRef, ViewChild } from "@angular/core";
-import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
+import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from "@angular/router";
 import {
   NgbAlert,
@@ -31,13 +31,7 @@ import { AppRoutingAdminPrivateModule } from "src/app/app-routing-admin-private.
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.scss"],
-  imports: [
-    CommonModule,
-    AdminChildSectionFormComponent,
-    NgbModule,
-    ReactiveFormsModule,
-    NgbAlert,
-    AppRoutingAdminPrivateModule],
+  imports: [CommonModule, AdminChildSectionFormComponent, NgbModule, ReactiveFormsModule, NgbAlert, AppRoutingAdminPrivateModule, FormsModule],
   standalone: true,
 })
 export class LoginComponent extends FormFieldsImplComponent implements OnInit {

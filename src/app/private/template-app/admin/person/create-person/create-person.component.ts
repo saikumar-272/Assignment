@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
@@ -19,7 +20,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 selector: "app-create-person",
   templateUrl: "./create-person.component.html",
   styleUrls: ["./create-person.component.scss"],
-  imports: [ AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class CreatePersonComponent

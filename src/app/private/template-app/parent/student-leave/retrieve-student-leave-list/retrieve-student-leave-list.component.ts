@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     ParentChildSectionFormComponent
 } from 'src/app/shared/parent/child-section-forms/parent-child-section-form.component';
@@ -23,7 +24,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 @Component({
 selector: "app-retrieve-student-leave-list",
   templateUrl: "./retrieve-student-leave-list.component.html",
-  imports: [NgbModule, CommonModule, ParentChildSectionFormComponent, RouterModule, NgbPaginationModule],
+  imports: [NgbModule, CommonModule, ParentChildSectionFormComponent, RouterModule, NgbPaginationModule, FormsModule, ReactiveFormsModule],
   styleUrls: ["./retrieve-student-leave-list.component.scss"],
   standalone: true
 })

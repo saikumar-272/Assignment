@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DynamicFieldDisplayComponent } from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
 
@@ -28,13 +29,7 @@ import { NgbModal, NgbModule, NgbPaginationModule,  } from '@ng-bootstrap/ng-boo
   selector: "app-retrieve-country-list",
   templateUrl: "./retrieve-country-list.component.html",
   styleUrls: ["./retrieve-country-list.component.scss"],
-  imports: [
-    CommonModule,
-    RouterModule,
-    NgbModule,
-    AdminChildSectionFormComponent,
-    DynamicFieldDisplayComponent,
-    NgbPaginationModule],
+  imports: [CommonModule, RouterModule, NgbModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbPaginationModule, FormsModule, ReactiveFormsModule],
   standalone: true,
 })
 export class RetrieveCountryListComponent

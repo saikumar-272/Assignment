@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
@@ -21,7 +22,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 selector: "app-create-organisation",
   templateUrl: "./create-organisation.component.html",
   styleUrls: ["./create-organisation.component.scss"],
-  imports: [ AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class CreateOrganisationComponent

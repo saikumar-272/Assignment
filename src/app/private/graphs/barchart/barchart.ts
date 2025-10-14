@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Component} from "@angular/core";
 import {ChartType} from "chart.js";
 import {NgChartsModule} from "ng2-charts";
@@ -5,7 +6,7 @@ import {NgChartsModule} from "ng2-charts";
 @Component({
   selector: "barchart",
   standalone: true,
-  imports: [NgChartsModule],
+  imports: [NgChartsModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./barchart.html",
 })
 export class BarChartComponent {

@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 

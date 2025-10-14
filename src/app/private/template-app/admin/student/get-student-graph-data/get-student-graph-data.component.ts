@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -25,7 +26,7 @@ import OptionsList from "src/app/shared/forms-custom/OptionsList.json";
 
 @Component({
 selector: "app-get-student-graph-data",
-  imports: [CommonModule, AdminChildSectionFormComponent, BarChartComponent, NgbModule],
+  imports: [CommonModule, AdminChildSectionFormComponent, BarChartComponent, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./get-student-graph-data.component.html",
   styleUrls: ["./get-student-graph-data.component.scss"],
   standalone: true

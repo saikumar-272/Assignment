@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import {
     AdminChildSectionFormComponent
@@ -51,7 +52,7 @@ import {of} from "rxjs";
 selector: "app-retrieve-employee",
   templateUrl: "./retrieve-employee.component.html",
   styleUrls: ["./retrieve-employee.component.scss"],
-  imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RetrieveEmpLocationListSearchPopupComponent, NgbModule],
+  imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RetrieveEmpLocationListSearchPopupComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveEmployeeComponent

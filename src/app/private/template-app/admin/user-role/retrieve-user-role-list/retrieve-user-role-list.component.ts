@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {
     AdminChildSectionFormComponent
@@ -25,7 +26,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 
 @Component({
 selector: "app-retrieve-user-role-list",
-  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule, NgbPaginationModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./retrieve-user-role-list.component.html",
   styleUrls: ["./retrieve-user-role-list.component.scss"],
   standalone: true

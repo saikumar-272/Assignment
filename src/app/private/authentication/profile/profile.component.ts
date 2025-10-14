@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {Component, OnInit} from "@angular/core";
-import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbAlertModule, NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ILoggedInUserDetails} from "src/app/shared/interfaces/dto/auth-service/auth";
 import {IResponseMessage} from "src/app/shared/interfaces/dto/dto-base";
@@ -22,7 +22,7 @@ import {StaffProfileComponent} from "../staff-profile/staff-profile.component";
 
 @Component({
 selector: "app-profile",
-  imports: [NgbModule, CommonModule, ReactiveFormsModule, StaffProfileComponent, NgbAlertModule],
+  imports: [NgbModule, CommonModule, ReactiveFormsModule, StaffProfileComponent, NgbAlertModule, FormsModule],
   templateUrl: "./profile.component.html",
   styleUrls: ["./profile.component.scss"],
   standalone: true

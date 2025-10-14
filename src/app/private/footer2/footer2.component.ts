@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Component, OnInit} from '@angular/core';
 
 @Component({

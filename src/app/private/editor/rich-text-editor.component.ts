@@ -2,12 +2,12 @@ import {Component, EventEmitter, Output, TemplateRef, ViewChild,} from "@angular
 import {AngularEditorConfig, AngularEditorModule} from "@kolkov/angular-editor";
 import { NgbModal, NgbModalRef, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormFieldsImplComponent} from "src/app/shared/forms-custom/form-fields-impl";
-import {FormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from "@angular/common";
 
 @Component({
 selector: "angular-editor-popup",
-  imports: [AngularEditorModule, FormsModule, CommonModule, NgbModule],
+  imports: [AngularEditorModule, FormsModule, CommonModule, NgbModule, ReactiveFormsModule],
   template: `
     <ng-template #angularEditorPopup let-modal>
       <angular-editor

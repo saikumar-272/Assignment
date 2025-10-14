@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DynamicFieldDisplayComponent } from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
 import { CommonModule } from "@angular/common";
@@ -24,11 +25,7 @@ import { IValidateLoginDetailsRequestModel } from "src/app/shared/interfaces/dto
 
 @Component({
   selector: "app-view-profile",
-  imports: [
-    DynamicFieldDisplayComponent,
-    AdminChildSectionFormComponent,
-    CommonModule,
-    NgbModule],
+  imports: [DynamicFieldDisplayComponent, AdminChildSectionFormComponent, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./view-profile.component.html",
   styleUrls: ["./view-profile.component.scss"],
   standalone: true,

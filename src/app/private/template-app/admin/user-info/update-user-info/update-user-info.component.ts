@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -19,7 +20,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 
 @Component({
 selector: "app-update-user-info",
-  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, NgbModule],
+  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./update-user-info.component.html",
   styleUrls: ["./update-user-info.component.scss"],
   standalone: true

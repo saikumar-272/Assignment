@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DynamicFieldDisplayComponent } from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
@@ -16,12 +17,7 @@ import { TimeZoneService } from "src/app/shared/services/timeZone.service";
   selector: "app-retrieve-class-info",
   templateUrl: "./retrieve-class-info.component.html",
   styleUrls: ["./retrieve-class-info.component.scss"],
-  imports: [
-    CommonModule,
-    RouterModule,
-    DynamicFieldDisplayComponent,
-    NgbModule,
-  ],
+  imports: [CommonModule, RouterModule, DynamicFieldDisplayComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true,
 })
 export class RetrieveClassInfoComponent

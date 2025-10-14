@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {Component, Input, OnInit} from "@angular/core";
-import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import { FormBuilder, FormGroup, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {Router} from "@angular/router";
 import {Subject} from "rxjs";
 import {IResponseMessage,} from "src/app/shared/interfaces/dto/dto-base";
@@ -14,7 +14,7 @@ import {
 
 @Component({
 selector: "app-staff-profile",
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule],
   templateUrl: "./staff-profile.component.html",
   styleUrls: ["./staff-profile.component.scss"],
   standalone: true

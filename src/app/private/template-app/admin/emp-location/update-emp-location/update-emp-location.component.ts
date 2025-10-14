@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -24,7 +25,7 @@ import {RichTextEditorComponent} from 'src/app/private/editor/rich-text-editor.c
 selector: 'app-update-emp-location',
   templateUrl: './update-emp-location.component.html',
   styleUrls: ['./update-emp-location.component.scss']
-, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule],
+, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class UpdateEmpLocationComponent  extends FormFieldsTemplateAppImplComponent implements OnInit

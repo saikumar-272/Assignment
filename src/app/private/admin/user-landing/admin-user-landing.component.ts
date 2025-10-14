@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Component, OnDestroy, OnInit, ViewChild} from "@angular/core";
 import {Router, RouterModule} from "@angular/router";
 import {Subscription} from "rxjs";
@@ -11,7 +12,7 @@ import {MainMenuComponent} from "./main-menu/admin-main-menu.component";
 
 @Component({
 selector: "app-admin-user-landing",
-  imports: [RouterModule, CommonModule, MainMenuComponent, SecondMainMenuComponent],
+  imports: [RouterModule, CommonModule, MainMenuComponent, SecondMainMenuComponent, FormsModule, ReactiveFormsModule],
   templateUrl: "./admin-user-landing.component.html",
   styleUrls: ["./admin-user-landing.component.scss"],
   standalone: true

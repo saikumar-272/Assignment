@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
 
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
@@ -29,13 +30,7 @@ import {
 
 @Component({
   selector: "app-retrieve-student-leave-list",
-  imports: [
-    RouterModule,
-    CommonModule,
-    AdminChildSectionFormComponent,
-    NgbModule,
-    NgbPaginationModule,
-  ],
+  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule, NgbPaginationModule, FormsModule, ReactiveFormsModule],
 
   templateUrl: "./retrieve-student-leave-list.component.html",
   styleUrls: ["./retrieve-student-leave-list.component.scss"],

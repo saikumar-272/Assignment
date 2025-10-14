@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
@@ -7,7 +8,7 @@ import { isBlank } from "src/app/shared/util/string-util";
 
 @Component({
   selector: "app-main-menu",
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./admin-main-menu.component.html",
   styleUrls: ["./admin-main-menu.component.scss"],
   standalone: true,

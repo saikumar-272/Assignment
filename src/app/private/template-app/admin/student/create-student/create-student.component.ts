@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -28,7 +29,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 
 @Component({
 selector: "app-create-student",
-  imports: [CommonModule, AdminChildSectionFormComponent, RetrieveEmpLocationListSearchPopupComponent, RetrieveFacultyListSearchPopupComponent, RouterModule, NgbModule],
+  imports: [CommonModule, AdminChildSectionFormComponent, RetrieveEmpLocationListSearchPopupComponent, RetrieveFacultyListSearchPopupComponent, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./create-student.component.html",
   styleUrls: ["./create-student.component.scss"],
   standalone: true

@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from "@angular/common";
 import {Component, OnInit} from "@angular/core";
 import {FormBuilder} from "@angular/forms";
@@ -25,7 +26,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 selector: "app-retrieve-section-list",
   templateUrl: "./retrieve-section-list.component.html",
   styleUrls: ["./retrieve-section-list.component.scss"],
-  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent,  NgbModule, CommonModule, RouterModule, NgbPaginationModule],
+  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbModule, CommonModule, RouterModule, NgbPaginationModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveSectionListComponent

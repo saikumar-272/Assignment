@@ -3,26 +3,27 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  serviceName : 'TemplateApp',
-  uiServiceName : 'templateappui',
+  serviceName: "TemplateApp",
+  uiServiceName: "templateappui",
   production: false,
   statusCheckDelay: 10000,
-  apiUrl: 'http://$$BACKEND_DOMAIN_PREFIX$$localhost:8085/',
-  templateappServiceApiUrl: 'http://$$BACKEND_DOMAIN_PREFIX$$localhost:8085',
-  tempappdummyServiceApiUrl: 'http://$$BACKEND_DOMAIN_PREFIX$$localhost:8085',
-  testservice2ServiceApiUrl: 'http://$$BACKEND_DOMAIN_PREFIX$$localhost:4300',
-  testschoolbeServiceApiUrl: 'http://$$BACKEND_DOMAIN_PREFIX$$localhost:4500',
-  mockservice1ServiceApiUrl: 'http://$$BACKEND_DOMAIN_PREFIX$$localhost:8087',
-  mockservice3ServiceApiUrl: 'http://$$BACKEND_DOMAIN_PREFIX$$localhost:8042',
-  mockservice2ServiceApiUrl: 'http://$$BACKEND_DOMAIN_PREFIX$$localhost:8089',
-  
-  templateappUrl: '/',
-  tempappdummyUrl: '/',
-  testservice2Url: '/testservice2/',
-  testschoolbeUrl: '/',
-  mockservice1Url: '/',
-  mockservice2Url: '/',
-  
+  apiUrl: "http://$$BACKEND_DOMAIN_PREFIX$$localhost:8085/",
+  // apiUrl: "http://$$BACKEND_DOMAIN_PREFIX$$localhost:8085",
+  // apiUrl: "http://localhost:8085/",
+  templateappServiceApiUrl: "http://$$BACKEND_DOMAIN_PREFIX$$localhost:8085",
+  tempappdummyServiceApiUrl: "http://$$BACKEND_DOMAIN_PREFIX$$localhost:8085",
+  testservice2ServiceApiUrl: "http://$$BACKEND_DOMAIN_PREFIX$$localhost:4300",
+  testschoolbeServiceApiUrl: "http://$$BACKEND_DOMAIN_PREFIX$$localhost:4500",
+  mockservice1ServiceApiUrl: "http://$$BACKEND_DOMAIN_PREFIX$$localhost:8087",
+  mockservice3ServiceApiUrl: "http://$$BACKEND_DOMAIN_PREFIX$$localhost:8042",
+  mockservice2ServiceApiUrl: "http://$$BACKEND_DOMAIN_PREFIX$$localhost:8089",
+
+  templateappUrl: "/",
+  tempappdummyUrl: "/",
+  testservice2Url: "/testservice2/",
+  testschoolbeUrl: "/",
+  mockservice1Url: "/",
+  mockservice2Url: "/",
 };
 
 /*

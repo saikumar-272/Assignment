@@ -5,7 +5,7 @@ import {
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {Component, OnInit, ViewChild} from "@angular/core";
-import {FormBuilder, FormGroup, FormsModule} from "@angular/forms";
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BackendServiceTemplateApp} from "src/app/shared/services/backend.service.template-app";
 import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
 import {AuthenticationService} from "src/app/shared/services/authentication.service";
@@ -37,7 +37,7 @@ import {of} from "rxjs";
 
 @Component({
 selector: "app-retrieve-student",
-  imports: [CommonModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RouterModule, FormsModule, RetrieveEmpLocationListSearchPopupComponent, RetrieveFacultyListSearchPopupComponent, NgbModule],
+  imports: [CommonModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, RouterModule, FormsModule, RetrieveEmpLocationListSearchPopupComponent, RetrieveFacultyListSearchPopupComponent, NgbModule, ReactiveFormsModule],
   templateUrl: "./retrieve-student.component.html",
   styleUrls: ["./retrieve-student.component.scss"],
   standalone: true

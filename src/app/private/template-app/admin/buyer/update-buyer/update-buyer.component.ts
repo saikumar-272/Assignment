@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -20,7 +21,7 @@ import {ToastNotificationService} from 'src/app/toast-notification-service';
 selector: 'app-update-buyer',
   templateUrl: './update-buyer.component.html',
   styleUrls: ['./update-buyer.component.scss']
-, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule],
+, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class UpdateBuyerComponent  extends FormFieldsTemplateAppImplComponent implements OnInit

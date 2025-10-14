@@ -4,7 +4,7 @@ import {
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
 
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
-import {FormBuilder, FormsModule} from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {Component, OnInit} from '@angular/core';
 import {
@@ -26,7 +26,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 selector: 'app-retrieve-employee-list',
   templateUrl: './retrieve-employee-list.component.html',
   styleUrls: ['./retrieve-employee-list.component.scss']
-, imports: [CommonModule, FormsModule, RouterModule, NgbModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbPaginationModule],
+, imports: [CommonModule, FormsModule, RouterModule, NgbModule, AdminChildSectionFormComponent, DynamicFieldDisplayComponent, NgbPaginationModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveEmployeeListComponent extends FormFieldsTemplateAppImplComponent implements OnInit

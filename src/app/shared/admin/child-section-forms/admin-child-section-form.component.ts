@@ -1,4 +1,4 @@
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges,} from "@angular/core";
 import {BackendService} from "src/app/shared/services/backend.service";
@@ -16,7 +16,7 @@ Purpose of imports
 
 @Component({
 selector: "app-child-section-form",
-  imports: [CommonModule, FormsModule, NgSelectModule],
+  imports: [CommonModule, FormsModule, NgSelectModule, ReactiveFormsModule],
   templateUrl: "./admin-child-section-form.component.html",
   styleUrls: ["./admin-child-section-form.component.scss"],
   standalone: true

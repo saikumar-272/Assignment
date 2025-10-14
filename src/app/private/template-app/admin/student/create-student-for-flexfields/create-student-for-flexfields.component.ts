@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -21,7 +22,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 
 @Component({
 selector: "app-create-student-for-flexfields",
-  imports: [AdminChildSectionFormComponent, CommonModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./create-student-for-flexfields.component.html",
   styleUrls: ["./create-student-for-flexfields.component.scss"],
   standalone: true

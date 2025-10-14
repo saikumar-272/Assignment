@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {
     AdminChildSectionFormComponent
@@ -25,7 +26,7 @@ import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-boots
 
 @Component({
 selector: "app-retrieve-tax-account-list",
-  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, DynamicFieldDisplayComponent, NgbModule, NgbPaginationModule],
+  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, DynamicFieldDisplayComponent, NgbModule, NgbPaginationModule, FormsModule, ReactiveFormsModule],
 
   templateUrl: "./retrieve-tax-account-list.component.html",
   styleUrls: ["./retrieve-tax-account-list.component.scss"],

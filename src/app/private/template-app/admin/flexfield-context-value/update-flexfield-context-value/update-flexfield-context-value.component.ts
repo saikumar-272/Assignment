@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from "@angular/common";
 import {Component, OnInit} from "@angular/core";
 import {FormBuilder} from "@angular/forms";
@@ -36,7 +37,7 @@ import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display
 selector: "app-update-flexfield-context-value",
   templateUrl: "./update-flexfield-context-value.component.html",
   styleUrls: ["./update-flexfield-context-value.component.scss"],
-  imports: [ AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class UpdateFlexfieldContextValueComponent

@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -23,7 +24,7 @@ import {of} from "rxjs";
 
 @Component({
 selector: "app-update-upload-person",
-  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, NgbModule],
+  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./update-upload-person.component.html",
   styleUrls: ["./update-upload-person.component.scss"],
   standalone: true

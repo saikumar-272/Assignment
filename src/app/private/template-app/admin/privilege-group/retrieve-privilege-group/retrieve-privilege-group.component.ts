@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import {
     AdminChildSectionFormComponent
@@ -24,7 +25,7 @@ import {
 selector: "app-retrieve-privilege-group",
   templateUrl: "./retrieve-privilege-group.component.html",
   styleUrls: ["./retrieve-privilege-group.component.scss"],
-  imports: [ DynamicFieldDisplayComponent, AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule],
+  imports: [DynamicFieldDisplayComponent, AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrievePrivilegeGroupComponent

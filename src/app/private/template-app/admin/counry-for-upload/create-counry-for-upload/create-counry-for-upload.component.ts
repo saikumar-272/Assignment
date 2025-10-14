@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -22,7 +23,7 @@ import {ToastNotificationService} from 'src/app/toast-notification-service';
 selector: 'app-create-counry-for-upload',
   templateUrl: './create-counry-for-upload.component.html',
   styleUrls: ['./create-counry-for-upload.component.scss']
-, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule],
+, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class CreateCounryForUploadComponent  extends FormFieldsTemplateAppImplComponent implements OnInit

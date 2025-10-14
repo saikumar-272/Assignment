@@ -1,28 +1,25 @@
-import {
-    AdminChildSectionFormComponent
-} from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
-import {ActivatedRoute, Router, RouterModule} from "@angular/router";
-import {CommonModule} from "@angular/common";
-import {Component, OnInit} from "@angular/core";
-import {FormBuilder} from "@angular/forms";
-import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {
-    ICreatePrivilegeGroupRequestModel
-} from "src/app/shared/interfaces/dto/template-app/privilege-group/create-privilege-group";
-import {CreateApiResponseModel} from "src/app/shared/interfaces/dto/dto-base";
-import {BackendServiceTemplateApp} from "src/app/shared/services/backend.service.template-app";
-import {YES_NO_OPTIONS} from "src/app/shared/util/constants";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
+import { NgbModal, NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ICreatePrivilegeGroupRequestModel } from "src/app/shared/interfaces/dto/template-app/privilege-group/create-privilege-group";
+import { CreateApiResponseModel } from "src/app/shared/interfaces/dto/dto-base";
+import { BackendServiceTemplateApp } from "src/app/shared/services/backend.service.template-app";
+import { YES_NO_OPTIONS } from "src/app/shared/util/constants";
 
-import {CustomisationService} from "src/app/customisation.service";
-import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
-import {AuthenticationService} from "src/app/shared/services/authentication.service";
-import {ToastNotificationService} from "src/app/toast-notification-service";
+import { CustomisationService } from "src/app/customisation.service";
+import { FormFieldsTemplateAppImplComponent } from "src/app/shared/forms-custom/form-fields-template-app-impl";
+import { AuthenticationService } from "src/app/shared/services/authentication.service";
+import { ToastNotificationService } from "src/app/toast-notification-service";
 @Component({
-selector: "app-create-privilege-group",
+  selector: "app-create-privilege-group",
   templateUrl: "./create-privilege-group.component.html",
   styleUrls: ["./create-privilege-group.component.scss"],
-  imports: [AdminChildSectionFormComponent,  CommonModule, RouterModule, NgbModule],
-  standalone: true
+  imports: [AdminChildSectionFormComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
+  standalone: true,
 })
 export class CreatePrivilegeGroupComponent
   extends FormFieldsTemplateAppImplComponent

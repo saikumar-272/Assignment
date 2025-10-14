@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import {
     AdminChildSectionFormComponent
@@ -28,7 +29,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 selector: "app-update-parent",
   templateUrl: "./update-parent.component.html",
   styleUrls: ["./update-parent.component.scss"],
-  imports: [ AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [AdminChildSectionFormComponent, DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class UpdateParentComponent

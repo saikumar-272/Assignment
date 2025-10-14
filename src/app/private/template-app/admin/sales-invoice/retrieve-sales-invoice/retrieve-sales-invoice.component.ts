@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import {ActivatedRoute, Router, RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
@@ -28,7 +29,7 @@ import {getNumberWithCommaSeparated} from "src/app/shared/util/string-util";
 selector: "app-retrieve-sales-invoice",
   templateUrl: "./retrieve-sales-invoice.component.html",
   styleUrls: ["./retrieve-sales-invoice.component.scss"],
-  imports: [ DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveSalesInvoiceComponent

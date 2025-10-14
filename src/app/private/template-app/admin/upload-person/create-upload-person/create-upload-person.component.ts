@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -21,7 +22,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 
 @Component({
 selector: "app-create-upload-person",
-  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, NgbModule],
+  imports: [RouterModule, AdminChildSectionFormComponent, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./create-upload-person.component.html",
   styleUrls: ["./create-upload-person.component.scss"],
   standalone: true

@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -23,7 +24,7 @@ import {of} from "rxjs";
 
 @Component({
 selector: "app-update-student-exam-result",
-  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule],
+  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
 
   templateUrl: "./update-student-exam-result.component.html",
   styleUrls: ["./update-student-exam-result.component.scss"],

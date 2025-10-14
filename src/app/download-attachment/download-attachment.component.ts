@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from "@angular/common";
 import {Component, OnInit, Renderer2} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -11,7 +12,7 @@ import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
 selector: "app-root",
-  imports: [CommonModule, NgbModule],
+  imports: [CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./download-attachment.component.html",
   styleUrls: ["./download-attachment.component.scss"],
   standalone: true

@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -22,7 +23,7 @@ import {ToastNotificationService} from 'src/app/toast-notification-service';
 selector: 'app-create-email-notification-test',
   templateUrl: './create-email-notification-test.component.html',
   styleUrls: ['./create-email-notification-test.component.scss']
-, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule],
+, imports: [CommonModule, RouterModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class CreateEmailNotificationTestComponent  extends FormFieldsTemplateAppImplComponent implements OnInit

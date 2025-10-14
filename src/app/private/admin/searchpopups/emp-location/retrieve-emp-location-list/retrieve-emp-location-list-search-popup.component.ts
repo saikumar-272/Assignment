@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   Component,
   EventEmitter,
@@ -34,12 +35,7 @@ import { NgbModule, NgbPaginationModule, NgbModal, NgbModalRef,  } from '@ng-boo
 
 @Component({
   selector: "retrieve-emp-location-list-search-popup",
-  imports: [
-    DynamicFieldDisplayComponent,
-    NgbModule,
-    CommonModule,
-    AdminChildSectionFormComponent,
-    NgbPaginationModule],
+  imports: [DynamicFieldDisplayComponent, NgbModule, CommonModule, AdminChildSectionFormComponent, NgbPaginationModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./retrieve-emp-location-list-search-popup.component.html",
   styleUrls: ["./retrieve-emp-location-list-search-popup.component.scss"],
   standalone: true,

@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DynamicFieldDisplayComponent} from "src/app/shared/dynamic-field-display/dynamic-field-display.component";
 import {ActivatedRoute, Router, RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
@@ -20,7 +21,7 @@ import {
 selector: "app-retrieve-parent",
   templateUrl: "./retrieve-parent.component.html",
   styleUrls: ["./retrieve-parent.component.scss"],
-  imports: [ DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule],
+  imports: [DynamicFieldDisplayComponent, CommonModule, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class RetrieveParentComponent

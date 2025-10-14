@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //User Actions request model
 import {DynamicFieldDisplayComponent} from 'src/app/shared/dynamic-field-display/dynamic-field-display.component';
 import {ActivatedRoute, Router, RouterModule} from '@angular/router';
@@ -15,7 +16,7 @@ import {TimeZoneService} from "src/app/shared/services/timeZone.service";
 
 @Component({
 selector: "app-retrieve-tax-type",
-  imports: [RouterModule, CommonModule, DynamicFieldDisplayComponent, NgbModule],
+  imports: [RouterModule, CommonModule, DynamicFieldDisplayComponent, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./retrieve-tax-type.component.html",
   styleUrls: ["./retrieve-tax-type.component.scss"],
   standalone: true

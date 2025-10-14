@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -21,7 +22,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 
 @Component({
 selector: "app-create-new-staff-user",
-  imports: [CommonModule, AdminChildSectionFormComponent, RouterModule, NgbModule],
+  imports: [CommonModule, AdminChildSectionFormComponent, RouterModule, NgbModule, FormsModule, ReactiveFormsModule],
 
   templateUrl: "./create-new-staff-user.component.html",
   styleUrls: ["./create-new-staff-user.component.scss"],

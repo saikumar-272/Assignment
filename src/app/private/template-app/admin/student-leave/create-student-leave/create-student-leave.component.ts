@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
 import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
@@ -16,12 +17,7 @@ import { ToastNotificationService } from "src/app/toast-notification-service";
 
 @Component({
   selector: "app-create-student-leave",
-  imports: [
-    RouterModule,
-    CommonModule,
-    AdminChildSectionFormComponent,
-    NgbModule,
-  ],
+  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
 
   templateUrl: "./create-student-leave.component.html",
   styleUrls: ["./create-student-leave.component.scss"],

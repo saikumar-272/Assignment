@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     ParentChildSectionFormComponent
 } from 'src/app/shared/parent/child-section-forms/parent-child-section-form.component';
@@ -21,7 +22,7 @@ import {ToastNotificationService} from "src/app/toast-notification-service";
 
 @Component({
 selector: "app-update-student-leave",
-  imports: [ParentChildSectionFormComponent, CommonModule, NgbModule],
+  imports: [ParentChildSectionFormComponent, CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./update-student-leave.component.html",
   styleUrls: ["./update-student-leave.component.scss"],
   standalone: true

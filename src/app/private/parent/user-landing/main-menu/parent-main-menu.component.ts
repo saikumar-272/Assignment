@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
@@ -8,7 +9,7 @@ import { AppRoutingAdminPrivateModule } from "src/app/app-routing-admin-private.
 
 @Component({
   selector: "parent-app-main-menu",
-  imports: [CommonModule, AppRoutingAdminPrivateModule],
+  imports: [CommonModule, AppRoutingAdminPrivateModule, FormsModule, ReactiveFormsModule],
   templateUrl: "./parent-main-menu.component.html",
   styleUrls: ["./parent-main-menu.component.scss"],
   standalone: true,

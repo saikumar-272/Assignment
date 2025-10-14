@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
     AdminChildSectionFormComponent
 } from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
@@ -24,7 +25,7 @@ import {ToastNotificationService} from 'src/app/toast-notification-service';
 selector: 'app-create-employee-for-flexfields',
   templateUrl: './create-employee-for-flexfields.component.html',
   styleUrls: ['./create-employee-for-flexfields.component.scss']
-, imports: [CommonModule, AdminChildSectionFormComponent, NgbModule],
+, imports: [CommonModule, AdminChildSectionFormComponent, NgbModule, FormsModule, ReactiveFormsModule],
   standalone: true
 })
 export class CreateEmployeeForFlexfieldsComponent  extends FormFieldsTemplateAppImplComponent implements OnInit
