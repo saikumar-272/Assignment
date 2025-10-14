@@ -1,16 +1,15 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import {RetrieveStudentLeaveListComponent} from './retrieve-student-leave-list.component';
+import { RetrieveStudentLeaveListComponent } from "./UI_PAGE_NAME_LOWER_CASE_HYPHENATED.component";
 
-describe('RetrieveStudentLeaveListComponent', () => {
+describe("RetrieveStudentLeaveListComponent", () => {
   let component: RetrieveStudentLeaveListComponent;
   let fixture: ComponentFixture<RetrieveStudentLeaveListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [RetrieveStudentLeaveListComponent]
-})
-    .compileComponents();
+      imports: [RetrieveStudentLeaveListComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('RetrieveStudentLeaveListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

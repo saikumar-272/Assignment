@@ -1,25 +1,24 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import {UserRolePrivilegesComponent} from './user-role-privileges.component';
+import { PrivilegeGroupItemsComponent } from "./privilege-group-items.component";
 
-describe('UserRolePrivilegesComponent', () => {
-  let component: UserRolePrivilegesComponent;
-  let fixture: ComponentFixture<UserRolePrivilegesComponent>;
+describe("PrivilegeGroupItemsComponent", () => {
+  let component: PrivilegeGroupItemsComponent;
+  let fixture: ComponentFixture<PrivilegeGroupItemsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [UserRolePrivilegesComponent]
-})
-    .compileComponents();
+      imports: [PrivilegeGroupItemsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserRolePrivilegesComponent);
+    fixture = TestBed.createComponent(PrivilegeGroupItemsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

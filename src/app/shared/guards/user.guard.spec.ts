@@ -1,16 +1,16 @@
-import {TestBed} from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import {UserGuard} from './user.guard';
+import { StaffUserOnlyGuard } from "./user.guard";
 
-describe('UserGuard', () => {
-  let guard: UserGuard;
+describe("StaffUserOnlyGuard", () => {
+  let guard: StaffUserOnlyGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    guard = TestBed.inject(UserGuard);
+    guard = TestBed.inject(StaffUserOnlyGuard);
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(guard).toBeTruthy();
   });
 });

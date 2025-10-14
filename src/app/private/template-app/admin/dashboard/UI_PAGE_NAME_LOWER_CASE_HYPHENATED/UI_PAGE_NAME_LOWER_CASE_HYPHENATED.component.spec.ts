@@ -1,16 +1,15 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import {RetrieveCounryForUploadListComponent} from './retrieve-counry-for-upload-list.component';
+import { RetrieveCounryForUploadListComponent } from "./UI_PAGE_NAME_LOWER_CASE_HYPHENATED.component";
 
-describe('RetrieveCounryForUploadListComponent', () => {
+describe("RetrieveCounryForUploadListComponent", () => {
   let component: RetrieveCounryForUploadListComponent;
   let fixture: ComponentFixture<RetrieveCounryForUploadListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [RetrieveCounryForUploadListComponent]
-})
-    .compileComponents();
+      imports: [RetrieveCounryForUploadListComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('RetrieveCounryForUploadListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

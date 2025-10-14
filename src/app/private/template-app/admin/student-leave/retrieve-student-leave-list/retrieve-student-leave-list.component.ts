@@ -1,34 +1,45 @@
-import {
-    AdminChildSectionFormComponent
-} from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
+import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
 
-import {ActivatedRoute, Router, RouterModule} from '@angular/router';
-import {CommonModule} from '@angular/common';
-import {Component, OnInit} from "@angular/core";
-import {FormBuilder} from "@angular/forms";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 import {
-    retrieveStudentLeaveListDataObject,
-    retrieveStudentLeaveListSearchFilter,
+  retrieveStudentLeaveListDataObject,
+  retrieveStudentLeaveListSearchFilter,
 } from "src/app/shared/interfaces/dto/template-app/student-leave/retrieve-student-leave-list";
-import {BackendServiceTemplateApp} from "src/app/shared/services/backend.service.template-app";
-import {Constants, PAGE_SIZE_OPTIONS, YES_NO_OPTIONS,} from "src/app/shared/util/constants";
-import {RetrieveListResponseModel,} from "src/app/shared/interfaces/dto/dto-base";
+import { BackendServiceTemplateApp } from "src/app/shared/services/backend.service.template-app";
+import {
+  Constants,
+  PAGE_SIZE_OPTIONS,
+  YES_NO_OPTIONS,
+} from "src/app/shared/util/constants";
+import { RetrieveListResponseModel } from "src/app/shared/interfaces/dto/dto-base";
 
+import { CustomisationService } from "src/app/customisation.service";
+import { FormFieldsTemplateAppImplComponent } from "src/app/shared/forms-custom/form-fields-template-app-impl";
+import { AuthenticationService } from "src/app/shared/services/authentication.service";
+import { ToastNotificationService } from "src/app/toast-notification-service";
 
-import {CustomisationService} from "src/app/customisation.service";
-import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
-import {AuthenticationService} from "src/app/shared/services/authentication.service";
-import {ToastNotificationService} from "src/app/toast-notification-service";
-
-import { NgbModule, NgbPaginationModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbModule,
+  NgbPaginationModule,
+  NgbModal,
+} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-selector: "app-retrieve-student-leave-list",
-  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule, NgbPaginationModule],
+  selector: "app-retrieve-student-leave-list",
+  imports: [
+    RouterModule,
+    CommonModule,
+    AdminChildSectionFormComponent,
+    NgbModule,
+    NgbPaginationModule,
+  ],
 
   templateUrl: "./retrieve-student-leave-list.component.html",
   styleUrls: ["./retrieve-student-leave-list.component.scss"],
-  standalone: true
+  standalone: true,
 })
 export class RetrieveStudentLeaveListComponent
   extends FormFieldsTemplateAppImplComponent
@@ -94,7 +105,8 @@ export class RetrieveStudentLeaveListComponent
     this.retrieveStudentLeaveListTableColumns =
       this.getListApiTableColumnListCustom(
         "retrieveStudentLeaveList",
-        retrieveStudentLeaveListResponseParamList
+        retrieveStudentLeaveListResponseParamList,
+        this
       );
     //Load page fields
     let retrieveStudentLeaveListRequestParamList =
@@ -106,11 +118,13 @@ export class RetrieveStudentLeaveListComponent
     this.retrieveStudentLeaveListSectionFields =
       this.getSectionFieldsFromApiRequestParams(
         "retrieveStudentLeaveList",
-        retrieveStudentLeaveListRequestParamList
+        retrieveStudentLeaveListRequestParamList,
+        this
       );
 
     this.onPageInit("retrieveStudentLeaveList", this.currentRoute, this, [
-      "retrieveStudentLeaveListSC"]);
+      "retrieveStudentLeaveListSC",
+    ]);
   }
 
   async resetSearchCriteria() {
@@ -211,7 +225,8 @@ export class RetrieveStudentLeaveListComponent
     selectedValue: any
   ) {
     this.updateDependentFieldsDisplayProps(apiName, key, selectedValue, this, [
-      "retrieveStudentLeaveListSC"]);
+      "retrieveStudentLeaveListSC",
+    ]);
   }
 
   updateSelectOptionsData() {}

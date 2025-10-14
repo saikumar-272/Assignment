@@ -1,31 +1,31 @@
-import {
-    AdminChildSectionFormComponent
-} from 'src/app/shared/admin/child-section-forms/admin-child-section-form.component';
-import {CommonModule} from '@angular/common';
-import {Component, OnInit} from "@angular/core";
-import {FormBuilder} from "@angular/forms";
-import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {
-    ICreateStudentLeaveRequestModel
-} from "src/app/shared/interfaces/dto/template-app/student-leave/create-student-leave";
-import {CreateApiResponseModel,} from "src/app/shared/interfaces/dto/dto-base";
-import {BackendServiceTemplateApp} from "src/app/shared/services/backend.service.template-app";
-import {YES_NO_OPTIONS} from "src/app/shared/util/constants";
+import { AdminChildSectionFormComponent } from "src/app/shared/admin/child-section-forms/admin-child-section-form.component";
+import { CommonModule } from "@angular/common";
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
+import { NgbModal, NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ICreateStudentLeaveRequestModel } from "src/app/shared/interfaces/dto/template-app/student-leave/create-student-leave";
+import { CreateApiResponseModel } from "src/app/shared/interfaces/dto/dto-base";
+import { BackendServiceTemplateApp } from "src/app/shared/services/backend.service.template-app";
+import { YES_NO_OPTIONS } from "src/app/shared/util/constants";
 
-
-import {CustomisationService} from "src/app/customisation.service";
-import {FormFieldsTemplateAppImplComponent} from "src/app/shared/forms-custom/form-fields-template-app-impl";
-import {AuthenticationService} from "src/app/shared/services/authentication.service";
-import {ActivatedRoute, Router, RouterModule} from "@angular/router";
-import {ToastNotificationService} from "src/app/toast-notification-service";
+import { CustomisationService } from "src/app/customisation.service";
+import { FormFieldsTemplateAppImplComponent } from "src/app/shared/forms-custom/form-fields-template-app-impl";
+import { AuthenticationService } from "src/app/shared/services/authentication.service";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
+import { ToastNotificationService } from "src/app/toast-notification-service";
 
 @Component({
-selector: "app-create-student-leave",
-  imports: [RouterModule, CommonModule, AdminChildSectionFormComponent, NgbModule],
+  selector: "app-create-student-leave",
+  imports: [
+    RouterModule,
+    CommonModule,
+    AdminChildSectionFormComponent,
+    NgbModule,
+  ],
 
   templateUrl: "./create-student-leave.component.html",
   styleUrls: ["./create-student-leave.component.scss"],
-  standalone: true
+  standalone: true,
 })
 export class CreateStudentLeaveComponent
   extends FormFieldsTemplateAppImplComponent
@@ -80,7 +80,8 @@ export class CreateStudentLeaveComponent
     this.createStudentLeaveSectionFields =
       this.getSectionFieldsFromApiRequestParams(
         "CreateStudentLeave",
-        createStudentLeaveRequestParamList
+        createStudentLeaveRequestParamList,
+        this
       );
     this.setDataToFormOnload(
       "createStudentLeave",
