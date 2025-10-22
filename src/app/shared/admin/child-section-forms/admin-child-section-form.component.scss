@@ -1,0 +1,29 @@
+.password-parent input:focus {
+  float: none !important;
+}
+.pwrd-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.generate-tooltip {
+  position: absolute;
+  top: -8px; /* adjust to place at top-right of input */
+  right: 10px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+.generate-tooltip:hover {
+  background: #f5f5f5;
+}

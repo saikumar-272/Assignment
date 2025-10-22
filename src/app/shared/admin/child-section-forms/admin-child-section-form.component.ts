@@ -1,12 +1,26 @@
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {CommonModule} from '@angular/common';
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges,} from "@angular/core";
-import {BackendService} from "src/app/shared/services/backend.service";
-import {HttpClient} from "@angular/common/http";
-import {Observable, of, Subject} from "rxjs";
-import {catchError, debounceTime, distinctUntilChanged, switchMap, tap,} from "rxjs/operators";
-import {isBlank} from "src/app/shared/util/string-util";
-import {NgSelectModule} from "@ng-select/ng-select";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from "@angular/core";
+import { BackendService } from "src/app/shared/services/backend.service";
+import { HttpClient } from "@angular/common/http";
+import { Observable, of, Subject } from "rxjs";
+import {
+  catchError,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+  tap,
+} from "rxjs/operators";
+import { isBlank } from "src/app/shared/util/string-util";
+import { NgSelectModule } from "@ng-select/ng-select";
 
 /*
 Purpose of imports
@@ -15,11 +29,11 @@ Purpose of imports
 */
 
 @Component({
-selector: "app-child-section-form",
+  selector: "app-child-section-form",
   imports: [CommonModule, FormsModule, NgSelectModule, ReactiveFormsModule],
   templateUrl: "./admin-child-section-form.component.html",
   styleUrls: ["./admin-child-section-form.component.scss"],
-  standalone: true
+  standalone: true,
 })
 export class AdminChildSectionFormComponent implements OnInit, OnChanges {
   @Output() openSearchPopup = new EventEmitter<any>();
@@ -35,6 +49,10 @@ export class AdminChildSectionFormComponent implements OnInit, OnChanges {
   items: any[] = [];
   loading: boolean = false;
   childSectionRowsCount: number = 10;
+
+  showPassword: { [key: string]: boolean } = {};
+  showTooltip = false;
+  tooltipTimeout: any;
 
   constructor(
     private http: HttpClient,
@@ -231,5 +249,22 @@ export class AdminChildSectionFormComponent implements OnInit, OnChanges {
         sectionField.gridColumnsCount = derivedGridColumnCount;
       }
     }
+  }
+
+  togglePassword(fieldKey: string) {
+    this.showPassword[fieldKey] = !this.showPassword[fieldKey];
+  }
+
+  hideTooltipLater() {
+    this.tooltipTimeout = setTimeout(() => {
+      this.showTooltip = false;
+    }, 300); // Delay to allow click
+  }
+  generatePassword(fieldKey: string) {
+    console.log(fieldKey);
+    const randomPassword = Math.random().toString(36).slice(-10);
+    console.log(randomPassword);
+    this.childSectionData[fieldKey] = randomPassword;
+    this.showTooltip = false; // hide tooltip after click
   }
 }
